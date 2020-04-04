@@ -125,6 +125,7 @@ function enregistrerSurnom(event) {
     // Extraire la valeur de l'input
     let pseudo = document.querySelector('.tab__info__pseudo_input').value;
     pseudo = pseudo == "" ? "LAZY" : pseudo; 
+    pseudo = pseudo == undefined ? "LAZY" : pseudo; 
     localStorage['pseudo'] = pseudo;
     // Verification de l'existence d'un surnom et affichage
     afficher_surnom()
