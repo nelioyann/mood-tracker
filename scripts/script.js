@@ -99,6 +99,7 @@ nav_links.forEach(nav_link =>{
     nav_link.addEventListener("click", e=>{
         let current_name = e.target.getAttribute("data-tab"); 
         // let link_name = e.target.getAttribute("data-tab"); 
+        alert(current_name)
         e.preventDefault();
         nav_links.forEach( el => el.classList.remove("nav__link--active"));
         document.querySelector(`.nav__link__${current_name}`).classList.add("nav__link--active");
