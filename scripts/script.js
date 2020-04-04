@@ -99,9 +99,9 @@ function displayNotification  (title, body) {
 save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! "))
 
 nav_links.forEach(nav_link =>{
-    alert(nav_link)
+    // alert(nav_link)
     nav_link.addEventListener("click", e=>{
-        alert(e)
+        // alert(e)
         let current_name = e.target.getAttribute("data-tab"); 
         // let link_name = e.target.getAttribute("data-tab"); 
         alert(current_name)
