@@ -74,8 +74,8 @@ pushBtn.addEventListener("click", ()=>{
     if (status == "granted") pushBtn.style.visibility = "hidden";
 });
 })
+alert("77")
 
-alert("78")
 if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
 
 function displayNotification  (title, body) {
