@@ -14,9 +14,9 @@ const tabs = document.querySelectorAll(".tabs")
 
 
 wellness.addEventListener("input", (e)=>{
-    let new_value = (e.target.value - 1) * -115;
+    let new_value = (e.target.value - 1) * -130;
     // console.log(new_value)
-    preview.style.transform = `translateY(${new_value}px)`
+    preview.style.transform = `translateX(${new_value}px)`
 })
 
 construction.addEventListener("input", e=>{

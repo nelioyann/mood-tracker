@@ -154,18 +154,18 @@ label {
 }
 
 .mood_preview {
-  width: 100%;
-  /* height: 100px; */
+  width: 110px;
+  height: 110px;
   overflow: hidden;
   position: relative;
-  /* display: grid; */
-  /* place-content: center; */
-  /* flex-grow: 1; */
+
 }
 .mood_images {
   width: 110px;
   height: 110px;
   display: grid;
+  grid-auto-flow: column;
+  /* overflow: hidden; */
   gap: 15px;
   margin: 0 auto;
 
