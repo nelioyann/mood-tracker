@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v1"
+const staticCacheName = "site-static-v00"
 
 
 // Fichier qui seront cacher
@@ -36,7 +36,7 @@ self.addEventListener("install", event=>{
                 console.log(err)
             })
     )
-    // self.skipWaiting();
+    self.skipWaiting();
 });
 
 // Activation 
