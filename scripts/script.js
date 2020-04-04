@@ -68,7 +68,8 @@ btnAdd.addEventListener("click", () => {
 
 pushBtn.addEventListener("click", ()=>{
 	Notification.requestPermission(function(status) {
-	console.log("Notification permission status:", status);
+    console.log("Notification permission status:", status);
+    if (status == "granted") pushBtn.style.visibility = "hidden";
 });
 })
 
