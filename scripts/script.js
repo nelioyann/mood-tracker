@@ -1,4 +1,4 @@
-alert("yo")
+
 
 const wellness = document.querySelector(".wellness");
 const construction = document.querySelector(".construction");
@@ -40,7 +40,7 @@ stability.addEventListener("input", e=>{
 //  Installation de la PWA
 let deferredPrompt;
 
-alert("43")
+
 window.addEventListener("beforeinstallprompt", e => {
 	console.log("before install prompt");
 	e.preventDefault();
@@ -48,7 +48,7 @@ window.addEventListener("beforeinstallprompt", e => {
 	btnAdd.style.visibility = "visible";
 });
 
-alert("51")
+
 window.addEventListener("appinstalled", evt => {
     app.logEvent("a2hs", "installed");
     btnAdd.style.visibility = "hidden";
@@ -59,7 +59,7 @@ btnAdd.addEventListener("click", () => {
 	deferredPrompt.prompt();
 	deferredPrompt.userChoice.then(choiceResult => {
 		if (choiceResult.outcome === "accepted") {
-            // alert()
+            
 			console.log("User accepted the A2HS prompt");
 		}
 		deferredPrompt = null;
@@ -74,11 +74,11 @@ pushBtn.addEventListener("click", ()=>{
     if (status == "granted") pushBtn.style.visibility = "hidden";
 });
 })
-alert("77")
+
 
 // if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
 
-alert("81")
+
 function displayNotification  (title, body) {
 	if (Notification.permission == "granted") {
         
@@ -98,14 +98,14 @@ function displayNotification  (title, body) {
 }
 
 save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! "))
-alert("100")
+
 nav_links.forEach(nav_link =>{
-    // alert(nav_link)
+    
     nav_link.addEventListener("click", e=>{
-        // alert(e)
+        
         let current_name = e.target.getAttribute("data-tab"); 
         // let link_name = e.target.getAttribute("data-tab"); 
-        alert(current_name)
+        
         e.preventDefault();
         nav_links.forEach( el => el.classList.remove("nav__link--active"));
         document.querySelector(`.nav__link__${current_name}`).classList.add("nav__link--active");
@@ -118,7 +118,7 @@ nav_links.forEach(nav_link =>{
 
 
 // Pseudo
-alert("120")
+
 // Affichage du surnom sur la page d'accueil
 const pseudo_form = document.querySelector(".tab__info__pseudo_form");
 const pseudo_input = document.querySelector(".tab__info__pseudo_input");
@@ -138,7 +138,7 @@ function enregistrerSurnom(event) {
     // Verification de l'existence d'un surnom et affichage
     afficher_surnom()
 };
-alert("140")
+
 // Affiche un surnom s'il en existe un localement
 function afficher_surnom() {
     let pseudo = localStorage['pseudo']
