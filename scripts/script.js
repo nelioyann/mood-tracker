@@ -75,12 +75,12 @@ pushBtn.addEventListener("click", ()=>{
 });
 })
 
-if (Notification){
+// if (Notification){
 
-    if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
-} else{
-    pushBtn.style.visibility = "hidden";
-}
+//     if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
+// } else{
+//     pushBtn.style.visibility = "hidden";
+// }
 
 
 function displayNotification  (title, body) {
