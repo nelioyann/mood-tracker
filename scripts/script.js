@@ -92,7 +92,7 @@ function displayNotification  (title, body) {
 	}
 }
 
-save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "Have a nice f*cking day ! "))
+save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! "))
 
 nav_links.forEach(nav_link =>{
     nav_link.addEventListener("click", e=>{
