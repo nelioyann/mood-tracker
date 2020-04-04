@@ -115,7 +115,7 @@ nav_links.forEach(nav_link =>{
 const pseudo_form = document.querySelector(".tab__info__pseudo_form");
 const pseudo_input = document.querySelector(".tab__info__pseudo_input");
 const pseudo_text = document.querySelector(".tab__info__pseudo_text");
-pseudo_form.addEventListener("submit", (e)=>console.log("event triggered submit"));
+pseudo_form.addEventListener("submit", (e)=>enregistrerSurnom(e));
 pseudo_form.addEventListener("focusout", (e)=> enregistrerSurnom(e));
 	// enregistrerSurnom(e)
 afficher_surnom();

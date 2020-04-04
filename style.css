@@ -52,18 +52,20 @@ header {
   max-width: 800px;
   display: flex;
   justify-content: space-between;
+  margin: 0 1em;
 }
 header h1 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: lighter;
-  margin: 0 1em;
+  margin-top: 0;
+  
 }
 .installPrompt,
 .pushPrompt {
   background-color: var(--foreground);
   color: var(--darkground);
   padding: 5px;
-  margin: 0.5em 1em;
+  margin: 0em 0em 1em;
   cursor: pointer;
   font-size: 0.7rem;
   border-radius: 3px;
@@ -74,7 +76,8 @@ header h1 {
 }
 header .greetings__text {
   font-family: "Patrick Hand", cursive;
-  margin: 0 1em;
+  font-size: 1.2rem;
+  
 }
 main {
   flex-grow: 1;
