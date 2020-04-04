@@ -78,6 +78,7 @@ alert("77")
 
 if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
 
+alert("81")
 function displayNotification  (title, body) {
 	if (Notification.permission == "granted") {
         
