@@ -1,20 +1,19 @@
-@font-face{
-  font-family: 'Patrick Hand';
+@font-face {
+  font-family: "Patrick Hand";
   src: url("./fonts/PatrickHandRegular.ttf");
 }
-@font-face{
+@font-face {
   font-family: "Roboto";
   src: url("./fonts/RobotoRegular.ttf");
 }
-:root{
+:root {
   --thumbSize: 20px;
   --themeColor: #ffe001;
   --foreground: #f5ece7;
   --darkground: #585a79;
- 
 }
 
-.container{
+.container {
   /* margin: 0 2em; */
   min-height: 100vh;
   width: 100%;
@@ -22,8 +21,9 @@
   display: flex;
   flex-direction: column;
 }
-body{
-  margin: 0;padding: 0;
+body {
+  margin: 0;
+  padding: 0;
   background-color: var(--foreground);
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ body{
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
-header{
+header {
   background-color: var(--darkground);
   color: var(--foreground);
   display: flex;
@@ -46,20 +46,20 @@ header{
   position: sticky;
   position: -webkit-sticky;
 }
-.header_contents{
+.header_contents {
   min-width: 250px;
   width: 100%;
   max-width: 800px;
   display: flex;
   justify-content: space-between;
 }
-header h1{
-  
+header h1 {
   font-size: 1.2rem;
   font-weight: lighter;
   margin: 0 1em;
 }
-.installPrompt, .pushPrompt{
+.installPrompt,
+.pushPrompt {
   background-color: var(--foreground);
   color: var(--darkground);
   padding: 5px;
@@ -68,15 +68,15 @@ header h1{
   font-size: 0.7rem;
   border-radius: 3px;
 }
-.installPrompt{
+.installPrompt {
   /* display: none; */
   visibility: hidden;
 }
-header span{
-  font-family: 'Patrick Hand', cursive;
+header .greetings__text {
+  font-family: "Patrick Hand", cursive;
   margin: 0 1em;
 }
-main{
+main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -84,7 +84,7 @@ main{
   background-color: var(--foreground);
 }
 
-.tabs{
+.tabs {
   min-width: 250px;
   width: 100%;
   max-width: 600px;
@@ -92,43 +92,65 @@ main{
   flex-direction: column;
   align-items: center;
 }
-.tab__history, .tab__info{
+.tab__history,
+.tab__info {
   display: none;
 }
-
-
-.mood_form{
-  
+.tabs__content {
+  margin: 0 1em;
+}
+.tab__info__pseudo_text {
+  color: var(--foreground);
+  background-color: var(--darkground);
+  padding: 1px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: none;
+}
+.tab__info__pseudo_form {
+  display: inline-block;
+  width: 30px;
+}
+.tab__info__pseudo_input {
+  border: none;
+  outline: none;
+  color: inherit;
+  max-width: 50px;
+  padding: 5px 6px;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  border-radius: 1px;
+  background: #f5ece7;
+  box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #ffffff;
+}
+.mood_form {
   min-width: 300px;
   width: 100%;
-  
-  
 }
 
-.mood_form .sliders{
+.mood_form .sliders {
   margin: 0 2em;
 }
-.mood_form__btn{
+.mood_form__btn {
   width: max-content;
   padding: 15px 50px;
   margin: 1em auto;
-  border: 2px solid  var(--darkground);
+  border: 2px solid var(--darkground);
   border-radius: 25px;
   color: var(--darkground);
   cursor: pointer;
   /* transition: 300ms; */
 }
-.mood_form__btn:active{
+.mood_form__btn:active {
   background-color: var(--darkground);
   color: var(--foreground);
 }
-label{
+label {
   margin-top: 2em;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.mood_preview{
+.mood_preview {
   width: 100%;
   /* height: 100px; */
   overflow: hidden;
@@ -137,17 +159,17 @@ label{
   /* place-content: center; */
   /* flex-grow: 1; */
 }
-.mood_images{
+.mood_images {
   width: 110px;
   height: 110px;
   display: grid;
   gap: 15px;
   margin: 0 auto;
-  
+
   /* transform: translateY(-100px); */
   transition: 600ms;
 }
-.mood_image{
+.mood_image {
   height: 100px;
   /* height: 100px; */
   border-radius: 5px;
@@ -155,7 +177,7 @@ label{
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-iteration-count: 1;
-  
+
   /* background-color: #fff; */
 }
 
@@ -163,7 +185,7 @@ label{
   -webkit-appearance: none;
   width: 100%;
   height: 8px;
-  border-radius: 5px;  
+  border-radius: 5px;
   background: var(--themeColor);
   outline: none;
   margin: 0;
@@ -175,7 +197,7 @@ label{
   width: var(--thumbSize);
   height: var(--thumbSize);
   border: 4px solid #fff;
-  border-radius: 50%; 
+  border-radius: 50%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
   background: var(--themeColor);
   cursor: pointer;
@@ -189,7 +211,7 @@ label{
   cursor: pointer;
 }
 
-.slider_labels{
+.slider_labels {
   margin: 0.5em 0 1.5em;
   padding: 0;
   list-style-type: none;
@@ -197,8 +219,6 @@ label{
   width: 100%;
   justify-content: space-between;
 }
-
-
 
 /* ------- */
 
@@ -247,255 +267,156 @@ label{
 
 /* -------------- */
 
-
-
 @keyframes shake {
   2% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-4% {
-
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  4% {
     transform: translate(0, 0) rotate(5.5deg);
-
-}
-6% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-8% {
-
+  }
+  6% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  8% {
     transform: translate(0, 0) rotate(-5.5deg);
-
-}
-10% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-12% {
-
+  }
+  10% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  12% {
     transform: translate(0, 0) rotate(2.5deg);
-
-}
-14% {
-
+  }
+  14% {
     transform: translate(0, 0) rotate(5.5deg);
-
-}
-16% {
-
+  }
+  16% {
     transform: translate(0, 0) rotate(-5.5deg);
-
-}
-18% {
-
+  }
+  18% {
     transform: translate(0, 0) rotate(-1.5deg);
-
-}
-20% {
-
+  }
+  20% {
     transform: translate(0, 0) rotate(4.5deg);
-
-}
-22% {
-
+  }
+  22% {
     transform: translate(0, 0) rotate(-6.5deg);
-
-}
-24% {
-
+  }
+  24% {
     transform: translate(0, 0) rotate(1.5deg);
-
-}
-26% {
-
+  }
+  26% {
     transform: translate(0, 0) rotate(1.5deg);
-
-}
-28% {
-
+  }
+  28% {
     transform: translate(0, 0) rotate(-4.5deg);
-
-}
-30% {
-
+  }
+  30% {
     transform: translate(0, 0) rotate(5.5deg);
-
-}
-32% {
-
+  }
+  32% {
     transform: translate(0, 0) rotate(2.5deg);
-
-}
-34% {
-
+  }
+  34% {
     transform: translate(0, 0) rotate(3.5deg);
-
-}
-36% {
-
+  }
+  36% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-38% {
-
+  }
+  38% {
     transform: translate(0, 0) rotate(-4.5deg);
-
-}
-40% {
-
+  }
+  40% {
     transform: translate(0, 0) rotate(2.5deg);
-
-}
-42% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-44% {
-
+  }
+  42% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  44% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-46% {
-
+  }
+  46% {
     transform: translate(0, 0) rotate(-4.5deg);
-
-}
-48% {
-
+  }
+  48% {
     transform: translate(0, 0) rotate(-1.5deg);
-
-}
-50% {
-
+  }
+  50% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-52% {
-
+  }
+  52% {
     transform: translate(0, 0) rotate(-2.5deg);
-
-}
-54% {
-
+  }
+  54% {
     transform: translate(0, 0) rotate(3.5deg);
-
-}
-56% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-58% {
-
+  }
+  56% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  58% {
     transform: translate(0, 0) rotate(-6.5deg);
-
-}
-60% {
-
+  }
+  60% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-62% {
-
+  }
+  62% {
     transform: translate(0, 0) rotate(-1.5deg);
-
-}
-64% {
-
+  }
+  64% {
     transform: translate(0, 0) rotate(3.5deg);
-
-}
-66% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-68% {
-
+  }
+  66% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  68% {
     transform: translate(0, 0) rotate(4.5deg);
-
-}
-70% {
-
+  }
+  70% {
     transform: translate(0, 0) rotate(1.5deg);
-
-}
-72% {
-
+  }
+  72% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-74% {
-
+  }
+  74% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-76% {
-
+  }
+  76% {
     transform: translate(0, 0) rotate(2.5deg);
-
-}
-78% {
-
+  }
+  78% {
     transform: translate(0, 0) rotate(-1.5deg);
-
-}
-80% {
-
+  }
+  80% {
     transform: translate(0, 0) rotate(-5.5deg);
-
-}
-82% {
-
+  }
+  82% {
     transform: translate(0, 0) rotate(7.5deg);
-
-}
-84% {
-
-    transform: translate(0, 0) rotate(.5deg);
-
-}
-86% {
-
+  }
+  84% {
+    transform: translate(0, 0) rotate(0.5deg);
+  }
+  86% {
     transform: translate(0, 0) rotate(5.5deg);
-
-}
-88% {
-
+  }
+  88% {
     transform: translate(0, 0) rotate(4.5deg);
-
-}
-90% {
-
+  }
+  90% {
     transform: translate(0, 0) rotate(-2.5deg);
-
-}
-92% {
-
+  }
+  92% {
     transform: translate(0, 0) rotate(1.5deg);
-
-}
-94% {
-
+  }
+  94% {
     transform: translate(0, 0) rotate(-5.5deg);
-
-}
-96% {
-
+  }
+  96% {
     transform: translate(0, 0) rotate(7.5deg);
-
-}
-98% {
-
+  }
+  98% {
     transform: translate(0, 0) rotate(-3.5deg);
-
-}
-0%, 100% {
-
+  }
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0);
-}}
+  }
+}

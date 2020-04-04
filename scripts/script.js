@@ -107,3 +107,41 @@ nav_links.forEach(nav_link =>{
         console.log(current_name)
     })
 })
+
+
+// Pseudo
+
+// Affichage du surnom sur la page d'accueil
+const pseudo_form = document.querySelector(".tab__info__pseudo_form");
+const pseudo_input = document.querySelector(".tab__info__pseudo_input");
+const pseudo_text = document.querySelector(".tab__info__pseudo_text");
+pseudo_form.addEventListener("submit", (e)=>console.log("event triggered submit"));
+pseudo_form.addEventListener("focusout", (e)=> enregistrerSurnom(e));
+	// enregistrerSurnom(e)
+afficher_surnom();
+
+function enregistrerSurnom(event) {
+    event.preventDefault();
+    // Extraire la valeur de l'input
+    let pseudo = document.querySelector('.tab__info__pseudo_input').value;
+    pseudo = pseudo == "" ? "LAZY" : pseudo; 
+    localStorage['pseudo'] = pseudo;
+    // Verification de l'existence d'un surnom et affichage
+    afficher_surnom()
+};
+
+// Affiche un surnom s'il en existe un localement
+function afficher_surnom() {
+    let pseudo = localStorage['pseudo']
+    if (!pseudo_text || !pseudo_form) return null
+    pseudo = pseudo == "" ? "LAZY" : pseudo; 
+    pseudo_text.innerHTML = pseudo;
+    document.querySelector(".greetings__pseudo").innerHTML = pseudo;
+    pseudo_form.style.display = "none";  
+    pseudo_text.style.display = "inline-block";
+    pseudo_text.addEventListener('click', function() {
+        pseudo_text.style.display = 'none';
+        pseudo_form.style.display = 'inline-block';
+    });
+
+};

@@ -24,9 +24,8 @@
         <header>
             <div class="header_contents">
                 <div class="greetings">
-                    <h1>Hey lazy</h1>
-                    <span> How're you feeling today ?</span>
-    
+                    <h1 >Hey, <span class="greetings__pseudo">Lazy</span>.</h1>
+                    <span class="greetings__text"> How're you feeling today ?</span>
                 </div>
                 <div class="pwa_access">
                     <div class="installPrompt">Install on device</div>
@@ -103,15 +102,27 @@
                 </form>
             </div>
             <div class="tabs tab__history">
-                <p>{History here}</p>
+                <div class="tabs_content">
+                    <p>Coming soon...</p>
+                </div>
             </div>
             <div class="tabs tab__info">
-                <p>{Info tab here}</p>
-                <h2>I can't allow the push notifications, is this app broken ?</h2>
+                <div class="tabs__content">
+                    <h3>I can't allow the push notifications, is this app broken ?</h3>
                 <p>No it's not. You are the pro- . Well actually this issue might come from another 
-                    app currently running on your phone. Due to security concern, you should disable temporarily apps 
+                    app currently running on your phone. Due to security concern, you should temporarily disable apps 
                     that are allowed to hover over other applications (ie: assistive touch) 
                 </p>
+                <h3>I am offended by the name 
+                    <span class="tab__info__pseudo_text">Lazy</span>
+                    <form class="tab__info__pseudo_form"><input type="text" class="tab__info__pseudo_input" placeholder="insert" /></form>
+                    <br>Can I change it?</h3>
+                <p>Of course ! Would you also like a coffe-. Yes you definitely can.
+                    Press the highlighted word above to do just that.
+                </p>
+                </div>
+                
+                
             </div>
 
         </main>
