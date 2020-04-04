@@ -75,6 +75,10 @@ pushBtn.addEventListener("click", ()=>{
 });
 })
 
+if ("Notification" in window) {
+    if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
+}
+if (!("Notification" in window)) pushBtn.style.visibility = "hidden";
 // if (Notification){
 
 //     if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
