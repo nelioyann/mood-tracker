@@ -97,7 +97,7 @@ function displayNotification  (title, body) {
 }
 
 save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! "))
-
+alert("100")
 nav_links.forEach(nav_link =>{
     // alert(nav_link)
     nav_link.addEventListener("click", e=>{
@@ -117,7 +117,7 @@ nav_links.forEach(nav_link =>{
 
 
 // Pseudo
-
+alert("120")
 // Affichage du surnom sur la page d'accueil
 const pseudo_form = document.querySelector(".tab__info__pseudo_form");
 const pseudo_input = document.querySelector(".tab__info__pseudo_input");
@@ -137,7 +137,7 @@ function enregistrerSurnom(event) {
     // Verification de l'existence d'un surnom et affichage
     afficher_surnom()
 };
-
+alert("140")
 // Affiche un surnom s'il en existe un localement
 function afficher_surnom() {
     let pseudo = localStorage['pseudo']
