@@ -7,7 +7,7 @@
   src: url("./fonts/RobotoRegular.ttf");
 }
 :root {
-  --thumbSize: 20px;
+  --thumbSize: 25px;
   --themeColor: #ffe001;
   --foreground: #f5ece7;
   --darkground: #585a79;
@@ -197,7 +197,10 @@ label {
   width: 100%;
   height: 8px;
   border-radius: 5px;
-  background: var(--themeColor);
+  /* background: var(--themeColor); */
+  background: var(--foreground);
+  box-shadow: inset 3px 3px 5px #ddd4d0, 
+            inset -3px -3px 5px #fffffe;
   outline: none;
   margin: 0;
 }
@@ -207,11 +210,15 @@ label {
   appearance: none;
   width: var(--thumbSize);
   height: var(--thumbSize);
-  border: 4px solid #fff;
+  /* border: 4px solid #fff; */
   border-radius: 50%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  background: var(--themeColor);
+  /* background: var(--themeColor); */
+  background: var(--foreground);
   cursor: pointer;
+  box-shadow:  3px 3px 5px #ddd4d0, 
+             -3px -3px 5px #fffffe;
+  
 }
 
 .slider::-moz-range-thumb {
@@ -220,6 +227,7 @@ label {
   border-radius: 50%;
   background: var(--themeColor);
   cursor: pointer;
+  
 }
 
 .slider_labels {
