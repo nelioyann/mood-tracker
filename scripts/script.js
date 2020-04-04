@@ -1,4 +1,4 @@
-// alert("yo")
+alert("yo")
 
 const wellness = document.querySelector(".wellness");
 const construction = document.querySelector(".construction");
@@ -40,6 +40,7 @@ stability.addEventListener("input", e=>{
 //  Installation de la PWA
 let deferredPrompt;
 
+alert("43")
 window.addEventListener("beforeinstallprompt", e => {
 	console.log("before install prompt");
 	e.preventDefault();
@@ -47,6 +48,7 @@ window.addEventListener("beforeinstallprompt", e => {
 	btnAdd.style.visibility = "visible";
 });
 
+alert("51")
 window.addEventListener("appinstalled", evt => {
     app.logEvent("a2hs", "installed");
     btnAdd.style.visibility = "hidden";
@@ -73,6 +75,7 @@ pushBtn.addEventListener("click", ()=>{
 });
 })
 
+alert("78")
 if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
 
 function displayNotification  (title, body) {
