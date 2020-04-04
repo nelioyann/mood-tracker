@@ -33,7 +33,7 @@ body {
   color: var(--darkground);
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
+  /* -webkit-touch-callout: none; */
 }
 header {
   background-color: var(--darkground);
