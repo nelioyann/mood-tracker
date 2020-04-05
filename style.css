@@ -1,10 +1,12 @@
 @font-face {
   font-family: "Patrick Hand";
   src: url("./fonts/PatrickHandRegular.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/RobotoRegular.ttf");
+  font-display: swap;
 }
 :root {
   --thumbSize: 25px;
