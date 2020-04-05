@@ -71,18 +71,21 @@ header {
 }
 .greetings{
   flex-grow: 1;
+  margin: 0.5em 0em 1em 2em;
 }
-.greetings, .pwa_access{
-  margin: 0.5em 2em 0;
+.pwa_access{
+  margin: 0.5em 2em 1em 0em;
 
 }
 .greetings_title {
   font-size: 1.2rem;
   font-weight: lighter;
-  margin-top: 0;
+  margin: 0 0 0.5em;
+  font-family: "Patrick Hand", cursive;  
+}
+.greetings__text {
   font-family: "Patrick Hand", cursive;
-  
-
+  font-size: 1rem;
   
 }
 
@@ -110,11 +113,7 @@ header {
   /* display: none; */
   visibility: hidden;
 }
-.greetings__text {
-  font-family: "Patrick Hand", cursive;
-  font-size: 1.2rem;
-  
-}
+
 main {
   flex-grow: 1;
   display: flex;
