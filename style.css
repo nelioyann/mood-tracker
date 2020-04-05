@@ -80,6 +80,9 @@ header {
   font-size: 1.2rem;
   font-weight: lighter;
   margin-top: 0;
+  font-family: "Patrick Hand", cursive;
+  
+
   
 }
 
@@ -107,7 +110,7 @@ header {
   /* display: none; */
   visibility: hidden;
 }
-header .greetings__text {
+.greetings__text {
   font-family: "Patrick Hand", cursive;
   font-size: 1.2rem;
   
