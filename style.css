@@ -282,6 +282,7 @@ label {
 
 .nav__icon {
   font-size: 18px;
+  color: var(--darkground);
 }
 
 /* -------------- */
