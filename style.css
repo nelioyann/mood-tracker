@@ -8,6 +8,7 @@
   src: url("./fonts/RobotoRegular.ttf");
   font-display: swap;
 }
+
 :root {
   --thumbSize: 25px;
   --themeColor: #ffe001;
@@ -38,34 +39,61 @@ body {
   -webkit-touch-callout: none;
 }
 header {
-  background-color: var(--darkground);
+  background-color: var(darkground);
   color: var(--foreground);
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
-  padding: 15px 0;
   top: 0;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   position: -webkit-sticky;
 }
-.header_contents {
+.header_nav{
+  display: flex;
+  
+  justify-content: space-between;
   min-width: 250px;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
+  align-items: center;
+  /* padding: 5px 0; */
+}
+.header_contents {
+  background-color: var(--foreground);
+  color: var(--darkground);
+  /* margin: auto; */
+  min-width: 250px;
+  /* width: 100%; */
+  max-width: 600px;
   display: flex;
   justify-content: space-between;
-  margin: 0 1em;
 }
-header h1 {
+.greetings{
+  flex-grow: 1;
+}
+.greetings, .pwa_access{
+  margin: 0.5em 1em 0;
+
+}
+.greetings_title {
   font-size: 1.2rem;
   font-weight: lighter;
   margin-top: 0;
   
 }
+
+.logo_img{
+  height: 60px;
+  cursor: pointer;
+}
+.logo_text{
+  padding: 0px 10px;
+}
 .installPrompt,
 .pushPrompt {
-  background-color: var(--foreground);
-  color: var(--darkground);
+  background-color: var(--darkground);
+  color: var(--foreground);
   padding: 5px;
   margin: 0em 0em 1em;
   cursor: pointer;
@@ -95,7 +123,7 @@ main {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 .tab__history,
 .tab__info {
@@ -137,10 +165,11 @@ main {
 }
 .mood_form__btn {
   width: max-content;
-  padding: 15px 50px;
+  padding: 10px 40px;
   margin: 1em auto;
   border: 2px solid var(--darkground);
-  border-radius: 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
   color: var(--darkground);
   cursor: pointer;
   /* transition: 300ms; */
@@ -161,11 +190,9 @@ label {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border-radius: 150px;
-  border-radius: 150px;
   background: #f5ece7;
   padding: 5px;
-  margin: 1em;
+  margin: 1em auto;
   box-shadow: inset 5px 5px 10px #dfd7d2, 
             inset -5px -5px 10px #fffffc;
 
@@ -233,7 +260,7 @@ label {
 }
 
 .slider_labels {
-  margin: 0.5em 0 1.5em;
+  margin: 0.3em 0em 0.5em 0.3em;
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -255,7 +282,7 @@ label {
   overflow-x: auto;
 }
 
-.nav__link {
+div.nav__link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,22 +301,18 @@ label {
   transition: background-color 0.1s ease-in-out;
 }
 
-.nav__link:hover {
+div.nav__link:hover {
   background-color: #eeeeee;
 }
 
-.nav__link--active {
+div.nav__link--active {
   color: #009578;
 }
 
 .nav__icon {
   font-size: 18px;
-  color: var(--darkground);
 }
-.nav__text{
-  color: var(--darkground);
 
-}
 /* -------------- */
 
 @keyframes shake {

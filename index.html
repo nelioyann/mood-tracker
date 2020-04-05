@@ -23,20 +23,27 @@
 <body>
     <div class="container">
         <header>
-            <div class="header_contents">
-                <div class="greetings">
-                    <h1 >Hey, <span class="greetings__pseudo">Lazy</span>.</h1>
-                    <span class="greetings__text"> How're you feeling today ?</span>
+            <div class="header_nav">
+                <div class="logo">
+                    <img  data-tab="today" class="logo_img nav__link" src="./images/logo.svg" alt="logo">
                 </div>
-                <div class="pwa_access">
-                    <div class="installPrompt">Install on device</div>
-                    <div class="pushPrompt">Allow Push Notifications</div>
-                </div>
+                <div class="logo_text header_date">Text</div>
             </div>
+            
             
         </header>
         <main>
             <div class="tabs tab__today">
+                <div class="header_contents">
+                    <div class="greetings">
+                        <h1 class="greetings_title">Hey, <span class="greetings__pseudo">-----</span></h1>
+                        <span class="greetings__text"> How're you feeling today ?</span>
+                    </div>
+                    <div class="pwa_access">
+                        <div class="installPrompt">Install on device</div>
+                        <div class="pushPrompt">Allow Push Notifications</div>
+                    </div>
+                </div>
                 <div class="mood_preview">
                     <div id="mood_images" class="mood_images">
 
