@@ -284,7 +284,10 @@ label {
   font-size: 18px;
   color: var(--darkground);
 }
+.nav__text{
+  color: var(--darkground);
 
+}
 /* -------------- */
 
 @keyframes shake {
