@@ -39,7 +39,7 @@ body {
   -webkit-touch-callout: none;
 }
 header {
-  background-color: var(darkground);
+  background-color: var(--darkground);
   color: var(--foreground);
   display: flex;
   /* flex-direction: column; */
@@ -83,6 +83,9 @@ header {
   
 }
 
+.logo{
+  margin: 0em 1em;
+}
 .logo_img{
   height: 60px;
   cursor: pointer;
