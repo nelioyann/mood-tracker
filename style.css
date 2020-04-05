@@ -1,26 +1,22 @@
 @font-face {
   font-family: "Patrick Hand";
-  src: url("./fonts/PatrickHandRegular.ttf");
+  src: url(/fc34dc610fe64c025b01cfc2eb1e17a73b11900e/28b84/fonts/patrickhandregular.ttf);
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("./fonts/RobotoRegular.ttf");
+  font-family: Roboto;
+  src: url(/096c9245b6a192d1403a82848e104a65f578a8ec/45e62/fonts/robotoregular.ttf);
   font-display: swap;
 }
-
 :root {
   --thumbSize: 25px;
   --themeColor: #ffe001;
   --foreground: #f5ece7;
   --darkground: #585a79;
 }
-
 .container {
-  /* margin: 0 2em; */
   min-height: 100vh;
   width: 100%;
-  /* max-width: 600px; */
   display: flex;
   flex-direction: column;
 }
@@ -42,78 +38,68 @@ header {
   background-color: var(--darkground);
   color: var(--foreground);
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   top: 0;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   position: -webkit-sticky;
 }
-.header_nav{
+.header_nav {
   display: flex;
-  
   justify-content: space-between;
   min-width: 250px;
   width: 100%;
   max-width: 600px;
   align-items: center;
-  /* padding: 5px 0; */
 }
 .header_contents {
   background-color: var(--foreground);
   color: var(--darkground);
-  /* margin: auto; */
   min-width: 250px;
-  /* width: 100%; */
   max-width: 600px;
   display: flex;
   justify-content: space-between;
 }
-.greetings{
+.greetings {
   flex-grow: 1;
-  margin: 0.5em 0em 1em 2em;
+  margin: 0.5em 0 0em 1em;
 }
-.pwa_access{
-  margin: 0.5em 2em 1em 0em;
-
+.pwa_access {
+  margin: 0.5em 2em 0em 0;
 }
 .greetings_title {
   font-size: 1.2rem;
   font-weight: lighter;
   margin: 0 0 0.5em;
-  font-family: "Patrick Hand", cursive;  
+  font-family: "Patrick Hand", cursive;
 }
 .greetings__text {
   font-family: "Patrick Hand", cursive;
   font-size: 1rem;
-  
 }
-
-.logo{
-  margin: 0em 1em;
+.logo {
+  margin: 0 1em;
 }
-.logo_img{
+.logo_img {
   height: 60px;
   cursor: pointer;
 }
-.logo_text{
-  padding: 0px 10px;
+.logo_text {
+  padding: 0 10px;
 }
 .installPrompt,
 .pushPrompt {
   background-color: var(--darkground);
   color: var(--foreground);
   padding: 5px;
-  margin: 0em 0em 1em;
+  margin: 0 0 1em;
   cursor: pointer;
   font-size: 0.7rem;
   border-radius: 3px;
 }
 .installPrompt {
-  /* display: none; */
   visibility: hidden;
 }
-
 main {
   flex-grow: 1;
   display: flex;
@@ -121,14 +107,12 @@ main {
   align-items: center;
   background-color: var(--foreground);
 }
-
 .tabs {
   min-width: 250px;
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 .tab__history,
 .tab__info {
@@ -151,44 +135,40 @@ main {
 }
 .tab__info__pseudo_input {
   border: none;
-  outline: none;
+  outline: 0;
   color: inherit;
   max-width: 50px;
   padding: 5px 6px;
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
   border-radius: 1px;
   background: #f5ece7;
-  box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #ffffff;
+  box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
 }
 .mood_form {
   min-width: 300px;
   width: 100%;
 }
-
 .mood_form .sliders {
   margin: 0 2em;
 }
 .mood_form__btn {
   width: max-content;
   padding: 10px 40px;
-  margin: 1em auto;
+  margin: 0.5em auto;
   border: 2px solid var(--darkground);
   box-sizing: border-box;
   border-radius: 5px;
   color: var(--darkground);
   cursor: pointer;
-  /* transition: 300ms; */
 }
 .mood_form__btn:active {
   background-color: var(--darkground);
   color: var(--foreground);
 }
 label {
-  margin-top: 2em;
-  font-size: 1.2rem;
+  margin-top: 1em;
+  font-size: 1em;
   font-weight: 300;
 }
-
 .mood_preview {
   width: 110px;
   height: 110px;
@@ -197,96 +177,72 @@ label {
   position: relative;
   background: #f5ece7;
   padding: 5px;
-  margin: 1em auto;
-  box-shadow: inset 5px 5px 10px #dfd7d2, 
-            inset -5px -5px 10px #fffffc;
-
+  margin: auto;
+  box-shadow: inset 5px 5px 10px #dfd7d2, inset -5px -5px 10px #fffffc;
 }
 .mood_images {
   width: 110px;
   height: 110px;
   display: grid;
   grid-auto-flow: column;
-  /* overflow: hidden; */
   gap: 15px;
   margin: 0 auto;
-
-  /* transform: translateY(-100px); */
-  transition: 600ms;
+  transition: 0.6s;
 }
 .mood_image {
   height: 100px;
-  /* height: 100px; */
   border-radius: 5px;
   animation: shake;
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-iteration-count: 1;
-
-  /* background-color: #fff; */
 }
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
   height: 8px;
   border-radius: 5px;
-  /* background: var(--themeColor); */
   background: var(--foreground);
-  box-shadow: inset 3px 3px 5px #ddd4d0, 
-            inset -3px -3px 5px #fffffe;
-  outline: none;
+  box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+  outline: 0;
   margin: 0;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: var(--thumbSize);
   height: var(--thumbSize);
-  /* border: 4px solid #fff; */
   border-radius: 50%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  /* background: var(--themeColor); */
   background: var(--foreground);
   cursor: pointer;
-  box-shadow:  3px 3px 5px #ddd4d0, 
-             -3px -3px 5px #fffffe;
-  
+  box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
 }
-
 .slider::-moz-range-thumb {
   width: var(--thumbSize);
   height: var(--thumbSize);
   border-radius: 50%;
   background: var(--themeColor);
   cursor: pointer;
-  
 }
-
 .slider_labels {
-  margin: 0.3em 0em 0.5em 0.3em;
+  margin: 0.3em 0 0.5em 0.3em;
   padding: 0;
   list-style-type: none;
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-
-/* ------- */
-
 .nav {
-  position: fixed;
-  /* position: sticky; */
+  position: static;
   bottom: 0;
   width: 100%;
   height: 55px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+  background-color: #fff;
   display: flex;
   overflow-x: auto;
 }
-
 div.nav__link {
   display: flex;
   flex-direction: column;
@@ -298,28 +254,21 @@ div.nav__link {
   white-space: nowrap;
   font-family: sans-serif;
   font-size: 13px;
-  color: #444444;
+  color: #444;
   text-decoration: none;
   cursor: pointer;
-  /* pointer-events: none; */
   -webkit-tap-highlight-color: transparent;
   transition: background-color 0.1s ease-in-out;
 }
-
 div.nav__link:hover {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
-
 div.nav__link--active {
   color: #009578;
 }
-
 .nav__icon {
   font-size: 18px;
 }
-
-/* -------------- */
-
 @keyframes shake {
   2% {
     transform: translate(0, 0) rotate(0.5deg);
