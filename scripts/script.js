@@ -166,11 +166,32 @@ function afficher_surnom() {
 
 };
 
+
+
 const date_el = document.querySelector(".header_date")
 var today = new Date();
+console.log(today)
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 date_el.innerHTML = today
+// -------------------------------------
+const date_ms = Date.now()
+var current_date = new Date(date_ms)
+console.log(typeof today)
+console.log(today)
+let current_month =current_date.getMonth();
+let current_year =current_date.getFullYear();
+let current_day  =current_date.getDay();
+console.log(current_day)
+console.log(current_month)
+console.log(current_year)
+// expected output: 0
+var options = { weekday: 'long'};
+let current_weekday = Intl.DateTimeFormat('en-US', options).format(current_date);
+let current_monthtxt = Intl.DateTimeFormat('en-US', {month: 'long'}).format(current_date);
+
+console.log(current_monthtxt)
+console.log(current_monthtxt)
