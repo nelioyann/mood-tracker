@@ -87,12 +87,13 @@ if (!("Notification" in window)) pushBtn.style.visibility = "hidden";
 // }
 
 
-function displayNotification  (title, body) {
+function displayNotification  (title, body, tag) {
 	if (Notification.permission == "granted") {
         
 		navigator.serviceWorker.getRegistration().then(function(reg) {
 			var options = {
-				body: body,
+                body: body,
+                tag: tag,
 				icon: "/images/icons/icon-72x72.png",
 				vibrate: [100, 50, 100],
 				data: {
@@ -105,7 +106,7 @@ function displayNotification  (title, body) {
 	}
 }
 
-save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! "))
+save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! ", "tag_welcome"))
 
 nav_links.forEach(nav_link =>{
     
