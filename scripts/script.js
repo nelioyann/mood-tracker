@@ -1,5 +1,3 @@
-
-
 const wellness = document.querySelector(".wellness");
 const construction = document.querySelector(".construction");
 const stability = document.querySelector(".stability");
@@ -8,58 +6,57 @@ const save_btn = document.querySelector(".mood_form__btn");
 const preview_imgs = document.querySelectorAll("#mood_images img");
 const btnAdd = document.querySelector(".installPrompt");
 const pushBtn = document.querySelector(".pushPrompt");
-const nav_links = document.querySelectorAll(".nav__link")
-const tabs = document.querySelectorAll(".tabs")
+const nav_links = document.querySelectorAll(".nav__link");
+const tabs = document.querySelectorAll(".tabs");
+const history = document.querySelector(".history_contents");
 // console.log(preview_imgs)
 
+wellness.addEventListener("input", (e) => {
+	let new_value = (e.target.value - 1) * -129;
+	// console.log(new_value)
+	preview.style.transform = `translateX(${new_value}px)`;
+});
 
-wellness.addEventListener("input", (e)=>{
-    let new_value = (e.target.value - 1) * -129;
-    // console.log(new_value)
-    preview.style.transform = `translateX(${new_value}px)`
-})
+construction.addEventListener("input", (e) => {
+	// console.log((e.target.value -1)*1/10 + 1/10)
+	preview.style.filter = `grayscale(${1 - ((e.target.value - 1) * 1) / 10})`;
+});
 
-construction.addEventListener("input", e=>{
-    // console.log((e.target.value -1)*1/10 + 1/10)
-    preview.style.filter = `grayscale(${1 - (e.target.value - 1)*1/10 })`
-})
-
-stability.addEventListener("input", e=>{
-    // element.classList.remove("animate");
-    // console.log(preview_imgs)
-    preview_imgs.forEach( el => el.classList.remove("mood_image"))
-    void preview.offsetWidth; // trigger a DOM reflow
-    preview_imgs.forEach(el => el.classList.add("mood_image"))
-    // element.classList.add("animate");
-    let new_value = 10 - (e.target.value);
-    // console.log(new_value);
-    // console.log((e.target.value -1)*1/10 + 1/10)
-    preview_imgs.forEach(el => el.style.animationIterationCount = `${new_value}`)
-})
+stability.addEventListener("input", (e) => {
+	// element.classList.remove("animate");
+	// console.log(preview_imgs)
+	preview_imgs.forEach((el) => el.classList.remove("mood_image"));
+	void preview.offsetWidth; // trigger a DOM reflow
+	preview_imgs.forEach((el) => el.classList.add("mood_image"));
+	// element.classList.add("animate");
+	let new_value = 10 - e.target.value;
+	// console.log(new_value);
+	// console.log((e.target.value -1)*1/10 + 1/10)
+	preview_imgs.forEach(
+		(el) => (el.style.animationIterationCount = `${new_value}`)
+	);
+});
 
 //  Installation de la PWA
 let deferredPrompt;
 
-
-window.addEventListener("beforeinstallprompt", e => {
+window.addEventListener("beforeinstallprompt", (e) => {
 	console.log("before install prompt");
 	e.preventDefault();
 	deferredPrompt = e;
 	btnAdd.style.visibility = "visible";
 });
 
-
-window.addEventListener("appinstalled", evt => {
-    app.logEvent("a2hs", "installed");
-    btnAdd.style.visibility = "hidden";
-    console.log("it is installed")
+window.addEventListener("appinstalled", (evt) => {
+	app.logEvent("a2hs", "installed");
+	btnAdd.style.visibility = "hidden";
+	console.log("it is installed");
 });
 
 btnAdd.addEventListener("click", () => {
 	deferredPrompt.prompt();
-	deferredPrompt.userChoice.then(choiceResult => {
+	deferredPrompt.userChoice.then((choiceResult) => {
 		if (choiceResult.outcome === "accepted") {
-            
 			console.log("User accepted the A2HS prompt");
 		}
 		deferredPrompt = null;
@@ -68,15 +65,15 @@ btnAdd.addEventListener("click", () => {
 
 // Push notifications
 
-pushBtn.addEventListener("click", ()=>{
-	Notification.requestPermission(function(status) {
-    console.log("Notification permission status:", status);
-    if (status == "granted") pushBtn.style.visibility = "hidden";
+pushBtn.addEventListener("click", () => {
+	Notification.requestPermission(function (status) {
+		console.log("Notification permission status:", status);
+		if (status == "granted") pushBtn.style.visibility = "hidden";
+	});
 });
-})
 
 if ("Notification" in window) {
-    if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
+	if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
 }
 if (!("Notification" in window)) pushBtn.style.visibility = "hidden";
 // if (Notification){
@@ -86,45 +83,52 @@ if (!("Notification" in window)) pushBtn.style.visibility = "hidden";
 //     pushBtn.style.visibility = "hidden";
 // }
 
-
-function displayNotification  (title, body, tag) {
+function displayNotification(title, body, tag) {
 	if (Notification.permission == "granted") {
-        
-		navigator.serviceWorker.getRegistration().then(function(reg) {
-			var options = {
-                body: body,
-                tag: tag,
-				icon: "/images/icons/icon-72x72.png",
-				vibrate: [100, 50, 100],
-				data: {
-					dateOfArrival: Date.now(),
-					primaryKey: 1
-				}
-			};
-			reg.showNotification(title, options);
-		}).catch(err => console.log(err));
+		navigator.serviceWorker
+			.getRegistration()
+			.then(function (reg) {
+				var options = {
+					body: body,
+					tag: tag,
+					icon: "/images/icons/icon-72x72.png",
+					vibrate: [100, 50, 100],
+					data: {
+						dateOfArrival: Date.now(),
+						primaryKey: 1,
+					},
+				};
+				reg.showNotification(title, options);
+			})
+			.catch((err) => console.log(err));
 	}
 }
 
-save_btn.addEventListener("click",()=> displayNotification("Hey you ...", "You better have a nice f*cking day ! ", "tag_welcome"))
+save_btn.addEventListener("click", () =>{
+    save_mood();
+});
+	// displayNotification(
+	// 	"Hey you ...",
+	// 	"You better have a nice f*cking day ! ",
+	// 	"tag_welcome"
+	// )
 
-nav_links.forEach(nav_link =>{
-    
-    nav_link.addEventListener("click", e=>{
-        
-        let current_name = e.target.getAttribute("data-tab"); 
-        // let link_name = e.target.getAttribute("data-tab"); 
-        
-        e.preventDefault();
-        nav_links.forEach( el => el.classList.remove("nav__link--active"));
-        document.querySelector(`.nav__link__${current_name}`).classList.add("nav__link--active");
+nav_links.forEach((nav_link) => {
+	nav_link.addEventListener("click", (e) => {
+		let current_name = e.target.getAttribute("data-tab");
+		// let link_name = e.target.getAttribute("data-tab");
 
-        tabs.forEach(tab => tab.style.display = "none")
-        document.querySelector(`.tab__${current_name}`).style.display = "flex";
-        console.log(current_name)
-    })
-})
+		e.preventDefault();
+		nav_links.forEach((el) => el.classList.remove("nav__link--active"));
+		document
+			.querySelector(`.nav__link__${current_name}`)
+			.classList.add("nav__link--active");
 
+		tabs.forEach((tab) => (tab.style.display = "none"));
+		document.querySelector(`.tab__${current_name}`).style.display = "flex";
+		console.log(current_name);
+	});
+});
 
 // Pseudo
 
@@ -132,66 +136,206 @@ nav_links.forEach(nav_link =>{
 const pseudo_form = document.querySelector(".tab__info__pseudo_form");
 const pseudo_input = document.querySelector(".tab__info__pseudo_input");
 const pseudo_text = document.querySelector(".tab__info__pseudo_text");
-pseudo_form.addEventListener("submit", (e)=>enregistrerSurnom(e));
-pseudo_form.addEventListener("focusout", (e)=> enregistrerSurnom(e));
-	// enregistrerSurnom(e)
+pseudo_form.addEventListener("submit", (e) => enregistrerSurnom(e));
+pseudo_form.addEventListener("focusout", (e) => enregistrerSurnom(e));
+// enregistrerSurnom(e)
 afficher_surnom();
 
 function enregistrerSurnom(event) {
-    event.preventDefault();
-    // Extraire la valeur de l'input
-    let pseudo = document.querySelector('.tab__info__pseudo_input').value;
-    pseudo = pseudo == "" ? "LAZY" : pseudo; 
-    
-    localStorage['pseudo'] = pseudo;
-    // Verification de l'existence d'un surnom et affichage
-    afficher_surnom()
-};
+	event.preventDefault();
+	// Extraire la valeur de l'input
+	let pseudo = document.querySelector(".tab__info__pseudo_input").value;
+	pseudo = pseudo == "" ? "LAZY" : pseudo;
+
+	localStorage["pseudo"] = pseudo;
+	// Verification de l'existence d'un surnom et affichage
+	afficher_surnom();
+}
 
 // Affiche un surnom s'il en existe un localement
 function afficher_surnom() {
-    let pseudo = localStorage['pseudo']
-    if (!pseudo_text || !pseudo_form) return null
-    pseudo = pseudo == "" ? "LAZY" : pseudo; 
-    pseudo = pseudo == undefined ? "LAZY" : pseudo; 
-    console.log(pseudo)
-    pseudo_text.innerHTML = pseudo;
-    document.querySelector(".greetings__pseudo").innerHTML = pseudo;
-    pseudo_form.style.display = "none";  
-    pseudo_text.style.display = "inline-block";
-    pseudo_text.addEventListener('click', function() {
-        pseudo_text.style.display = 'none';
-        pseudo_form.style.display = 'inline-block';
-    });
+	let pseudo = localStorage["pseudo"];
+	if (!pseudo_text || !pseudo_form) return null;
+	pseudo = pseudo == "" ? "LAZY" : pseudo;
+	pseudo = pseudo == undefined ? "LAZY" : pseudo;
+	console.log(pseudo);
+	pseudo_text.innerHTML = pseudo;
+	document.querySelector(".greetings__pseudo").innerHTML = pseudo;
+	pseudo_form.style.display = "none";
+	pseudo_text.style.display = "inline-block";
+	pseudo_text.addEventListener("click", function () {
+		pseudo_text.style.display = "none";
+		pseudo_form.style.display = "inline-block";
+	});
+}
 
+const date_el = document.querySelector(".header_date");
+let today = new Date();
+console.log(today);
+var dd = String(today.getDate()).padStart(2, "0");
+var mm = Intl.DateTimeFormat("en-US", { month: "long" }).format(today); //January is 0!
+var yyyy = today.getFullYear();
+
+today =  `${dd}, ${mm} ${yyyy}`;
+date_el.innerHTML = today;
+// -------------------------------------
+
+const temporary = () => {
+	const date_ms = Date.now();
+	var current_date = new Date(date_ms);
+	console.log(typeof today);
+	console.log(today);
+	let current_month = current_date.getMonth();
+	let current_year = current_date.getFullYear();
+	let current_day = current_date.getDay();
+	console.log(current_day);
+	console.log(current_month);
+	console.log(current_year);
+	// expected output: 0
+	var options = { weekday: "long" };
+	let current_weekday = Intl.DateTimeFormat("en-US", options).format(
+		current_date
+	);
+	let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
+		current_date
+	);
+
+	console.log(current_monthtxt);
+	console.log(current_monthtxt);
+	let localdata = {
+		pseudo: "johnny",
+		moods: {
+			2020: [
+                { 1: [
+                    { 29: [5, 6, 7] }] },
+                    { 1: [
+                    { 30: [5, 7, 7] }] }
+                    ]
+		},
+            2021: [
+                { 1: [
+                    { 29: [5, 6, 7] }] }
+                    ]
+	};
+};
+
+const save_mood = () =>{
+    // recupere les 3 valeurs de l'échelle
+    let current_stability = stability.value;
+    let current_construction = construction.value;
+    let current_wellness = wellness.value;
+    let current_mood = {"s":current_stability, "c":current_construction, "b":current_wellness}
+    // recupere les 3 valeurs de la date
+    // const date_ms = Date.now();
+	let today = new Date();
+	// console.log(typeof today);
+	// console.log(today);
+	let current_month = today.getMonth();
+	let current_year = today.getFullYear();
+	let current_day = today.getDay();
+	let current_date = today.getDate();
+	// console.log(current_day);
+	// console.log(current_month);
+	// console.log(current_year);
+	// console.log(current_date);
+    // let day_entry = {current_date: [current_stability, current_construction,current_wellness]}
+    // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {"2020": 2};
+    let stored_moods = getFromStorage("moods");
+    // console.log(stored_moods)
+    let year_entry = stored_moods[current_year] ? stored_moods[current_year] : {};
+    let month_entry = year_entry[current_month] ? year_entry[current_month] : {};
+    let date_entry =  current_mood;
+    // let date_obj = {}
+    // date_obj[]
+    month_entry[current_date] = date_entry;
+    year_entry[current_month] = month_entry;
+    stored_moods[current_year] = year_entry
+    // stored_moods[current_year] = stored_moods[current_year] ? stored_moods[current_year] : stored_moods[current_year]
+    // console.log(stored_moods)
+    // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
+    // enregistre dans le localstorage
+    saveInStorage("moods", stored_moods)
+    makeHistory()
+}
+
+const getFromStorage = (key) => {
+    // Recuperer les cartes du local Storage labelé key s'il existe, sinon renvoyé un objet vide
+    let valeurText = localStorage[key] ? localStorage[key] : "{}";
+    // console.log("object")
+    // Conversion de la chaine de caractères en objet Javascript
+    let valeur = JSON.parse(valeurText);
+    return valeur;
 };
 
 
+// Mets à jour la valeur de la clé specifiée avec une nouvelleValeur
+const saveInStorage = (clé, nouvelleValeur) => {
+    // Convertir l'objet en chaine de caractères pour pouvoir le stocker
+    nouvelleValeur = JSON.stringify(nouvelleValeur);
+    // Enregister cette chaines de caractères localement
+    localStorage[clé] = nouvelleValeur;
+};
 
-const date_el = document.querySelector(".header_date")
-var today = new Date();
-console.log(today)
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
-date_el.innerHTML = today
-// -------------------------------------
-const date_ms = Date.now()
-var current_date = new Date(date_ms)
-console.log(typeof today)
-console.log(today)
-let current_month =current_date.getMonth();
-let current_year =current_date.getFullYear();
-let current_day  =current_date.getDay();
-console.log(current_day)
-console.log(current_month)
-console.log(current_year)
-// expected output: 0
-var options = { weekday: 'long'};
-let current_weekday = Intl.DateTimeFormat('en-US', options).format(current_date);
-let current_monthtxt = Intl.DateTimeFormat('en-US', {month: 'long'}).format(current_date);
+const makeHistory = () =>{
+    let stored_moods = getFromStorage("moods");
+    console.log(stored_moods)
+    let today = new Date();
+	let current_year = today.getFullYear();
+	let current_month = today.getMonth();
+    let current_date = today.getDate();
+    let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
+		today
+	);
+    if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
+        console.log("no entry yet for this month")
+        return null
+    }
+    // console.log(stored_moods[current_year][current_month])
+    let history_tab = document.querySelector(".history_contents");
 
-console.log(current_monthtxt)
-console.log(current_monthtxt)
+    let history_wrapper = makeElement("div", "month_history", "")
+    
+    let month_title = makeElement("h3", "month_title", `${current_monthtxt}  >`)
+    let days_slider = makeElement("div", "days_cards_slider", "");
+    history_wrapper.appendChild(month_title)
+    history_wrapper.appendChild(days_slider)
+    for(date in stored_moods[current_year][current_month]){
+        console.log(date)
+        let stability = stored_moods[current_year][current_month][date]["s"]
+        let construction = stored_moods[current_year][current_month][date]["c"]
+        let wellness = stored_moods[current_year][current_month][date]["b"]
+        let temp_date  = new Date(`${current_year}-${current_month}-${date}`);
+        console.log(temp_date)
+        // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
+        // let options = { weekday: "short" };
+	    let temp_weekday = Intl.DateTimeFormat("en-US", { weekday: "short" }).format(temp_date);
+        
+
+        let day_card = makeElement("div", "day_card","")
+        let day_title = makeElement("div", "day_title", temp_weekday)
+        let date_number = makeElement("div", "date_number", date)
+        let day_face = makeElement("div", "day_face","")
+        let day_image = makeElement("img", "day_img", "")
+        day_image.setAttribute("src", `./images/dog${wellness}.png`);
+        day_face.appendChild(day_image)
+        day_card.appendChild(day_title)
+        day_card.appendChild(date_number)
+        day_card.appendChild(day_face)
+        days_slider.appendChild(day_card)
+
+    console.log(temp_weekday)
+    }
+    history_tab.innerHTML = "";
+    history_tab.appendChild(history_wrapper);
+    console.log(history_wrapper)
+
+}
+
+const makeElement = (balise, classe, texte) =>{
+    let element = document.createElement(balise);
+    element.classList.add(classe)
+    element.innerHTML = texte;
+    return element
+}
+makeHistory()

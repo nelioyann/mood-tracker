@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Patrick Hand";
-  src: url(/fc34dc610fe64c025b01cfc2eb1e17a73b11900e/28b84/fonts/patrickhandregular.ttf);
+  src: url(/fonts/patrickhandregular.ttf);
   font-display: swap;
 }
 @font-face {
-  font-family: Roboto;
-  src: url(/096c9245b6a192d1403a82848e104a65f578a8ec/45e62/fonts/robotoregular.ttf);
+  font-family: "Roboto";
+  src: url(/fonts/robotoregular.ttf);
   font-display: swap;
 }
 :root {
@@ -120,6 +120,22 @@ main {
 }
 .tabs__content {
   margin: 0 1em;
+}
+.days_cards_slider{
+  display: flex;
+}
+.day_card {
+  background-color: var(--darkground);
+  margin: 0em 0.2em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.day_title, .date_number{
+  color: var(--foreground);
+}
+.day_img{
+  height: 40px;
 }
 .tab__info__pseudo_text {
   color: var(--foreground);
