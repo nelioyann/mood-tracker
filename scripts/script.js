@@ -105,13 +105,14 @@ function displayNotification(title, body, tag) {
 }
 
 save_btn.addEventListener("click", () =>{
-    save_mood();
+    save_mood();	
+	displayNotification(
+		"Hey you ...",
+		"You better have a nice f*cking day ! ",
+		"tag_welcome"
+	)
 });
-	// displayNotification(
-	// 	"Hey you ...",
-	// 	"You better have a nice f*cking day ! ",
-	// 	"tag_welcome"
-	// )
+
 
 nav_links.forEach((nav_link) => {
 	nav_link.addEventListener("click", (e) => {
@@ -287,15 +288,15 @@ const makeHistory = () =>{
     let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
 		today
 	);
-    if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
-        console.log("no entry yet for this month")
-        return null
-    }
     // console.log(stored_moods[current_year][current_month])
     let history_tab = document.querySelector(".history_contents");
 
     let history_wrapper = makeElement("div", "month_history", "")
     
+    if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
+        history_tab.innerHTML = "No entry yet for this month"
+        return null
+    }
     let month_title = makeElement("h3", "month_title", `${current_monthtxt}  >`)
     let days_slider = makeElement("div", "days_cards_slider", "");
     history_wrapper.appendChild(month_title)
