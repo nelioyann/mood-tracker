@@ -294,7 +294,7 @@ const makeHistory = () =>{
     let history_wrapper = makeElement("div", "month_history", "")
     
     if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
-        history_tab.innerHTML = "No entry yet for this month"
+        history_tab.innerHTML = "<h4>No entry yet for this month</h4>"
         return null
     }
     let month_title = makeElement("h3", "month_title", `${current_monthtxt}  >`)

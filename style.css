@@ -153,7 +153,9 @@ main {
   text-align: center;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.226);
 }
-
+.month_title{
+  font-weight: 400;
+}
 .day_title, .date_number{
   color: var(--foreground);
 }
