@@ -288,6 +288,7 @@ const makeHistory = () =>{
     let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
 		today
 	);
+	console.log(current_month)
     // console.log(stored_moods[current_year][current_month])
     let history_tab = document.querySelector(".history_contents");
 
@@ -297,7 +298,7 @@ const makeHistory = () =>{
         history_tab.innerHTML = "<h4>No entry yet for this month</h4>"
         return null
     }
-    let month_title = makeElement("h3", "month_title", `${current_monthtxt}  >`)
+    let month_title = makeElement("h3", "month_title", `${current_monthtxt}  &#8227;&#10085;`)
     let days_slider = makeElement("div", "days_cards_slider", "");
     history_wrapper.appendChild(month_title)
     history_wrapper.appendChild(days_slider)
@@ -306,7 +307,7 @@ const makeHistory = () =>{
         let stability = stored_moods[current_year][current_month][date]["s"]
         let construction = stored_moods[current_year][current_month][date]["c"]
         let wellness = stored_moods[current_year][current_month][date]["b"]
-        let temp_date  = new Date(`${current_year}-${current_month}-${date}`);
+        let temp_date  = new Date(`${current_year}-${current_month+1}-${date}`);
         console.log(temp_date)
         // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
         // let options = { weekday: "short" };
