@@ -285,10 +285,13 @@ const makeHistory = () =>{
 	let current_year = today.getFullYear();
 	let current_month = today.getMonth();
     let current_date = today.getDate();
+	console.log(current_date)
+	console.log(current_month)
+	console.log(current_year)
     let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
 		today
 	);
-	console.log(current_month)
+	
     // console.log(stored_moods[current_year][current_month])
     let history_tab = document.querySelector(".history_contents");
 
@@ -315,6 +318,9 @@ const makeHistory = () =>{
         
 
         let day_card = makeElement("div", "day_card","")
+		if (current_date == date) day_card.classList.add("current_day");
+		// console.log(typeof date)
+		// day_card.classList.add()
         let day_title = makeElement("div", "day_title", temp_weekday)
         let date_number = makeElement("div", "date_number", date)
         let day_face = makeElement("div", "day_face","")
@@ -324,7 +330,8 @@ const makeHistory = () =>{
         day_card.appendChild(day_title)
         day_card.appendChild(date_number)
         day_card.appendChild(day_face)
-        days_slider.appendChild(day_card)
+        // days_slider.appendChild(day_card)
+        days_slider.insertBefore(day_card, days_slider.firstChild)
 
     console.log(temp_weekday)
     }
