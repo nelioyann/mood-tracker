@@ -326,6 +326,7 @@ const makeHistory = () => {
   c_list = [];
   w_list = [];
   last_week_labels = [];
+  alert("329")
   for (date in stored_moods[current_year][current_month]) {
     console.log(date);
     let stability = parseInt(
@@ -372,6 +373,7 @@ const makeHistory = () => {
 	alert("371")
     console.log(temp_weekday);
   }
+  alert("376")
 
   console.log(last_week_labels);
   history_tab.innerHTML = "";
