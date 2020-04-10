@@ -9,8 +9,10 @@ const pushBtn = document.querySelector(".pushPrompt");
 const nav_links = document.querySelectorAll(".nav__link");
 const tabs = document.querySelectorAll(".tabs");
 const history = document.querySelector(".history_contents");
-var last_week_data = []
-var last_week_labels = []
+var s_list = [];
+var c_list = [];
+var w_list = [];
+var last_week_labels = [];
 // console.log(preview_imgs)
 
 wellness.addEventListener("input", (e) => {
@@ -106,15 +108,14 @@ function displayNotification(title, body, tag) {
 	}
 }
 
-save_btn.addEventListener("click", () =>{
-    save_mood();	
+save_btn.addEventListener("click", () => {
+	save_mood();
 	displayNotification(
 		"Hey you ...",
 		"You better have a nice f*cking day ! ",
 		"tag_welcome"
-	)
+	);
 });
-
 
 nav_links.forEach((nav_link) => {
 	nav_link.addEventListener("click", (e) => {
@@ -130,7 +131,7 @@ nav_links.forEach((nav_link) => {
 		tabs.forEach((tab) => (tab.style.display = "none"));
 		document.querySelector(`.tab__${current_name}`).style.display = "flex";
 		console.log(current_name);
-		showChart(last_week_labels, last_week_data)
+		showChart(s_list, c_list, w_list, last_week_labels);
 	});
 });
 
@@ -180,7 +181,7 @@ var dd = String(today.getDate()).padStart(2, "0");
 var mm = Intl.DateTimeFormat("en-US", { month: "long" }).format(today); //January is 0!
 var yyyy = today.getFullYear();
 
-today =  `${dd}, ${mm} ${yyyy}`;
+today = `${dd}, ${mm} ${yyyy}`;
 date_el.innerHTML = today;
 // -------------------------------------
 
@@ -209,28 +210,24 @@ const temporary = () => {
 	let localdata = {
 		pseudo: "johnny",
 		moods: {
-			2020: [
-                { 1: [
-                    { 29: [5, 6, 7] }] },
-                    { 1: [
-                    { 30: [5, 7, 7] }] }
-                    ]
+			2020: [{ 1: [{ 29: [5, 6, 7] }] }, { 1: [{ 30: [5, 7, 7] }] }],
 		},
-            2021: [
-                { 1: [
-                    { 29: [5, 6, 7] }] }
-                    ]
+		2021: [{ 1: [{ 29: [5, 6, 7] }] }],
 	};
 };
 
-const save_mood = () =>{
-    // recupere les 3 valeurs de l'échelle
-    let current_stability = stability.value;
-    let current_construction = construction.value;
-    let current_wellness = wellness.value;
-    let current_mood = {"s":current_stability, "c":current_construction, "b":current_wellness}
-    // recupere les 3 valeurs de la date
-    // const date_ms = Date.now();
+const save_mood = () => {
+	// recupere les 3 valeurs de l'échelle
+	let current_stability = stability.value;
+	let current_construction = construction.value;
+	let current_wellness = wellness.value;
+	let current_mood = {
+		s: current_stability,
+		c: current_construction,
+		b: current_wellness,
+	};
+	// recupere les 3 valeurs de la date
+	// const date_ms = Date.now();
 	let today = new Date();
 	// console.log(typeof today);
 	// console.log(today);
@@ -242,174 +239,194 @@ const save_mood = () =>{
 	// console.log(current_month);
 	// console.log(current_year);
 	// console.log(current_date);
-    // let day_entry = {current_date: [current_stability, current_construction,current_wellness]}
-    // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {"2020": 2};
-    let stored_moods = getFromStorage("moods");
-    // console.log(stored_moods)
-    let year_entry = stored_moods[current_year] ? stored_moods[current_year] : {};
-    let month_entry = year_entry[current_month] ? year_entry[current_month] : {};
-    let date_entry =  current_mood;
-    // let date_obj = {}
-    // date_obj[]
-    month_entry[current_date] = date_entry;
-    year_entry[current_month] = month_entry;
-    stored_moods[current_year] = year_entry
-    // stored_moods[current_year] = stored_moods[current_year] ? stored_moods[current_year] : stored_moods[current_year]
-    // console.log(stored_moods)
-    // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
-    // enregistre dans le localstorage
-    saveInStorage("moods", stored_moods)
-    makeHistory()
-}
-
-const getFromStorage = (key) => {
-    // Recuperer les cartes du local Storage labelé key s'il existe, sinon renvoyé un objet vide
-    let valeurText = localStorage[key] ? localStorage[key] : "{}";
-    // console.log("object")
-    // Conversion de la chaine de caractères en objet Javascript
-    let valeur = JSON.parse(valeurText);
-    return valeur;
+	// let day_entry = {current_date: [current_stability, current_construction,current_wellness]}
+	// localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {"2020": 2};
+	let stored_moods = getFromStorage("moods");
+	// console.log(stored_moods)
+	let year_entry = stored_moods[current_year] ? stored_moods[current_year] : {};
+	let month_entry = year_entry[current_month] ? year_entry[current_month] : {};
+	let date_entry = current_mood;
+	// let date_obj = {}
+	// date_obj[]
+	month_entry[current_date] = date_entry;
+	year_entry[current_month] = month_entry;
+	stored_moods[current_year] = year_entry;
+	// stored_moods[current_year] = stored_moods[current_year] ? stored_moods[current_year] : stored_moods[current_year]
+	// console.log(stored_moods)
+	// localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
+	// enregistre dans le localstorage
+	saveInStorage("moods", stored_moods);
+	makeHistory();
 };
 
+const getFromStorage = (key) => {
+	// Recuperer les cartes du local Storage labelé key s'il existe, sinon renvoyé un objet vide
+	let valeurText = localStorage[key] ? localStorage[key] : "{}";
+	// console.log("object")
+	// Conversion de la chaine de caractères en objet Javascript
+	let valeur = JSON.parse(valeurText);
+	return valeur;
+};
 
 // Mets à jour la valeur de la clé specifiée avec une nouvelleValeur
 const saveInStorage = (clé, nouvelleValeur) => {
-    // Convertir l'objet en chaine de caractères pour pouvoir le stocker
-    nouvelleValeur = JSON.stringify(nouvelleValeur);
-    // Enregister cette chaines de caractères localement
-    localStorage[clé] = nouvelleValeur;
+	// Convertir l'objet en chaine de caractères pour pouvoir le stocker
+	nouvelleValeur = JSON.stringify(nouvelleValeur);
+	// Enregister cette chaines de caractères localement
+	localStorage[clé] = nouvelleValeur;
 };
 
-
-const makeHistory = () =>{
-    let stored_moods = getFromStorage("moods");
-    console.log(stored_moods)
-    let today = new Date();
+const makeHistory = () => {
+	let stored_moods = getFromStorage("moods");
+	console.log(stored_moods);
+	let today = new Date();
 	let current_year = today.getFullYear();
 	let current_month = today.getMonth();
-    let current_date = today.getDate();
-	console.log(current_date)
-	console.log(current_month)
-	console.log(current_year)
-    let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
+	let current_date = today.getDate();
+	console.log(current_date);
+	console.log(current_month);
+	console.log(current_year);
+	let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
 		today
 	);
-	
-	
-    // console.log(stored_moods[current_year][current_month])
-    var history_tab = document.querySelector(".history_contents");
+
+	// console.log(stored_moods[current_year][current_month])
+	var history_tab = document.querySelector(".history_contents");
 	var weekCanvas = makeElement("div", "chartContainer", "");
-	let cvs = makeElement("canvas", "weekChart", "")
-	weekCanvas.appendChild(cvs)
-	
-    let history_wrapper = makeElement("div", "month_history", "")
-    
-    if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
-        history_tab.innerHTML = "<h4>No entry yet for this month</h4>"
-        return null
-    }
-    let month_title = makeElement("h3", "month_title", `${current_monthtxt}  &#8227;&#10085;`)
-    let days_slider = makeElement("div", "days_cards_slider", "");
-    history_wrapper.appendChild(month_title)
-    history_wrapper.appendChild(days_slider)
-    for(date in stored_moods[current_year][current_month]){
-        console.log(date)
-        let stability = parseInt(stored_moods[current_year][current_month][date]["s"])
-        let construction = parseInt(stored_moods[current_year][current_month][date]["c"])
-        let wellness = parseInt(stored_moods[current_year][current_month][date]["b"])
+	let cvs = makeElement("canvas", "weekChart", "");
+	weekCanvas.appendChild(cvs);
 
+	let history_wrapper = makeElement("div", "month_history", "");
 
-		
-		
-		last_week_data.push(stability+construction+wellness)
-		last_week_labels.push(`${date} ${current_monthtxt}`)
-		
+	if (
+		!stored_moods[current_year] ||
+		!stored_moods[current_year][current_month]
+	) {
+		history_tab.innerHTML = "<h4>No entry yet for this month</h4>";
+		return null;
+	}
+	let month_title = makeElement(
+		"h3",
+		"month_title",
+		`${current_monthtxt}  &#8227;&#10085;`
+	);
+	let days_slider = makeElement("div", "days_cards_slider", "");
+	history_wrapper.appendChild(month_title);
+	history_wrapper.appendChild(days_slider);
+	for (date in stored_moods[current_year][current_month]) {
+		console.log(date);
+		let stability = parseInt(
+			stored_moods[current_year][current_month][date]["s"]
+		);
+		let construction = parseInt(
+			stored_moods[current_year][current_month][date]["c"]
+		);
+		let wellness = parseInt(
+			stored_moods[current_year][current_month][date]["b"]
+		);
 
+		s_list.push(stability);
+		c_list.push(construction);
+		w_list.push(wellness);
+		// last_week_data.push(stability+construction+wellness)
+		last_week_labels.push(`${date} ${current_monthtxt}`);
 
-        let temp_date  = new Date(`${current_year}-${current_month+1}-${date}`);
-        console.log(temp_date)
-        // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
-        // let options = { weekday: "short" };
-	    let temp_weekday = Intl.DateTimeFormat("en-US", { weekday: "short" }).format(temp_date);
-        
+		let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
+		console.log(temp_date);
+		// console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
+		// let options = { weekday: "short" };
+		let temp_weekday = Intl.DateTimeFormat("en-US", {
+			weekday: "short",
+		}).format(temp_date);
 
-        let day_card = makeElement("div", "day_card","")
+		let day_card = makeElement("div", "day_card", "");
 		if (current_date == date) day_card.classList.add("current_day");
 		// console.log(typeof date)
 		// day_card.classList.add()
-        let day_title = makeElement("div", "day_title", temp_weekday)
-        let date_number = makeElement("div", "date_number", date)
-        let day_face = makeElement("div", "day_face","")
-        let day_image = makeElement("img", "day_img", "")
-        day_image.setAttribute("src", `./images/dog${wellness}.png`);
-        day_image.style.filter = `grayscale(${1 - ((construction - 1) * 1) / 10})`;
+		let day_title = makeElement("div", "day_title", temp_weekday);
+		let date_number = makeElement("div", "date_number", date);
+		let day_face = makeElement("div", "day_face", "");
+		let day_image = makeElement("img", "day_img", "");
+		day_image.setAttribute("src", `./images/dog${wellness}.png`);
+		day_image.style.filter = `grayscale(${1 - ((construction - 1) * 1) / 10})`;
 		day_image.style.animationIterationCount = `${stability}`;
-		day_face.appendChild(day_image)
-        day_card.appendChild(day_title)
-        day_card.appendChild(date_number)
-        day_card.appendChild(day_face)
-        // days_slider.appendChild(day_card)
-        days_slider.insertBefore(day_card, days_slider.firstChild)
+		day_face.appendChild(day_image);
+		day_card.appendChild(day_title);
+		day_card.appendChild(date_number);
+		day_card.appendChild(day_face);
+		// days_slider.appendChild(day_card)
+		days_slider.insertBefore(day_card, days_slider.firstChild);
 
-    console.log(temp_weekday)
-    }
-	console.log(last_week_data)
-	console.log(last_week_labels)
-    history_tab.innerHTML = "";
-    history_tab.appendChild(history_wrapper);
-	console.log(weekCanvas)
+		console.log(temp_weekday);
+	}
+
+	console.log(last_week_labels);
+	history_tab.innerHTML = "";
+	history_tab.appendChild(history_wrapper);
+	console.log(weekCanvas);
 	history_tab.appendChild(weekCanvas);
-	
+
 	// <canvas id="myChart"></canvas>
-    console.log(history_wrapper)
+	console.log(history_wrapper);
+};
 
-}
+const makeElement = (balise, classe, texte) => {
+	let element = document.createElement(balise);
+	element.classList.add(classe);
+	element.innerHTML = texte;
+	return element;
+};
 
-const makeElement = (balise, classe, texte) =>{
-    let element = document.createElement(balise);
-    element.classList.add(classe)
-    element.innerHTML = texte;
-    return element
-}
-
-const showChart = (weekLabels, weekMoods) =>{
-	var ctx = document.querySelector('.weekChart').getContext('2d');
-	console.log(ctx)
+const showChart = (s_list, c_list, w_list, weekLabels) => {
+	var ctx = document.querySelector(".weekChart").getContext("2d");
+	console.log(ctx);
 	var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: weekLabels,
-        datasets: [{
-            label: 'Your mood',
-            data: weekMoods,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-}
-makeHistory()
+		type: "bar",
+		data: {
+			labels: weekLabels,
+			datasets: [
+				{
+					label: "Stability",
+					data: s_list,
+					backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+					borderColor: ["rgba(255, 99, 132, 1)"],
+					borderWidth: 1,
+				},
+				{
+					label: "Construction",
+					data: c_list,
+					backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+					borderColor: ["rgba(54, 162, 235, 1)"],
+					borderWidth: 1,
+				},
+				{
+					label: "Wellness",
+					data: w_list,
+					backgroundColor: ["rgba(255, 206, 86, 0.2)"],
+					borderColor: ["rgba(255, 206, 86, 1)"],
+					borderWidth: 1,
+				},
+			],
+		},
+		options: {
+			scales: {
+				yAxes: [
+					{
+						ticks: {
+							beginAtZero: true,
+						},
+						stacked: true
+					}
+				],xAxes: [
+					{
+						ticks: {
+							beginAtZero: true,
+						},
+						stacked: true
+					}
+				]
+			},
+		},
+	});
+};
+makeHistory();
