@@ -376,7 +376,7 @@ const showChart = (weekLabels, weekMoods) =>{
     data: {
         labels: weekLabels,
         datasets: [{
-            label: '# Moods',
+            label: 'My Moods this month',
             data: weekMoods,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
