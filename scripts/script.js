@@ -381,6 +381,10 @@ const makeElement = (balise, classe, texte) => {
 };
 
 const showChart = (s_list, c_list, w_list, weekLabels) => {
+	if(s_list.length == 0){
+		
+		return null
+	}
 	var ctx = document.querySelector(".weekChart").getContext("2d");
 	console.log(ctx);
 	var myChart = new Chart(ctx, {
