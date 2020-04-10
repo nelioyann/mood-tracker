@@ -328,6 +328,7 @@ const makeHistory = () =>{
         let day_image = makeElement("img", "day_img", "")
         day_image.setAttribute("src", `./images/dog${wellness}.png`);
         day_image.style.filter = `grayscale(${1 - ((construction - 1) * 1) / 10})`;
+		day_image.style.animationIterationCount = `${stability}`;
 		day_face.appendChild(day_image)
         day_card.appendChild(day_title)
         day_card.appendChild(date_number)

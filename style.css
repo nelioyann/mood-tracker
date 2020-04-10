@@ -170,6 +170,10 @@ main {
 }
 .day_img{
   height: 40px;
+  animation: shake;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 0;
 }
 .tab__info__pseudo_text {
   color: var(--foreground);
