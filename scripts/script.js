@@ -217,6 +217,9 @@ const temporary = () => {
 };
 
 const save_mood = () => {
+	s_list = [];
+	c_list = [];
+	w_list = [];
 	// recupere les 3 valeurs de l'échelle
 	let current_stability = stability.value;
 	let current_construction = construction.value;
