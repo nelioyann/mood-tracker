@@ -287,6 +287,7 @@ const saveInStorage = (clé, nouvelleValeur) => {
 const makeHistory = () => {
   let stored_moods = getFromStorage("moods");
   console.log(stored_moods);
+  alert("290")
   let today = new Date();
   let current_year = today.getFullYear();
   let current_month = today.getMonth();
@@ -303,7 +304,7 @@ const makeHistory = () => {
   var weekCanvas = makeElement("div", "chartContainer", "");
   let cvs = makeElement("canvas", "weekChart", "");
   weekCanvas.appendChild(cvs);
-
+  alert("307")
   let history_wrapper = makeElement("div", "month_history", "");
 
   if (
