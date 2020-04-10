@@ -9,6 +9,8 @@ const pushBtn = document.querySelector(".pushPrompt");
 const nav_links = document.querySelectorAll(".nav__link");
 const tabs = document.querySelectorAll(".tabs");
 const history = document.querySelector(".history_contents");
+var last_week_data = []
+var last_week_labels = []
 // console.log(preview_imgs)
 
 wellness.addEventListener("input", (e) => {
@@ -128,6 +130,7 @@ nav_links.forEach((nav_link) => {
 		tabs.forEach((tab) => (tab.style.display = "none"));
 		document.querySelector(`.tab__${current_name}`).style.display = "flex";
 		console.log(current_name);
+		showChart(last_week_labels, last_week_data)
 	});
 });
 
@@ -292,8 +295,7 @@ const makeHistory = () =>{
 		today
 	);
 	
-	let last_week_data = []
-	let last_week_labels = []
+	
     // console.log(stored_moods[current_year][current_month])
     var history_tab = document.querySelector(".history_contents");
 	var weekCanvas =makeElement("div", "chartContainer", "").appendChild( makeElement("canvas", "weekChart", ""));
@@ -355,7 +357,7 @@ const makeHistory = () =>{
     history_tab.appendChild(history_wrapper);
 	console.log(weekCanvas)
 	history_tab.appendChild(weekCanvas);
-	showChart(last_week_labels, last_week_data)
+	
 	// <canvas id="myChart"></canvas>
     console.log(history_wrapper)
 
@@ -372,7 +374,7 @@ const showChart = (weekLabels, weekMoods) =>{
 	var ctx = document.querySelector('.weekChart').getContext('2d');
 	console.log(ctx)
 	var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: weekLabels,
         datasets: [{
