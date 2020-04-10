@@ -239,6 +239,7 @@ const save_mood = () => {
 	let current_year = today.getFullYear();
 	let current_day = today.getDay();
 	let current_date = today.getDate();
+	alert("242")
 	// console.log(current_day);
 	// console.log(current_month);
 	// console.log(current_year);
@@ -259,7 +260,9 @@ const save_mood = () => {
 	// console.log(stored_moods)
 	// localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
 	// enregistre dans le localstorage
+	alert("263")
 	saveInStorage("moods", stored_moods);
+	alert("265")
 	makeHistory();
 };
 
