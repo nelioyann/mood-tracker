@@ -110,11 +110,11 @@ function displayNotification(title, body, tag) {
 
 save_btn.addEventListener("click", () => {
 	save_mood();
-	displayNotification(
-		"Hey you ...",
-		"You better have a nice f*cking day ! ",
-		"tag_welcome"
-	);
+	// displayNotification(
+	// 	"Hey you ...",
+	// 	"You better have a nice f*cking day ! ",
+	// 	"tag_welcome"
+	// );
 });
 
 nav_links.forEach((nav_link) => {
@@ -220,6 +220,7 @@ const save_mood = () => {
 	s_list = [];
 	c_list = [];
 	w_list = [];
+	last_week_labels = [];
 	// recupere les 3 valeurs de l'échelle
 	let current_stability = stability.value;
 	let current_construction = construction.value;
@@ -319,6 +320,7 @@ const makeHistory = () => {
 	s_list = [];
 	c_list = [];
 	w_list = [];
+	last_week_labels = [];
 	for (date in stored_moods[current_year][current_month]) {
 		console.log(date);
 		let stability = parseInt(

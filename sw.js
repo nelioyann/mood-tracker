@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v10987"
+const staticCacheName = "site-static-v1987"
 
 
 // Fichier qui seront cacher
