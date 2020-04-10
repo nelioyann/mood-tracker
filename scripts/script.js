@@ -290,7 +290,7 @@ const makeHistory = () => {
   alert("290")
   let today = new Date();
   let current_year = today.getFullYear();
-  let current_month = today.getMonth();
+  let current_month = parseInt(today.getMonth());
   let current_date = today.getDate();
   console.log(current_date);
   console.log(current_month);
@@ -347,9 +347,12 @@ const makeHistory = () => {
     w_list.push(wellness);
     // last_week_data.push(stability+construction+wellness)
     last_week_labels.push(`${date} ${current_monthtxt}`);
+	alert("350")
 
     let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
-    console.log(temp_date);
+	console.log(temp_date);
+	alert("354")
+	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
     // let options = { weekday: "short" };
     let temp_weekday = Intl.DateTimeFormat("en-US", {
