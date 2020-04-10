@@ -298,7 +298,9 @@ const makeHistory = () =>{
 	
     // console.log(stored_moods[current_year][current_month])
     var history_tab = document.querySelector(".history_contents");
-	var weekCanvas =makeElement("div", "chartContainer", "").appendChild( makeElement("canvas", "weekChart", ""));
+	var weekCanvas = makeElement("div", "chartContainer", "");
+	let cvs = makeElement("canvas", "weekChart", "")
+	weekCanvas.appendChild(cvs)
 	
     let history_wrapper = makeElement("div", "month_history", "")
     
@@ -319,8 +321,8 @@ const makeHistory = () =>{
 
 		
 		
-		last_week_data.push(stability)
-		last_week_labels.push(`${date}/${current_month}`)
+		last_week_data.push(stability+construction+wellness)
+		last_week_labels.push(`${date}/${current_monthtxt}`)
 		
 
 
