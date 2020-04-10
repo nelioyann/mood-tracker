@@ -322,7 +322,7 @@ const makeHistory = () =>{
 		
 		
 		last_week_data.push(stability+construction+wellness)
-		last_week_labels.push(`${date}/${current_monthtxt}`)
+		last_week_labels.push(`${date} ${current_monthtxt}`)
 		
 
 
@@ -380,7 +380,7 @@ const showChart = (weekLabels, weekMoods) =>{
     data: {
         labels: weekLabels,
         datasets: [{
-            label: 'My Moods this month',
+            label: 'Your mood',
             data: weekMoods,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
