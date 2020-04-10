@@ -328,6 +328,8 @@ const makeHistory = () => {
   last_week_labels = [];
   alert("329")
   for (date in stored_moods[current_year][current_month]) {
+  alert("331")
+
     console.log(date);
     let stability = parseInt(
       stored_moods[current_year][current_month][date]["s"]
@@ -338,6 +340,7 @@ const makeHistory = () => {
     let wellness = parseInt(
       stored_moods[current_year][current_month][date]["b"]
     );
+	alert("343")
 
     s_list.push(stability);
     c_list.push(construction);
@@ -352,6 +355,7 @@ const makeHistory = () => {
     let temp_weekday = Intl.DateTimeFormat("en-US", {
       weekday: "short",
     }).format(temp_date);
+	alert("357")
 
     let day_card = makeElement("div", "day_card", "");
     if (current_date == date) day_card.classList.add("current_day");
