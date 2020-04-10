@@ -313,6 +313,9 @@ const makeHistory = () => {
 	let days_slider = makeElement("div", "days_cards_slider", "");
 	history_wrapper.appendChild(month_title);
 	history_wrapper.appendChild(days_slider);
+	s_list = [];
+	c_list = [];
+	w_list = [];
 	for (date in stored_moods[current_year][current_month]) {
 		console.log(date);
 		let stability = parseInt(
