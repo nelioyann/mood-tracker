@@ -309,6 +309,7 @@ const makeHistory = () =>{
         console.log(date)
         let stability = stored_moods[current_year][current_month][date]["s"]
         let construction = stored_moods[current_year][current_month][date]["c"]
+		console.log(construction)
         let wellness = stored_moods[current_year][current_month][date]["b"]
         let temp_date  = new Date(`${current_year}-${current_month+1}-${date}`);
         console.log(temp_date)
@@ -326,7 +327,8 @@ const makeHistory = () =>{
         let day_face = makeElement("div", "day_face","")
         let day_image = makeElement("img", "day_img", "")
         day_image.setAttribute("src", `./images/dog${wellness}.png`);
-        day_face.appendChild(day_image)
+        day_image.style.filter = `grayscale(${1 - ((construction - 1) * 1) / 10})`;
+		day_face.appendChild(day_image)
         day_card.appendChild(day_title)
         day_card.appendChild(date_number)
         day_card.appendChild(day_face)
