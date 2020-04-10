@@ -292,9 +292,12 @@ const makeHistory = () =>{
 		today
 	);
 	
+	let last_week_data = []
+	let last_week_labels = []
     // console.log(stored_moods[current_year][current_month])
-    let history_tab = document.querySelector(".history_contents");
-
+    var history_tab = document.querySelector(".history_contents");
+	var weekCanvas =makeElement("div", "chartContainer", "").appendChild( makeElement("canvas", "weekChart", ""));
+	
     let history_wrapper = makeElement("div", "month_history", "")
     
     if (!stored_moods[current_year] || !stored_moods[current_year][current_month]){
@@ -307,10 +310,18 @@ const makeHistory = () =>{
     history_wrapper.appendChild(days_slider)
     for(date in stored_moods[current_year][current_month]){
         console.log(date)
-        let stability = stored_moods[current_year][current_month][date]["s"]
-        let construction = stored_moods[current_year][current_month][date]["c"]
-		console.log(construction)
-        let wellness = stored_moods[current_year][current_month][date]["b"]
+        let stability = parseInt(stored_moods[current_year][current_month][date]["s"])
+        let construction = parseInt(stored_moods[current_year][current_month][date]["c"])
+        let wellness = parseInt(stored_moods[current_year][current_month][date]["b"])
+
+
+		
+		
+		last_week_data.push(stability)
+		last_week_labels.push(`${date}/${current_month}`)
+		
+
+
         let temp_date  = new Date(`${current_year}-${current_month+1}-${date}`);
         console.log(temp_date)
         // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
@@ -338,8 +349,14 @@ const makeHistory = () =>{
 
     console.log(temp_weekday)
     }
+	console.log(last_week_data)
+	console.log(last_week_labels)
     history_tab.innerHTML = "";
     history_tab.appendChild(history_wrapper);
+	console.log(weekCanvas)
+	history_tab.appendChild(weekCanvas);
+	showChart(last_week_labels, last_week_data)
+	// <canvas id="myChart"></canvas>
     console.log(history_wrapper)
 
 }
@@ -349,5 +366,46 @@ const makeElement = (balise, classe, texte) =>{
     element.classList.add(classe)
     element.innerHTML = texte;
     return element
+}
+
+const showChart = (weekLabels, weekMoods) =>{
+	var ctx = document.querySelector('.weekChart').getContext('2d');
+	console.log(ctx)
+	var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: weekLabels,
+        datasets: [{
+            label: '# Moods',
+            data: weekMoods,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 }
 makeHistory()

@@ -144,6 +144,7 @@ main {
 }
 .days_cards_slider{
   display: flex;
+      margin-bottom: 50px;
 }
 .day_card {
   background-color: var(--darkground);
