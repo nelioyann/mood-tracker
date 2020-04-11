@@ -423,16 +423,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
           borderColor: "rgba(255, 99, 132, 1)",
           borderWidth: 1,
         },
-        {
-          label: "Total",
-          type: "line",
-          stack: "total",
-          data: total,
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          fill: false,
-          borderColor: "rgba(75, 192, 192, 1)",
-          borderWidth: 1,
-        },
+      
         {
           label: "Construction",
           stack: "Construction",
@@ -450,9 +441,23 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
           borderColor: "rgba(255, 206, 86, 1)",
           borderWidth: 1,
         },
+        {
+          label: "Total",
+          type: "line",
+          stack: "total",
+          data: total,
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          fill: false,
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+        }
       ],
     },
     options: {
+      title: {
+        display:true,
+        text:"Mood Chart"
+      },
       scales: {
         yAxes: [
           {
