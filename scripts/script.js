@@ -264,7 +264,7 @@ const save_mood = () => {
   saveInStorage("moods", stored_moods);
 //   alert("265");
   makeHistory();
-  alert("post hist");
+//   alert("post hist");
 };
 
 const getFromStorage = (key) => {
