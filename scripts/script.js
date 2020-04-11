@@ -260,9 +260,9 @@ const save_mood = () => {
   // console.log(stored_moods)
   // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
   // enregistre dans le localstorage
-  alert("263");
+//   alert("263");
   saveInStorage("moods", stored_moods);
-  alert("265");
+//   alert("265");
   makeHistory();
   alert("267");
 };
@@ -287,7 +287,7 @@ const saveInStorage = (clé, nouvelleValeur) => {
 const makeHistory = () => {
   let stored_moods = getFromStorage("moods");
   console.log(stored_moods);
-  alert("290")
+//   alert("290")
   let today = new Date();
   let current_year = today.getFullYear();
   let current_month = parseInt(today.getMonth());
@@ -304,7 +304,7 @@ const makeHistory = () => {
   var weekCanvas = makeElement("div", "chartContainer", "");
   let cvs = makeElement("canvas", "weekChart", "");
   weekCanvas.appendChild(cvs);
-  alert("307")
+//   alert("307")
   let history_wrapper = makeElement("div", "month_history", "");
 
   if (
@@ -355,10 +355,10 @@ const makeHistory = () => {
 	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
     // let options = { weekday: "short" };
-    let temp_weekday = Intl.DateTimeFormat("en-US", {
-      weekday: "short"
-    }).format(temp_date);
-	alert("357")
+	let temp_weekday = Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date);
+	
+
+	alert("360")
 
     let day_card = makeElement("div", "day_card", "");
     if (current_date == date) day_card.classList.add("current_day");
