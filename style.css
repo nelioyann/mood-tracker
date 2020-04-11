@@ -146,7 +146,7 @@ main {
   display: flex;
   margin-bottom: 50px;
   overflow-x: auto;
-  padding: 30px 0px;
+  padding: 20px 0px;
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
@@ -213,15 +213,19 @@ main {
   width: max-content;
   padding: 10px 40px;
   margin: 0.5em auto;
-  border: 2px solid var(--darkground);
+  /* border: 2px solid var(--darkground); */
   box-sizing: border-box;
   border-radius: 5px;
+  box-shadow:  16px 16px 31px #d3cbc7, 
+             -16px -16px 31px #ffffff;
   color: var(--darkground);
   cursor: pointer;
 }
 .mood_form__btn:active {
-  background-color: var(--darkground);
-  color: var(--foreground);
+  /* background-color: var(--darkground); */
+  /* color: var(--foreground); */
+  box-shadow:  16px 16px 31px #d3cbc7, 
+             -16px -16px 31px #ffffff;
 }
 label {
   margin-top: 1em;

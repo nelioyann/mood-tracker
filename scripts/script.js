@@ -150,7 +150,7 @@ function enregistrerSurnom(event) {
   event.preventDefault();
   // Extraire la valeur de l'input
   let pseudo = document.querySelector(".tab__info__pseudo_input").value;
-  pseudo = pseudo == "" ? "LAZY" : pseudo;
+  pseudo = pseudo == "" ? "Person" : pseudo;
 
   localStorage["pseudo"] = pseudo;
   // Verification de l'existence d'un surnom et affichage
@@ -161,8 +161,8 @@ function enregistrerSurnom(event) {
 function afficher_surnom() {
   let pseudo = localStorage["pseudo"];
   if (!pseudo_text || !pseudo_form) return null;
-  pseudo = pseudo == "" ? "LAZY" : pseudo;
-  pseudo = pseudo == undefined ? "LAZY" : pseudo;
+  pseudo = pseudo == "" ? "Person" : pseudo;
+  pseudo = pseudo == undefined ? "Person" : pseudo;
   console.log(pseudo);
   pseudo_text.innerHTML = pseudo;
   document.querySelector(".greetings__pseudo").innerHTML = pseudo;
@@ -413,6 +413,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       datasets: [
         {
           label: "Stability",
+          stack: "stability",
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
@@ -420,6 +421,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
         },
         {
           label: "Construction",
+          stack: "Construction",
           data: c_list,
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderColor: "rgba(54, 162, 235, 1)",
@@ -427,6 +429,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
         },
         {
           label: "Wellness",
+          stack: "Wellness",
+
           data: w_list,
           backgroundColor: "rgba(255, 206, 86, 0.2)",
           borderColor: "rgba(255, 206, 86, 1)",
