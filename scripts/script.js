@@ -355,7 +355,7 @@ const makeHistory = () => {
 	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
 	temp_date = new Date()
-	let temp_weekday = Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date);
+	let temp_weekday = Intl.DateTimeFormat("en-US", {weekday: "short"}).format(temp_date);
 	
 
 	// alert("360")
