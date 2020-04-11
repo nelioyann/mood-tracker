@@ -406,6 +406,10 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
   }
   var ctx = document.querySelector(".weekChart").getContext("2d");
   console.log(ctx);
+  let total = []
+  for (i=0; i<s_list.length; i++){
+    total[i] = s_list[i] + c_list[i] + w_list[i]
+  }
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -417,6 +421,16 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 1,
+        },
+        {
+          label: "Total",
+          type: "line",
+          stack: "total",
+          data: total,
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          fill: false,
+          borderColor: "rgba(75, 192, 192, 1)",
           borderWidth: 1,
         },
         {
