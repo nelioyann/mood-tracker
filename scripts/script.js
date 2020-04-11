@@ -348,17 +348,17 @@ const makeHistory = () => {
     // last_week_data.push(stability+construction+wellness)
     last_week_labels.push(`${date} ${current_monthtxt}`);
 	// alert("350")
-
-    let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
+    // let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
+    let temp_date = new Date(current_year, current_month + 1, date);
 	console.log(temp_date);
-	alert("354")
+	// alert("354")
 	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
 	temp_date = new Date()
 	let temp_weekday = Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date);
 	
 
-	alert("360")
+	// alert("360")
 
     let day_card = makeElement("div", "day_card", "");
     if (current_date == date) day_card.classList.add("current_day");
@@ -390,7 +390,7 @@ const makeHistory = () => {
 
   // <canvas id="myChart"></canvas>
   console.log(history_wrapper);
-  console.log("393")
+//   console.log("393")
 };
 
 const makeElement = (balise, classe, texte) => {
