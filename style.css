@@ -144,7 +144,11 @@ main {
 }
 .days_cards_slider{
   display: flex;
-      margin-bottom: 50px;
+  margin-bottom: 50px;
+  overflow-x: auto;
+  padding: 30px 0px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 .day_card {
   background-color: var(--darkground);
