@@ -355,16 +355,16 @@ const makeHistory = () => {
 	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
     // let options = { weekday: "short" };
-    let temp_weekday = Intl.DateTimeFormat("en-US", {
-      weekday: "short",
-    }).format(temp_date);
+    // let temp_weekday = Intl.DateTimeFormat("en-US", {
+    //   weekday: "short",
+    // }).format(temp_date);
 	alert("357")
 
     let day_card = makeElement("div", "day_card", "");
     if (current_date == date) day_card.classList.add("current_day");
     // console.log(typeof date)
     // day_card.classList.add()
-    let day_title = makeElement("div", "day_title", temp_weekday);
+    let day_title = makeElement("div", "day_title", "temp_weekday");
     let date_number = makeElement("div", "date_number", date);
     let day_face = makeElement("div", "day_face", "");
     let day_image = makeElement("img", "day_img", "");
@@ -378,7 +378,7 @@ const makeHistory = () => {
     // days_slider.appendChild(day_card)
     days_slider.insertBefore(day_card, days_slider.firstChild);
 	alert("371")
-    console.log(temp_weekday);
+    
   }
   alert("376")
 
