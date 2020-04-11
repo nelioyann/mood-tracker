@@ -146,6 +146,7 @@ main {
   display: flex;
   margin-bottom: 50px;
   overflow-x: auto;
+  padding: 10px 0px;
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }
