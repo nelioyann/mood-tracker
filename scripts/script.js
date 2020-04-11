@@ -377,10 +377,10 @@ const makeHistory = () => {
     day_card.appendChild(day_face);
     // days_slider.appendChild(day_card)
     days_slider.insertBefore(day_card, days_slider.firstChild);
-	alert("380")
+	// alert("380")
     
   }
-  alert("383")
+//   alert("383")
 
   console.log(last_week_labels);
   history_tab.innerHTML = "";
