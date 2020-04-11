@@ -239,7 +239,7 @@ const save_mood = () => {
   let current_year = today.getFullYear();
   let current_day = today.getDay();
   let current_date = today.getDate();
-  alert("242");
+//   alert("242");
   // console.log(current_day);
   // console.log(current_month);
   // console.log(current_year);
@@ -264,7 +264,7 @@ const save_mood = () => {
   saveInStorage("moods", stored_moods);
 //   alert("265");
   makeHistory();
-  alert("267");
+  alert("post hist");
 };
 
 const getFromStorage = (key) => {
@@ -326,9 +326,9 @@ const makeHistory = () => {
   c_list = [];
   w_list = [];
   last_week_labels = [];
-  alert("329")
+//   alert("329")
   for (date in stored_moods[current_year][current_month]) {
-  alert("331")
+//   alert("331")
 
     console.log(date);
     let stability = parseInt(
@@ -340,14 +340,14 @@ const makeHistory = () => {
     let wellness = parseInt(
       stored_moods[current_year][current_month][date]["b"]
     );
-	alert("343")
+	// alert("343")
 
     s_list.push(stability);
     c_list.push(construction);
     w_list.push(wellness);
     // last_week_data.push(stability+construction+wellness)
     last_week_labels.push(`${date} ${current_monthtxt}`);
-	alert("350")
+	// alert("350")
 
     let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
 	console.log(temp_date);
