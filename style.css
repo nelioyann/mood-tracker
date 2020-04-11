@@ -128,12 +128,28 @@ main {
   
 }
 .overlay_text{
-  color: var(--foreground);
+  background-color: var(--foreground);
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   text-align: center;
-  
-  margin-top: 1em;
+  width: max-content;
+  position: relative;
+  padding: 1em 2em;
+  border-radius: 3px;
+  color: var(--darkground);
+  margin: 1em auto;
+}
+.close_overlay{
+  position: absolute;
+  top: 3px;right: 3px;
+  background-color: var(--darkground);
+  border-radius: 5px;
+  color: var(--foreground);
+  padding: 5px;
+  line-height: 0.5rem;
+  cursor: pointer;
+  font-size: 0.5rem;
+  /* height: 2px;width: 2px; */
 }
 .tab__history,
 .tab__info {
@@ -222,8 +238,8 @@ main {
   cursor: pointer;
 }
 .mood_form__btn:active {
-  /* background-color: var(--darkground); */
-  /* color: var(--foreground); */
+  background-color: var(--darkground);
+  color: var(--foreground);
   box-shadow:  16px 16px 31px #d3cbc7, 
              -16px -16px 31px #ffffff;
 }

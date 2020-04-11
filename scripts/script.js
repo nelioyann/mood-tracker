@@ -9,6 +9,9 @@ const pushBtn = document.querySelector(".pushPrompt");
 const nav_links = document.querySelectorAll(".nav__link");
 const tabs = document.querySelectorAll(".tabs");
 const history = document.querySelector(".history_contents");
+const overlay= document.querySelector(".update_overlay")
+const close_overlay= document.querySelector(".close_overlay")
+
 var s_list = [];
 var c_list = [];
 var w_list = [];
@@ -109,14 +112,15 @@ function displayNotification(title, body, tag) {
 }
 
 save_btn.addEventListener("click", () => {
+  overlay.style.display = "block";
+  console.log(overlay)
   save_mood();
-  // displayNotification(
-  // 	"Hey you ...",
-  // 	"You better have a nice f*cking day ! ",
-  // 	"tag_welcome"
-  // );
+
 });
 
+close_overlay.addEventListener("click", ()=>{
+  overlay.style.display = "none";
+})
 nav_links.forEach((nav_link) => {
   nav_link.addEventListener("click", (e) => {
     let current_name = e.target.getAttribute("data-tab");
@@ -130,7 +134,7 @@ nav_links.forEach((nav_link) => {
 
     tabs.forEach((tab) => (tab.style.display = "none"));
     document.querySelector(`.tab__${current_name}`).style.display = "flex";
-    console.log(current_name);
+    // console.log(current_name);
     showChart(s_list, c_list, w_list, last_week_labels);
   });
 });
@@ -163,7 +167,7 @@ function afficher_surnom() {
   if (!pseudo_text || !pseudo_form) return null;
   pseudo = pseudo == "" ? "Person" : pseudo;
   pseudo = pseudo == undefined ? "Person" : pseudo;
-  console.log(pseudo);
+  // console.log(pseudo);
   pseudo_text.innerHTML = pseudo;
   document.querySelector(".greetings__pseudo").innerHTML = pseudo;
   pseudo_form.style.display = "none";
@@ -176,7 +180,7 @@ function afficher_surnom() {
 
 const date_el = document.querySelector(".header_date");
 let today = new Date();
-console.log(today);
+// console.log(today);
 var dd = String(today.getDate()).padStart(2, "0");
 var mm = Intl.DateTimeFormat("en-US", { month: "long" }).format(today); //January is 0!
 var yyyy = today.getFullYear();
@@ -188,14 +192,14 @@ date_el.innerHTML = today;
 const temporary = () => {
   const date_ms = Date.now();
   var current_date = new Date(date_ms);
-  console.log(typeof today);
-  console.log(today);
+  // console.log(typeof today);
+  // console.log(today);
   let current_month = current_date.getMonth();
   let current_year = current_date.getFullYear();
   let current_day = current_date.getDay();
-  console.log(current_day);
-  console.log(current_month);
-  console.log(current_year);
+  // console.log(current_day);
+  // console.log(current_month);
+  // console.log(current_year);
   // expected output: 0
   var options = { weekday: "long" };
   let current_weekday = Intl.DateTimeFormat("en-US", options).format(
@@ -205,8 +209,6 @@ const temporary = () => {
     current_date
   );
 
-  console.log(current_monthtxt);
-  console.log(current_monthtxt);
   let localdata = {
     pseudo: "johnny",
     moods: {
@@ -286,15 +288,13 @@ const saveInStorage = (clé, nouvelleValeur) => {
 
 const makeHistory = () => {
   let stored_moods = getFromStorage("moods");
-  console.log(stored_moods);
+  // console.log(stored_moods);
 //   alert("290")
   let today = new Date();
   let current_year = today.getFullYear();
   let current_month = parseInt(today.getMonth());
   let current_date = today.getDate();
-  console.log(current_date);
-  console.log(current_month);
-  console.log(current_year);
+
   let current_monthtxt = Intl.DateTimeFormat("en-US", { month: "long" }).format(
     today
   );
@@ -330,7 +330,7 @@ const makeHistory = () => {
   for (date in stored_moods[current_year][current_month]) {
 //   alert("331")
 
-    console.log(date);
+    // console.log(date);
     let stability = parseInt(
       stored_moods[current_year][current_month][date]["s"]
     );
@@ -350,7 +350,7 @@ const makeHistory = () => {
 	// alert("350")
     // let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
     let temp_date = new Date(current_year, current_month + 1, date);
-	console.log(temp_date);
+	// console.log(temp_date);
 	// alert("354")
 	
     // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
@@ -382,14 +382,14 @@ const makeHistory = () => {
   }
 //   alert("383")
 
-  console.log(last_week_labels);
+  // console.log(last_week_labels);
   history_tab.innerHTML = "";
   history_tab.appendChild(history_wrapper);
-  console.log(weekCanvas);
+  // console.log(weekCanvas);
   history_tab.appendChild(weekCanvas);
 
   // <canvas id="myChart"></canvas>
-  console.log(history_wrapper);
+  // console.log(history_wrapper);
 //   console.log("393")
 };
 
