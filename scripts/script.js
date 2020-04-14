@@ -362,7 +362,7 @@ const makeHistory = () => {
     last_week_labels.push(`${date} ${current_monthtxt}`);
 	// alert("350")
     // let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
-    let temp_date = new Date(current_year, current_month + 1, date);
+    let temp_date = new Date(current_year, current_month, date);
 	// console.log(temp_date);
 	// alert("354")
 	
