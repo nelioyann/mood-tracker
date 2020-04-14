@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-ve451"
+const staticCacheName = "site-static-ve45s1"
 
 // Fichier qui seront cacher
 const assets = [
@@ -24,7 +24,8 @@ const assets = [
     "/images/dog9.png",
     "/images/dog10.png",
     "/fonts/patrickhandregular.ttf",
-    "/fonts/robotoregular.ttf"
+    "/fonts/robotoregular.ttf",
+    "https://type.fit/api/quotes"
     
     
 ]
