@@ -132,25 +132,43 @@ main {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: max-content;
   position: relative;
   padding: 1em 2em;
   border-radius: 3px;
   color: var(--darkground);
-  margin: 1em auto;
+  /* margin: 1em auto; */
 }
 .close_overlay{
   position: absolute;
   top: 3px;right: 3px;
-  background-color: var(--darkground);
+  /* background-color: var(--darkground); */
   border-radius: 5px;
   color: var(--foreground);
-  padding: 5px;
-  line-height: 0.5rem;
+  height: 32px;
+  width: 32px;
+  opacity: 0.7;
   cursor: pointer;
-  font-size: 0.5rem;
-  /* height: 2px;width: 2px; */
+
 }
+.close_overlay:before, .close_overlay:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close_overlay:before {
+  transform: rotate(45deg);
+}
+.close_overlay:after {
+  transform: rotate(-45deg);
+}
+
 .tab__history,
 .tab__info {
   display: none;
