@@ -134,7 +134,7 @@ main {
   background-color: var(--foreground);
   color: var(--darkground);
   width: 100%;
-  margin: 0 1em;
+  /* margin: 0 1em; */
   max-width: 80vw;
   transform: translate(-50%, -50%);
   border-radius: 3px;
