@@ -29,6 +29,19 @@ construction.addEventListener("input", (e) => {
   preview.style.filter = `grayscale(${1 - ((e.target.value - 1) * 1) / 10})`;
 });
 
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    let index = Math.floor(Math.random() * Math.floor(data.length))
+    console.log(data[index])
+    document.querySelector(".overlay_quote").innerHTML = data[index].text
+    let author = data[index].author == null ? "Someone famous" : data[index].author
+    document.querySelector(".overlay_author").innerHTML = `&#8211;${author}`
+  });
+
 stability.addEventListener("input", (e) => {
   // element.classList.remove("animate");
   // console.log(preview_imgs)

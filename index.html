@@ -15,7 +15,8 @@
     <meta name="apple-mobile-web-app-title" content="Mood Tracker" />
     <meta property="og:image" content="./images/icons/icon-152x152.png" />
     <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png" />
-    <meta name="description" content="Track your mood with this web application. Are you feeling great today ?Let's find out !">
+    <meta name="description"
+        content="Track your mood with this web application. Are you feeling great today ?Let's find out !">
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
@@ -25,20 +26,24 @@
         <header>
             <div class="header_nav">
                 <div class="logo">
-                    <img  data-tab="today" class="logo_img nav__link" src="./images/logo.svg" alt="logo">
+                    <img data-tab="today" class="logo_img nav__link" src="./images/logo.svg" alt="logo">
                 </div>
                 <div class="logo_text header_date">Text</div>
             </div>
-            
-            
+
+
         </header>
         <main>
             <div class="tabs tab__today">
                 <div class="update_overlay">
-                    <div class="overlay_text">Have a nice Day ! 
+                    <div class="overlay_contents">
+                        <h5>Quote of the day</h5>
+                        <div class="overlay_quote">Have a nice Day !</div>
+                        <div class="overlay_author">----</div>
                         <span class="close_overlay">x</span>
                     </div>
-                    
+
+
                 </div>
                 <div class="header_contents">
                     <div class="greetings">
@@ -68,7 +73,8 @@
                 <form class="mood_form">
                     <div class="sliders">
                         <label for="stability">steadiness</label>
-                        <input class="slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1" />
+                        <input class="slider stability" type="range" name="stability" id="stability" min="1" max="10"
+                            step="1" />
                         <ul class="slider_labels">
                             <li>1</li>
                             <li>2</li>
@@ -82,8 +88,8 @@
                             <li>10</li>
                         </ul>
                         <label for="construction">construction</label>
-                        <input class="slider construction" type="range" name="construction" value="10" id="construction" min="1"
-                            max="10" step="1" />
+                        <input class="slider construction" type="range" name="construction" value="10" id="construction"
+                            min="1" max="10" step="1" />
                         <ul class="slider_labels">
                             <li>1</li>
                             <li>2</li>
@@ -97,8 +103,8 @@
                             <li>10</li>
                         </ul>
                         <label for="wellness">wellness</label>
-                        <input class="slider wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10"
-                            step="1" />
+                        <input class="slider wellness" type="range" value="1" name="wellness" id="wellness" min="1"
+                            max="10" step="1" />
                         <ul class="slider_labels">
                             <li>1</li>
                             <li>2</li>
@@ -117,28 +123,31 @@
             </div>
             <div class="tabs tab__history">
                 <div class="tabs__content history_contents">
-                    
+
                 </div>
             </div>
             <div class="tabs tab__info">
                 <div class="tabs__content">
                     <h4>I can't allow the push notifications, is this app broken ?</h4>
-                <p>Well actually this issue might come from another 
-                    app currently running on your phone. Due to security concern, you should temporarily disable apps 
-                    that are allowed to hover over other applications (ie: assistive touch) <br>
-                </p>
-                <h4>I don't like the name 
-                    <span class="tab__info__pseudo_text">Lazy</span>
-                    <form class="tab__info__pseudo_form"><input type="text" class="tab__info__pseudo_input" placeholder="insert" /></form>
-                    <br>Can I change it?</h4>
-                <p>Of course, you definitely can.
-                    Press the highlighted word above to do just that.
-                </p>
+                    <p>Well actually this issue might come from another
+                        app currently running on your phone. Due to security concern, you should temporarily disable
+                        apps
+                        that are allowed to hover over other applications (ie: assistive touch) <br>
+                    </p>
+                    <h4>I don't like the name
+                        <span class="tab__info__pseudo_text">Lazy</span>
+                        <form class="tab__info__pseudo_form"><input type="text" class="tab__info__pseudo_input"
+                                placeholder="insert" /></form>
+                        <br>Can I change it?
+                    </h4>
+                    <p>Of course, you definitely can.
+                        Press the highlighted word above to do just that.
+                    </p>
                 </div>
-                
-                
+
+
             </div>
-        <!-- <canvas class="weekChart"></canvas> -->
+            <!-- <canvas class="weekChart"></canvas> -->
         </main>
 
         <nav class="nav">

@@ -116,6 +116,7 @@ main {
   flex-direction: column;
 }
 
+
 .update_overlay{
   position: absolute;
   height: 100%;
@@ -127,29 +128,46 @@ main {
   background-color: rgba(0, 0, 0, 0.52);
   
 }
-.overlay_text{
-  background-color: var(--foreground);
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  text-align: center;
-  top: 50%;
+.overlay_contents{
+    top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: max-content;
-  position: relative;
-  padding: 1em 2em;
-  border-radius: 3px;
+  background-color: var(--foreground);
   color: var(--darkground);
-  /* margin: 1em auto; */
+  width: 100%;
+  margin: 0 1em;
+  max-width: 80vw;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+
+    position: relative;
+  padding: 0.5em;
+}
+.overlay_quote{
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0.5em;
+  
+  /* text-align: center; */
+
+}
+.overlay_author{
+  font-size: 0.8rem;
+  /* font-weight: bold; */
+  /* margin: 0.5em; */
+  /* margin-right: 40px; */
+  opacity: 0.8;
+  width: 100%;
+  text-align: right;
 }
 .close_overlay{
   position: absolute;
-  top: 3px;right: 3px;
+  top: 20px;right: 20px;
   /* background-color: var(--darkground); */
   border-radius: 5px;
   color: var(--foreground);
-  height: 32px;
-  width: 32px;
+  height: 22px;
+  width: 22px;
   opacity: 0.7;
   cursor: pointer;
 
@@ -158,7 +176,7 @@ main {
   position: absolute;
   left: 15px;
   content: ' ';
-  height: 33px;
+  height: 23px;
   width: 2px;
   background-color: #333;
 }
