@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Patrick Hand";
-  src: url(/fonts/patrickhandregular.ttf);
+  src: url(/fonts/patrick.ttf);
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url(/fonts/robotoregular.ttf);
+  src: url(/fonts/roboto.ttf);
   font-display: swap;
 }
 :root {
@@ -88,14 +88,21 @@ header {
   padding: 0 10px;
 }
 .installPrompt,
-.pushPrompt {
+.pushPrompt, .netlify-identity-button {
   background-color: var(--darkground);
   color: var(--foreground);
   padding: 5px;
   margin: 0 0 1em;
+  text-decoration: none;
   cursor: pointer;
   font-size: 0.7rem;
   border-radius: 3px;
+}
+.netlify-identity-button{
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin: 5px;
+
 }
 .installPrompt {
   visibility: hidden;
@@ -321,6 +328,7 @@ label {
   box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
   outline: 0;
   margin: 0;
+  cursor: pointer;
 }
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -329,6 +337,7 @@ label {
   height: var(--thumbSize);
   border-radius: 50%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  outline: none;
   background: var(--foreground);
   cursor: pointer;
   box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
@@ -337,8 +346,10 @@ label {
   width: var(--thumbSize);
   height: var(--thumbSize);
   border-radius: 50%;
-  background: var(--themeColor);
-  cursor: pointer;
+  background: var(--foreground);
+  box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+  outline: 0;
+  margin: 0;
 }
 .slider_labels {
   margin: 0.3em 0 0.5em 0.3em;

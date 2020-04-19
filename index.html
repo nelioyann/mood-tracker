@@ -1,173 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#585a79">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#585a79" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
     <title>This is fine</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta name="apple-mobile-web-app-title" content="Mood Tracker" />
     <meta property="og:image" content="./images/icons/icon-152x152.png" />
     <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png" />
-    <meta name="description"
-        content="Track your mood with this web application. Are you feeling great today ?Let's find out !">
-    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-</head>
+    <meta
+      name="description"
+      content="Track your mood with this web application. Are you feeling great today ?Let's find out !"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <div class="header_nav">
-                <div class="logo">
-                    <img data-tab="today" class="logo_img nav__link" src="./images/logo.svg" alt="logo">
-                </div>
-                <div class="logo_text header_date">Text</div>
+      <header>
+        <div class="header_nav">
+          <div class="logo">
+            <img
+              data-tab="today"
+              class="logo_img nav__link"
+              src="./images/logo.svg"
+              alt="logo"
+            />
+          </div>
+          <div class="logo_text header_date">Text</div>
+        </div>
+        
+      </header>
+      <main>
+        <div class="tabs tab__today">
+          <div class="update_overlay">
+            <div class="overlay_contents">
+              <h5>Quote of the day</h5>
+              <div class="overlay_quote">Have a nice Day !</div>
+              <div class="overlay_author">----</div>
+              <span class="close_overlay">x</span>
             </div>
-
-
-        </header>
-        <main>
-            <div class="tabs tab__today">
-                <div class="update_overlay">
-                    <div class="overlay_contents">
-                        <h5>Quote of the day</h5>
-                        <div class="overlay_quote">Have a nice Day !</div>
-                        <div class="overlay_author">----</div>
-                        <span class="close_overlay">x</span>
-                    </div>
-
-
-                </div>
-                <div class="header_contents">
-                    <div class="greetings">
-                        <h1 class="greetings_title">Hey, <span class="greetings__pseudo">-----</span></h1>
-                        <span class="greetings__text"> How're you feeling today ?</span>
-                    </div>
-                    <div class="pwa_access">
-                        <div class="installPrompt">Install on device</div>
-                        <div class="pushPrompt">Allow Push Notifications</div>
-                    </div>
-                </div>
-                <div class="mood_preview">
-                    <div id="mood_images" class="mood_images">
-
-                        <img class="mood_image" src="./images/dog1.png" alt="dog1" />
-                        <img class="mood_image" src="./images/dog2.png" alt="dog2" />
-                        <img class="mood_image" src="./images/dog3.png" alt="dog3" />
-                        <img class="mood_image" src="./images/dog4.png" alt="dog4" />
-                        <img class="mood_image" src="./images/dog5.png" alt="dog5" />
-                        <img class="mood_image" src="./images/dog6.png" alt="dog6" />
-                        <img class="mood_image" src="./images/dog7.png" alt="dog7" />
-                        <img class="mood_image" src="./images/dog8.png" alt="dog8" />
-                        <img class="mood_image" src="./images/dog9.png" alt="dog9" />
-                        <img class="mood_image" src="./images/dog10.png" alt="dog10" />
-                    </div>
-                </div>
-                <form class="mood_form">
-                    <div class="sliders">
-                        <label for="stability">steadiness</label>
-                        <input class="slider stability" type="range" name="stability" id="stability" min="1" max="10"
-                            step="1" />
-                        <ul class="slider_labels">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                        </ul>
-                        <label for="construction">construction</label>
-                        <input class="slider construction" type="range" name="construction" value="10" id="construction"
-                            min="1" max="10" step="1" />
-                        <ul class="slider_labels">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                        </ul>
-                        <label for="wellness">wellness</label>
-                        <input class="slider wellness" type="range" value="1" name="wellness" id="wellness" min="1"
-                            max="10" step="1" />
-                        <ul class="slider_labels">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>
-                        </ul>
-                    </div>
-                    <div class="mood_form__btn">Save mood</div>
-                </form>
+          </div>
+          <div class="header_contents">
+            <div class="greetings">
+              <h1 class="greetings_title">
+                Hey, <span class="greetings__pseudo">-----</span>
+              </h1>
+              <span class="greetings__text"> How're you feeling today ?</span>
             </div>
-            <div class="tabs tab__history">
-                <div class="tabs__content history_contents">
+            <div class="pwa_access">
+              <div class="installPrompt">Install on device</div>
+              <div class="pushPrompt">Allow Push Notifications</div>
+            </div>
+          </div>
+          <div class="mood_preview">
+            <div id="mood_images" class="mood_images">
+              <img class="mood_image" src="./images/dog1.png" alt="dog1" />
+              <img class="mood_image" src="./images/dog2.png" alt="dog2" />
+              <img class="mood_image" src="./images/dog3.png" alt="dog3" />
+              <img class="mood_image" src="./images/dog4.png" alt="dog4" />
+              <img class="mood_image" src="./images/dog5.png" alt="dog5" />
+              <img class="mood_image" src="./images/dog6.png" alt="dog6" />
+              <img class="mood_image" src="./images/dog7.png" alt="dog7" />
+              <img class="mood_image" src="./images/dog8.png" alt="dog8" />
+              <img class="mood_image" src="./images/dog9.png" alt="dog9" />
+              <img class="mood_image" src="./images/dog10.png" alt="dog10" />
+            </div>
+          </div>
+          <form class="mood_form">
+            <div class="sliders">
+              <label for="stability">steadiness</label>
+              <input
+                class="slider stability"
+                type="range"
+                name="stability"
+                id="stability"
+                min="1"
+                max="10"
+                step="1"
+              />
+              <ul class="slider_labels">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+              <label for="construction">construction</label>
+              <input
+                class="slider construction"
+                type="range"
+                name="construction"
+                value="10"
+                id="construction"
+                min="1"
+                max="10"
+                step="1"
+              />
+              <ul class="slider_labels">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+              <label for="wellness">wellness</label>
+              <input
+                class="slider wellness"
+                type="range"
+                value="1"
+                name="wellness"
+                id="wellness"
+                min="1"
+                max="10"
+                step="1"
+              />
+              <ul class="slider_labels">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+            </div>
+            <div class="mood_form__btn">Save mood</div>
+          </form>
+        </div>
+        <div class="tabs tab__history">
+          <div class="tabs__content history_contents"></div>
+        </div>
+        <div class="tabs tab__info">
+          <div class="tabs__content">
+            <h4>I can't allow the push notifications, is this app broken ?</h4>
+            <p>
+              Well actually this issue might come from another app currently
+              running on your phone. Due to security concern, you should
+              temporarily disable apps that are allowed to hover over other
+              applications (ie: assistive touch) <br />
+            </p>
+            <h4>
+              I don't like the name
+              <span class="tab__info__pseudo_text">Lazy</span>
+              <form class="tab__info__pseudo_form">
+                <input
+                  type="text"
+                  class="tab__info__pseudo_input"
+                  placeholder="insert"
+                />
+              </form>
+              <br />Can I change it?
+            </h4>
+            <p>
+              Of course, you definitely can. Press the highlighted word above to
+              do just that.
+            </p>
+            <div data-netlify-identity-button>Login to join the community</div>
+          </div>
+        </div>
+        <!-- <canvas class="weekChart"></canvas> -->
+      </main>
 
-                </div>
-            </div>
-            <div class="tabs tab__info">
-                <div class="tabs__content">
-                    <h4>I can't allow the push notifications, is this app broken ?</h4>
-                    <p>Well actually this issue might come from another
-                        app currently running on your phone. Due to security concern, you should temporarily disable
-                        apps
-                        that are allowed to hover over other applications (ie: assistive touch) <br>
-                    </p>
-                    <h4>I don't like the name
-                        <span class="tab__info__pseudo_text">Lazy</span>
-                        <form class="tab__info__pseudo_form"><input type="text" class="tab__info__pseudo_input"
-                                placeholder="insert" /></form>
-                        <br>Can I change it?
-                    </h4>
-                    <p>Of course, you definitely can.
-                        Press the highlighted word above to do just that.
-                    </p>
-                </div>
-
-
-            </div>
-            <!-- <canvas class="weekChart"></canvas> -->
-        </main>
-
-        <nav class="nav">
-            <div class="nav__link nav__link--active nav__link__today" data-tab="today">
-                <i class="material-icons nav__icon" data-tab="today">today</i>
-                <span class="nav__text" data-tab="today">Today</span>
-            </div>
-            <div class=" nav__link nav__link__history" data-tab="history">
-                <i class="material-icons nav__icon" data-tab="history">timeline</i>
-                <span class="nav__text" data-tab="history">History</span>
-            </div>
-            <div class="nav__link nav__link__info" data-tab="info">
-                <i class="material-icons nav__icon" data-tab="info">info</i>
-                <span class="nav__text" data-tab="info">Info</span>
-            </div>
-        </nav>
+      <nav class="nav">
+        <div
+          class="nav__link nav__link--active nav__link__today"
+          data-tab="today"
+        >
+          <i class="material-icons nav__icon" data-tab="today">today</i>
+          <span class="nav__text" data-tab="today">Today</span>
+        </div>
+        <div class="nav__link nav__link__history" data-tab="history">
+          <i class="material-icons nav__icon" data-tab="history">timeline</i>
+          <span class="nav__text" data-tab="history">History</span>
+        </div>
+        <div class="nav__link nav__link__info" data-tab="info">
+          <i class="material-icons nav__icon" data-tab="info">info</i>
+          <span class="nav__text" data-tab="info">Info</span>
+        </div>
+        
+      </nav>
     </div>
+    <script
+      defer
+      type="text/javascript"
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
     <script defer src="./scripts/chart.js"></script>
     <script defer src="./scripts/app.js"></script>
     <script defer src="./scripts/script.js"></script>
-</body>
-
+  </body>
 </html>

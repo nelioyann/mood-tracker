@@ -34,9 +34,9 @@ fetch("https://type.fit/api/quotes")
     return response.json();
   })
   .then(function(data) {
-    console.log(data);
+    // console.log(data);
     let index = Math.floor(Math.random() * Math.floor(data.length))
-    console.log(data[index])
+    // console.log(data[index])
     document.querySelector(".overlay_quote").innerHTML = data[index].text
     let author = data[index].author == null ? "Someone famous" : data[index].author
     document.querySelector(".overlay_author").innerHTML = `&#8211;${author}`
@@ -493,3 +493,25 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
   });
 };
 makeHistory();
+
+
+// 
+// Open the modal
+netlifyIdentity.open();
+
+// Get the current user:
+const user = netlifyIdentity.currentUser();
+
+// Bind to events
+netlifyIdentity.on('init', user => console.log('init', user));
+netlifyIdentity.on('login', user => console.log('login', user));
+netlifyIdentity.on('logout', () => console.log('Logged out'));
+netlifyIdentity.on('error', err => console.error('Error', err));
+netlifyIdentity.on('open', () => console.log('Widget opened'));
+netlifyIdentity.on('close', () => console.log('Widget closed'));
+
+// Close the modal
+netlifyIdentity.close();
+
+// Log out the user
+netlifyIdentity.logout();
