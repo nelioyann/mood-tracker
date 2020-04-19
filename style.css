@@ -103,6 +103,7 @@ header {
   color: var(--foreground);
   padding: 5px;
   margin: 0.3em;
+  display: block;
   text-decoration: none;
   border-radius: 3px;
 
@@ -112,7 +113,7 @@ header {
   /* font-size: 1rem;
   margin: 5px; */
   padding: 0;
-  display: flex;
+  /* display: flex; */
   list-style-type: none;
 
 }
