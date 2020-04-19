@@ -506,11 +506,10 @@ const user = netlifyIdentity.currentUser();
 netlifyIdentity.on('init', user => console.log('init', user));
 netlifyIdentity.on('login', user => {
   console.log('login', user.user_metadata.full_name)
-  document.querySelector(".login_username").innerHTML = `Logged in as ${user.user_metadata.full_name}`;
+
 });
 netlifyIdentity.on('logout', () => {
   console.log('Logged out')
-  document.querySelector(".login_username").innerHTML = "";
 });
 netlifyIdentity.on('error', err => console.error('Error', err));
 netlifyIdentity.on('open', () => console.log('Widget opened'));

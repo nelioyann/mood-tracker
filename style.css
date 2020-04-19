@@ -98,10 +98,22 @@ header {
   font-size: 0.7rem;
   border-radius: 3px;
 }
-.netlify-identity-button{
+.netlify-identity-menu a{
+  background-color: var(--darkground);
+  color: var(--foreground);
+  padding: 5px;
+  margin: 0.3em;
+  text-decoration: none;
+  border-radius: 3px;
+
+}
+.netlify-identity-menu{
   /* padding: 10px 15px; */
-  font-size: 1rem;
-  margin: 5px;
+  /* font-size: 1rem;
+  margin: 5px; */
+  padding: 0;
+  display: flex;
+  list-style-type: none;
 
 }
 .installPrompt {
