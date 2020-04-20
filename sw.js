@@ -22,6 +22,7 @@ const assets = [
     "/images/dog7.png",
     "/images/dog8.png",
     "/images/dog9.png",
+    "/images/logo.svg",
     "/images/dog10.png",
     "/fonts/patrick.ttf",
     "/fonts/roboto.ttf",
