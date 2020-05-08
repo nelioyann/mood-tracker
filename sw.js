@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v5"
+const staticCacheName = "site-static-v32"
 
 // Fichier qui seront cacher
 const assets = [
@@ -10,6 +10,7 @@ const assets = [
     '/scripts/script.js',
     '/scripts/chart.js',
     '/scripts/app.js',
+    '/scripts/push.js',
     "/images/icons/icon-72x72.png",
     "/images/icons/icon-144x144.png",
     "/images/icons/icon-152x152.png",
@@ -36,7 +37,7 @@ self.addEventListener("install", event=>{
     event.waitUntil(
         caches.open(staticCacheName)
             .then(cache =>{
-                console.log('caching shell assets');
+                // console.log('caching shell assets');
                 return cache.addAll(assets)
         })
             .catch(err =>{
@@ -50,7 +51,7 @@ self.addEventListener("install", event=>{
 self.addEventListener("activate", event =>{
     event.waitUntil(
         caches.keys().then(keys =>{
-            console.log(`Keys ${keys}`);
+            // console.log(`Keys ${keys}`);
             return Promise.all(keys
             // Extract the keyname different than the cirrent keynameversion
             .filter(key => key !== staticCacheName)
@@ -81,10 +82,12 @@ self.addEventListener("fetch", (event)=>{
 })
 
 self.addEventListener("push", event =>{
-    const title = "Yay a message";
+    console.log(event.data.text())
+    const title = event.data.text();
+    // const title = "Yay a message";
     const body = "We have received a push message.";
     const icon = "/images/icons/icon-72x72.png";
-    const tag = "simple-push-example-tag";
+    // const tag = "simple-push-example-tag";
     event.waitUntil(
         self.registration.showNotification(title,{
             body:body,
@@ -93,3 +96,4 @@ self.addEventListener("push", event =>{
         })
     )
 })
+

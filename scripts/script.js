@@ -16,16 +16,14 @@ var s_list = [];
 var c_list = [];
 var w_list = [];
 var last_week_labels = [];
-// console.log(preview_imgs)
+
 
 wellness.addEventListener("input", (e) => {
   let new_value = (e.target.value - 1) * -129;
-  // console.log(new_value)
   preview.style.transform = `translateX(${new_value}px)`;
 });
 
 construction.addEventListener("input", (e) => {
-  // console.log((e.target.value -1)*1/10 + 1/10)
   preview.style.filter = `grayscale(${1 - ((e.target.value - 1) * 1) / 10})`;
 });
 
@@ -34,95 +32,24 @@ fetch("https://type.fit/api/quotes")
     return response.json();
   })
   .then(function(data) {
-    // console.log(data);
+    
     let index = Math.floor(Math.random() * Math.floor(data.length))
-    // console.log(data[index])
+    
     document.querySelector(".overlay_quote").innerHTML = data[index].text
     let author = data[index].author == null ? "Someone famous" : data[index].author
     document.querySelector(".overlay_author").innerHTML = `&#8211;${author}`
   });
 
 stability.addEventListener("input", (e) => {
-  // element.classList.remove("animate");
-  // console.log(preview_imgs)
   preview_imgs.forEach((el) => el.classList.remove("mood_image"));
   void preview.offsetWidth; // trigger a DOM reflow
   preview_imgs.forEach((el) => el.classList.add("mood_image"));
-  // element.classList.add("animate");
   let new_value = 10 - e.target.value;
-  // console.log(new_value);
-  // console.log((e.target.value -1)*1/10 + 1/10)
   preview_imgs.forEach(
     (el) => (el.style.animationIterationCount = `${new_value}`)
   );
 });
 
-//  Installation de la PWA
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  console.log("before install prompt");
-  e.preventDefault();
-  deferredPrompt = e;
-  btnAdd.style.visibility = "visible";
-});
-
-window.addEventListener("appinstalled", (evt) => {
-  app.logEvent("a2hs", "installed");
-  btnAdd.style.visibility = "hidden";
-  console.log("it is installed");
-});
-
-btnAdd.addEventListener("click", () => {
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === "accepted") {
-      console.log("User accepted the A2HS prompt");
-    }
-    deferredPrompt = null;
-  });
-});
-
-// Push notifications
-
-pushBtn.addEventListener("click", () => {
-  Notification.requestPermission(function (status) {
-    console.log("Notification permission status:", status);
-    if (status == "granted") pushBtn.style.visibility = "hidden";
-  });
-});
-
-if ("Notification" in window) {
-  if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
-}
-if (!("Notification" in window)) pushBtn.style.visibility = "hidden";
-// if (Notification){
-
-//     if (Notification.permission == "granted") pushBtn.style.visibility = "hidden";
-// } else{
-//     pushBtn.style.visibility = "hidden";
-// }
-
-function displayNotification(title, body, tag) {
-  if (Notification.permission == "granted") {
-    navigator.serviceWorker
-      .getRegistration()
-      .then(function (reg) {
-        var options = {
-          body: body,
-          tag: tag,
-          icon: "/images/icons/icon-72x72.png",
-          vibrate: [100, 50, 100],
-          data: {
-            dateOfArrival: Date.now(),
-            primaryKey: 1,
-          },
-        };
-        reg.showNotification(title, options);
-      })
-      .catch((err) => console.log(err));
-  }
-}
 
 save_btn.addEventListener("click", () => {
   overlay.style.display = "block";
@@ -210,10 +137,6 @@ const temporary = () => {
   let current_month = current_date.getMonth();
   let current_year = current_date.getFullYear();
   let current_day = current_date.getDay();
-  // console.log(current_day);
-  // console.log(current_month);
-  // console.log(current_year);
-  // expected output: 0
   var options = { weekday: "long" };
   let current_weekday = Intl.DateTimeFormat("en-US", options).format(
     current_date
@@ -254,13 +177,7 @@ const save_mood = () => {
   let current_year = today.getFullYear();
   let current_day = today.getDay();
   let current_date = today.getDate();
-//   alert("242");
-  // console.log(current_day);
-  // console.log(current_month);
-  // console.log(current_year);
-  // console.log(current_date);
-  // let day_entry = {current_date: [current_stability, current_construction,current_wellness]}
-  // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {"2020": 2};
+
   let stored_moods = getFromStorage("moods");
   // console.log(stored_moods)
   let year_entry = stored_moods[current_year] ? stored_moods[current_year] : {};
@@ -271,11 +188,7 @@ const save_mood = () => {
   month_entry[current_date] = date_entry;
   year_entry[current_month] = month_entry;
   stored_moods[current_year] = year_entry;
-  // stored_moods[current_year] = stored_moods[current_year] ? stored_moods[current_year] : stored_moods[current_year]
-  // console.log(stored_moods)
-  // localStorage["moods"] = localStorage["moods"] ? localStorage["moods"] : {};
-  // enregistre dans le localstorage
-//   alert("263");
+
   saveInStorage("moods", stored_moods);
 //   alert("265");
   makeHistory();
@@ -511,12 +424,36 @@ netlifyIdentity.on('login', user => {
 netlifyIdentity.on('logout', () => {
   console.log('Logged out')
 });
-netlifyIdentity.on('error', err => console.error('Error', err));
-netlifyIdentity.on('open', () => console.log('Widget opened'));
-netlifyIdentity.on('close', () => console.log('Widget closed'));
+// netlifyIdentity.on('error', err => console.error('Error', err));
+// netlifyIdentity.on('open', () => console.log('Widget opened'));
+// netlifyIdentity.on('close', () => console.log('Widget closed'));
 
 // Close the modal
 netlifyIdentity.close();
 
 // Log out the user
 netlifyIdentity.logout();
+
+// ------------------
+// var key = 'AAAAYxu6hNk:APA91bE-BkcEJblXMSH6saXf5GrXRO2Af6Z-oKKLHwLWIDh7WyrDdMlJOGrgKL6iUrmwPf9t4Pu4lyhgoQIhGmM4wiz-X7RD0sVBFkmqDCQpKhrKcxQffePyhhOJxUDk8yLfTWFVCYAq';
+// var to = 'eqBDCQyaquy93TbxXzblPk:APA91bFZK3wAjH_H_OMgPvbLMItDkKpEPf-j1GWrMBAPUEhOJWu683A33GMoTRHvx-XdmwCjRgc2TPL28YgZiD9cDgB8pnKlgnrgPQVVKGATzHRn2zegfIDWM2_m7Yl1xJ0i-UYJm558';
+// var notification = {
+//   'title': 'Portugal vs. Denmark',
+//   'body': '5 to 1'
+// };
+
+// fetch('https://fcm.googleapis.com/fcm/send', {
+//   'method': 'POST',
+//   'headers': {
+//     'Authorization': 'key=' + key,
+//     'Content-Type': 'application/json'
+//   },
+//   'body': JSON.stringify({
+//     'notification': notification,
+//     'to': to
+//   })
+// }).then(function(response) {
+//   console.log(response);
+// }).catch(function(error) {
+//   console.error(error);
+// })

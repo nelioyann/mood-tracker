@@ -284,12 +284,11 @@ main {
 .mood_form__btn {
   width: max-content;
   padding: 10px 40px;
-  margin: 0.5em auto;
-  /* border: 2px solid var(--darkground); */
+  margin: 1em auto;
+  border: 2px solid var(--darkground);
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow:  16px 16px 31px #d3cbc7, 
-             -16px -16px 31px #ffffff;
+  
   color: var(--darkground);
   cursor: pointer;
 }
@@ -561,3 +560,4 @@ div.nav__link--active {
     transform: translate(0, 0) rotate(0);
   }
 }
+/* Netlify callout */
