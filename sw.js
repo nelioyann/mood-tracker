@@ -8,7 +8,7 @@ const assets = [
     '/index.html',
     '/style.css',
     '/scripts/script.js',
-    '/scripts/chart.js',
+    '/scripts/dependencies/chart.js',
     '/scripts/app.js',
     '/scripts/push.js',
     "/images/icons/icon-72x72.png",
