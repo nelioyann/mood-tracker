@@ -1,4 +1,4 @@
-
+// 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     // path from the root folder

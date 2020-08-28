@@ -162,7 +162,6 @@
   </div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
   <script>
 
     var firebaseConfig = {
@@ -177,30 +176,10 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    const messaging = firebase.messaging();
-    messaging
-      .getToken()
-      .then((currentToken) => {
-        if (currentToken) {
-          console.log(currentToken);
-        } else {
-          // Show permission request.
-          console.log(
-            "No Instance ID token available. Request permission to generate one."
-          );
-        }
-      })
-      .catch((err) => {
-        console.log("An error occurred while retrieving token. ", err);
-      });
-
-    messaging.onMessage((payload) => {
-      console.log("Message received. ", payload);
-    });
+    
   </script>
-  <script defer src="./scripts/app.js"></script>
-  <script defer type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script defer src="./scripts/chart.js"></script>
+  <!-- <script defer src="./scripts/app.js"></script> -->
+  <script defer src="./scripts/dependencies/chart.js"></script>
   <script defer src="./scripts/script.js"></script>
   <script defer src="./scripts/push.js"></script>
 </body>
