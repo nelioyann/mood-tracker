@@ -14,6 +14,8 @@
   --foreground: #f5ece7;
   --darkground: #585a79;
 }
+
+
 .container {
   min-height: 100vh;
   width: 100%;
@@ -82,6 +84,8 @@ header {
   margin: 0 1em;
 }
 .logo_img {
+  box-sizing: border-box;
+  padding: 0.3em;
   height: 60px;
   cursor: pointer;
 }
