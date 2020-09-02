@@ -62,11 +62,11 @@
 
 
     <main class="main flex flex-d-c flex-ai-c container__section">
-      <div class="tabs tab__today">
-        <div class="quote update_overlay">
-          <div class="quote__wrapper overlay_contents">
+      <div class="tabs tab__today flex flex-d-c">
+        <div class="tab__today__overlay">
+          <div class="quote overlay_contents">
             <h5 class="quote__text">Quote of the day</h5>
-            <div class="overlay_quote">Have a nice Day !</div>
+            <!-- <div class="overlay_quote">Have a nice Day !</div> -->
             <div class="quote__author overlay_author">----</div>
             <span class="quote__close close_overlay">x</span>
           </div>
@@ -75,34 +75,34 @@
         <div class="tab__today__greetings header_contents">
           <div class="greetings">
             <h1 class="greetings__title greetings_title">
-              Hey, <span class="greetings__pseudo">-----</span>
+              Hey, <span class="greetings__title__pseudo">-----</span>
             </h1>
             <span class="greetings__text"> How're you feeling today ?</span>
           </div>
           <div class="pwa_access">
-            <div class="installPrompt">Install on device</div>
-            <div class="pushPrompt">Allow Push Notifications</div>
+            <button class="pwa_access__button install_prompt">Install on device</button>
+            <button class="pwa_access__button push_prompt">Allow Push Notifications</button>
           </div>
         </div>
-        <div class="mood_preview">
-          <div id="mood_images" class="mood_images">
-            <img class="mood_image" src="./images/dog1.png" alt="dog1" />
-            <img class="mood_image" src="./images/dog2.png" alt="dog2" />
-            <img class="mood_image" src="./images/dog3.png" alt="dog3" />
-            <img class="mood_image" src="./images/dog4.png" alt="dog4" />
-            <img class="mood_image" src="./images/dog5.png" alt="dog5" />
-            <img class="mood_image" src="./images/dog6.png" alt="dog6" />
-            <img class="mood_image" src="./images/dog7.png" alt="dog7" />
-            <img class="mood_image" src="./images/dog8.png" alt="dog8" />
-            <img class="mood_image" src="./images/dog9.png" alt="dog9" />
-            <img class="mood_image" src="./images/dog10.png" alt="dog10" />
+        <div class="mood__preview">
+          <div id="mood_images" class="mood__preview__images mood_images">
+            <img class="mood__image" src="./images/dog1.png" alt="dog1" />
+            <img class="mood__image" src="./images/dog2.png" alt="dog2" />
+            <img class="mood__image" src="./images/dog3.png" alt="dog3" />
+            <img class="mood__image" src="./images/dog4.png" alt="dog4" />
+            <img class="mood__image" src="./images/dog5.png" alt="dog5" />
+            <img class="mood__image" src="./images/dog6.png" alt="dog6" />
+            <img class="mood__image" src="./images/dog7.png" alt="dog7" />
+            <img class="mood__image" src="./images/dog8.png" alt="dog8" />
+            <img class="mood__image" src="./images/dog9.png" alt="dog9" />
+            <img class="mood__image" src="./images/dog10.png" alt="dog10" />
           </div>
         </div>
-        <form class="mood_form">
+        <form class="mood__form">
           <div class="sliders">
-            <label for="stability">stability: from nervous to relaxed</label>
-            <input class="slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1" />
-            <ul class="slider_labels">
+            <label class="sliders__question" for="stability">stability: from nervous to relaxed</label>
+            <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1" />
+            <ul class="sliders__labels flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -114,10 +114,10 @@
               <li>9</li>
               <li>10</li>
             </ul>
-            <label for="construction">from exhausted to energetic</label>
-            <input class="slider construction" type="range" name="construction" value="10" id="construction" min="1"
+            <label class="sliders__question" for="construction">from exhausted to energetic</label>
+            <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1"
               max="10" step="1" />
-            <ul class="slider_labels">
+            <ul class="sliders__labels flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -129,10 +129,10 @@
               <li>9</li>
               <li>10</li>
             </ul>
-            <label for="wellness">wellness: from feeling down to feeling enthusiastic</label>
-            <input class="slider wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10"
+            <label class="sliders__question" for="wellness">wellness: from feeling down to feeling enthusiastic</label>
+            <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10"
               step="1" />
-            <ul class="slider_labels">
+            <ul class="sliders__labels flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -208,9 +208,9 @@
     
   </script> -->
   <!-- <script defer src="./scripts/app.js"></script> -->
-  <script defer src="./scripts/dependencies/chart.js"></script>
-  <script defer src="./scripts/script.js"></script>
-  <script defer src="./scripts/push.js"></script>
+  <!-- <script defer src="./scripts/dependencies/chart.js"></script> -->
+  <!-- <script defer src="./scripts/script.js"></script> -->
+  <!-- <script defer src="./scripts/push.js"></script> -->
 </body>
 
 </html>

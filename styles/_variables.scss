@@ -1,9 +1,22 @@
+@font-face {
+    font-family: "Patrick Hand";
+    src: url(../fonts/patrick.ttf);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url(../fonts/roboto.ttf);
+    font-display: swap;
+  }
+
 $color_dark: #585a79;
 $color_light: #f5ece7;
 $color_primary: #148FE8;
 
-$font_headings: sans-serif;
+$font_headings: "Patrick Hand", cursive;
 $font_body: Roboto, sans-serif;
+
+$size_thumb: 1em;
 
 $font_light : 100;
 $font_regular : 300;

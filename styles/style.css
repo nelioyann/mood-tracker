@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Patrick Hand";
+  src: url(../fonts/patrick.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/roboto.ttf);
+  font-display: swap;
+}
+
 :root {
   font-size: 16px;
 }
@@ -131,19 +143,199 @@ ul {
 }
 
 .main .tabs {
-  width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 100%;
 }
 
 .main .tabs .tab__history,
 .main .tabs .tab__info {
   display: none;
+}
+
+.main .tab__today__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.main .tab__today__overlay .quote {
+  top: 50%;
+  left: 50%;
+  background-color: var(--foreground);
+  color: var(--darkground);
+  width: 100%;
+  max-width: 80vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 3px;
+  position: relative;
+  padding: 0.5em;
+}
+
+.main .tab__today__overlay .quote__text {
+  display: block;
+}
+
+.main .tab__today__overlay .quote__author {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  width: 100%;
+  text-align: right;
+}
+
+.main .tab__today__overlay .quote__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* background-color: var(--darkground); */
+  border-radius: 5px;
+  color: var(--foreground);
+  height: 22px;
+  width: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.main .tab__today__overlay .quote__close::before, .main .tab__today__overlay .quote__close::after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 23px;
+  width: 2px;
+  background-color: #333;
+}
+
+.main .tab__today__overlay .quote__close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main .tab__today__overlay .quote__close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.main .tab__today__greetings .greetings__title {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin: 0 0 0.5em;
+  font-family: "Patrick Hand", cursive;
+}
+
+.main .tab__today__greetings .greetings__text {
+  font-family: "Patrick Hand", cursive;
+  font-size: 1rem;
+}
+
+.main .tab__today__greetings .pwa_access__button {
+  background-color: #585a79;
+  color: #f5ece7;
+  padding: 5px;
+  margin: 0 0 1em;
+  text-decoration: none;
+  cursor: pointer;
+  display: none;
+  font-size: 0.7rem;
+  border-radius: 3px;
+}
+
+.main .tab__today .mood__preview {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: #f5ece7;
+  padding: 5px;
+  margin: auto;
+  -webkit-box-shadow: inset 5px 5px 10px #dfd7d2, inset -5px -5px 10px #fffffc;
+          box-shadow: inset 5px 5px 10px #dfd7d2, inset -5px -5px 10px #fffffc;
+}
+
+.main .tab__today .mood__preview__images {
+  width: 5em;
+  height: 5em;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  margin: 0 auto;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.main .tab__today .mood__preview__images .mood__image {
+  height: 4em;
+  border-radius: 5px;
+  -webkit-animation: shake;
+          animation: shake;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.main .tab__today .mood__form {
+  padding: 0em 1em;
+}
+
+.main .tab__today .mood__form .sliders__question {
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.main .tab__today .mood__form .sliders__input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #f5ece7;
+  -webkit-box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+          box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+  outline: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.main .tab__today .mood__form .sliders__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background: #f5ece7;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
+          box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
+}
+
+.main .tab__today .mood__form .sliders__input::-moz-range-thumb {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #f5ece7;
+  box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+  outline: 0;
+  margin: 0;
+}
+
+.main .tab__today .mood__form .sliders__labels {
+  margin: 0.3em 0 0.5em 0.3em;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
 }
 
 .header_contents {
@@ -649,5 +841,23 @@ body {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+@media screen and (min-width: 320px) {
+  .sliders {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sliders {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sliders {
+    max-width: 1024px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
