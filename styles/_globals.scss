@@ -1,0 +1,55 @@
+:root {
+	font-size: 16px;
+	@include breakpoint-up($size_mobile) {
+		font-size: 16px;
+	}
+	@include breakpoint-up($size_tablet) {
+		font-size: 18px;
+	}
+	@include breakpoint-up($size_desktop) {
+		font-size: 22px;
+	}
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html{
+	overflow-x: hidden;
+}
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.4;
+	width: 100vw;
+	overflow: hidden;
+	min-height: 100vh;
+	font-family: $font_body;
+	color: $color_light;
+	background-color: $color_dark;
+}
+
+.flex {
+	display: flex;
+	&-jc-c {
+		justify-content: center;
+	}
+	&-jc-sb {
+		justify-content: space-between;
+	}
+	&-ai-c {
+		align-items: center;
+	}
+}
+
+button{
+	border: none;
+}
+
+ul{
+	padding: 0;
+	list-style-type: none;
+}
+
+

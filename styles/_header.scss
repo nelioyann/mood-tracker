@@ -1,0 +1,34 @@
+.header {
+  background-color: $color_dark;
+  color: $color_light;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  position: -webkit-sticky;
+  &__banner {
+    display: flex;
+    justify-content: space-between;
+    min-width: 250px;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    &__logo {
+      margin: 0 1em;
+      &__image{
+        box-sizing: border-box;
+        padding: 0.3em;
+        height: 3em;
+        cursor: pointer;
+      }
+    }
+    &__date{
+      padding: 0 10px;
+    }
+  }
+}
+
+
+
+
+

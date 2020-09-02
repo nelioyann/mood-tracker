@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="theme-color" content="#585a79" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
   <meta name="description" content="Track your mood with this web app" />
 
   <title>Mood Tracker</title>
@@ -17,61 +17,64 @@
   <meta name="apple-mobile-web-app-title" content="Mood Tracker" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-icon" sizes="57x57" href="images/mobile/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="images/mobile/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="images/mobile/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="images/mobile/apple-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="images/mobile/apple-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="images/mobile/apple-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="images/mobile/apple-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="images/mobile/apple-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="images/mobile/apple-icon-180x180.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="images/mobile/android-icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/mobile/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="images/mobile/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/mobile/favicon-16x16.png" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="images/mobile/ms-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="images/mobile/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/mobile/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="images/mobile/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/mobile/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="images/mobile/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/mobile/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="images/mobile/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/mobile/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/mobile/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/mobile/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/mobile/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/mobile/favicon-16x16.png" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="images/mobile/ms-icon-144x144.png" />
 
-    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 
-    <meta property="og:image" content="./images/thumbnail.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://moodtracker.tk" />
-    <meta property="og:title" content="Mood Tracker" />
-    <meta property="og:description" content="Track your mood" />
-    <meta name="twitter:card" content="Mood Tracker" />
-    <meta name="twitter:site" content="@nelioyann" />
-    <meta name="twitter:creator" content="@nelioyann" />
+  <meta property="og:image" content="./images/thumbnail.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moodtracker.tk" />
+  <meta property="og:title" content="Mood Tracker" />
+  <meta property="og:description" content="Track your mood" />
+  <meta name="twitter:card" content="Mood Tracker" />
+  <meta name="twitter:site" content="@nelioyann" />
+  <meta name="twitter:creator" content="@nelioyann" />
 
 
-  
+
 </head>
 
 <body>
   <div class="container">
-    <header>
-      <div class="header_nav">
-        <div class="logo">
-          <img data-tab="today" class="logo_img nav__link" src="./images/logo.svg" alt="logo" />
+    <header class="header container__section flex flex-jc-c">
+      <div class="header__banner">
+        <div class="header__banner__logo">
+          <img data-tab="today" class="header__banner__logo__image nav__link" src="./images/logo.svg" alt="Logo" />
         </div>
-        <div class="logo_text header_date">Text</div>
+        <div class="header__banner__date logo_text header_date"></div>
       </div>
 
     </header>
-    <main>
+
+
+    <main class="main container__section">
       <div class="tabs tab__today">
-        <div class="update_overlay">
-          <div class="overlay_contents">
-            <h5>Quote of the day</h5>
+        <div class="quote update_overlay">
+          <div class="quote__wrapper overlay_contents">
+            <h5 class="quote__text">Quote of the day</h5>
             <div class="overlay_quote">Have a nice Day !</div>
-            <div class="overlay_author">----</div>
-            <span class="close_overlay">x</span>
+            <div class="quote__author overlay_author">----</div>
+            <span class="quote__close close_overlay">x</span>
           </div>
         </div>
-        <div class="header_contents">
+        
+        <div class="tab__today__greetings header_contents">
           <div class="greetings">
-            <h1 class="greetings_title">
+            <h1 class="greetings__title greetings_title">
               Hey, <span class="greetings__pseudo">-----</span>
             </h1>
             <span class="greetings__text"> How're you feeling today ?</span>
@@ -169,7 +172,7 @@
       <!-- <canvas class="weekChart"></canvas> -->
     </main>
 
-    <nav class="nav">
+    <nav class="navigation nav container__section">
       <div class="nav__link nav__link--active nav__link__today" data-tab="today">
         <i class="material-icons nav__icon" data-tab="today">today</i>
         <span class="nav__text" data-tab="today">Today</span>
@@ -203,7 +206,7 @@
 
     
   </script> -->
-  <script defer src="./scripts/app.js"></script>
+  <!-- <script defer src="./scripts/app.js"></script> -->
   <script defer src="./scripts/dependencies/chart.js"></script>
   <script defer src="./scripts/script.js"></script>
   <script defer src="./scripts/push.js"></script>

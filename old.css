@@ -63,6 +63,20 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+.logo {
+  margin: 0 1em;
+}
+.logo_img {
+  box-sizing: border-box;
+  padding: 0.3em;
+  height: 60px;
+  cursor: pointer;
+}
+.logo_text {
+  padding: 0 10px;
+}
+/* =================================== */
 .greetings {
   flex-grow: 1;
   margin: 0.5em 0 0em 1em;
@@ -80,18 +94,7 @@ header {
   font-family: "Patrick Hand", cursive;
   font-size: 1rem;
 }
-.logo {
-  margin: 0 1em;
-}
-.logo_img {
-  box-sizing: border-box;
-  padding: 0.3em;
-  height: 60px;
-  cursor: pointer;
-}
-.logo_text {
-  padding: 0 10px;
-}
+
 .installPrompt,
 .pushPrompt, .netlify-identity-button {
   background-color: var(--darkground);
@@ -376,6 +379,7 @@ label {
   width: 100%;
   justify-content: space-between;
 }
+/* ---------------- */
 .nav {
   position: static;
   bottom: 0;
