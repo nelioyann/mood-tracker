@@ -4,7 +4,6 @@
   .tabs {
     width: 100%;
     padding-top: 0.5em;
-    // padding-bottom: 0.5em;
   }
   .tab-secondary {
     display: none;
@@ -19,12 +18,12 @@
       display: none;
       z-index: 5;
       backdrop-filter: blur(5px);
-      background-color: rgba(0, 0, 0, 0.52);
+      background-color: rgba($color_dark, 0.52);
       .quote {
         top: 50%;
         left: 50%;
-        background-color: var(--foreground);
-        color: var(--darkground);
+        background-color: $color_light;
+        color: $color_dark;
         width: 100%;
         max-width: 80vw;
         transform: translate(-50%, -50%);
@@ -47,7 +46,7 @@
           right: 20px;
           /* background-color: var(--darkground); */
           border-radius: 5px;
-          color: var(--foreground);
+          color: $color_light;
           height: 22px;
           width: 22px;
           opacity: 0.7;
@@ -109,7 +108,7 @@
       overflow: hidden;
       position: relative;
       background: #f5ece7;
-      padding: 5px;
+      padding: 0.5em;
       margin: auto;
       box-shadow: inset 5px 5px 10px #dfd7d2, inset -5px -5px 10px #fffffc;
       &__images {
@@ -117,10 +116,11 @@
         height: 5em;
         display: grid;
         grid-auto-flow: column;
-        gap: 15px;
+        gap: 1em;
         margin: 0 auto;
         transition: 0.6s;
         .mood__image {
+          width: 4em;
           height: 4em;
           border-radius: 5px;
           animation: shake;

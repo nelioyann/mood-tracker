@@ -1,11 +1,12 @@
+// DOM selections
 const wellness = document.querySelector(".wellness");
 const construction = document.querySelector(".construction");
 const stability = document.querySelector(".stability");
-const preview = document.querySelector("#mood_images");
+const preview = document.querySelector(".mood__preview__images");
 const save_btn = document.querySelector(".mood_form__btn");
-const preview_imgs = document.querySelectorAll("#mood_images img");
-const btnAdd = document.querySelector(".installPrompt");
-const pushBtn = document.querySelector(".pushPrompt");
+const preview_imgs = document.querySelectorAll("mood__preview__images .mood__image");
+const btnAdd = document.querySelector(".install_prompt");
+const pushBtn = document.querySelector(".push_prompt");
 const nav_links = document.querySelectorAll(".nav__link");
 const tabs = document.querySelectorAll(".tabs");
 const history = document.querySelector(".history_contents");
@@ -19,8 +20,8 @@ var last_week_labels = [];
 
 
 wellness.addEventListener("input", (e) => {
-  let new_value = (e.target.value - 1) * -129;
-  preview.style.transform = `translateX(${new_value}px)`;
+  let new_value = (e.target.value - 1) * -5;
+  preview.style.transform = `translateX(${new_value}em)`;
 });
 
 construction.addEventListener("input", (e) => {
