@@ -51,9 +51,10 @@
 <body>
   <div class="container flex flex-d-c">
     <header class="header container__section flex flex-jc-c">
-      <div class="header__banner">
-        <div class="header__banner__logo">
+      <div class="header__banner flex flex-ai-c flex-jc-sb">
+        <div class="header__banner__logo flex flex-ai-c">
           <img data-tab="today" class="header__banner__logo__image nav__link" src="./images/logo.svg" alt="Logo" />
+          <h1 class="header__banner__logo__brand">Mood Tracker</h1>
         </div>
         <div class="header__banner__date logo_text header_date"></div>
       </div>
@@ -74,7 +75,7 @@
         
         <div class="tab__today__greetings header_contents">
           <div class="greetings">
-            <h1 class="greetings__title greetings_title">
+            <h1 class="greetings__title hide-for-mobile">
               Hey, <span class="greetings__title__pseudo">-----</span>
             </h1>
             <span class="greetings__text"> How're you feeling today ?</span>
@@ -100,7 +101,7 @@
         </div>
         <form class="mood__form">
           <div class="sliders">
-            <label class="sliders__question" for="stability">stability: from nervous to relaxed</label>
+            <label class="sliders__question" for="stability">Stress</label>
             <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1" />
             <ul class="sliders__numbers flex flex-jc-sb">
               <li>1</li>
@@ -114,7 +115,11 @@
               <li>9</li>
               <li>10</li>
             </ul>
-            <label class="sliders__question" for="construction">from exhausted to energetic</label>
+            <div class="sliders__labels flex flex-jc-sb">
+              <span>nervous</span>
+              <span>relaxed</span>
+            </div>
+            <label class="sliders__question" for="construction">Energy</label>
             <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1"
               max="10" step="1" />
             <ul class="sliders__numbers flex flex-jc-sb">
@@ -129,7 +134,11 @@
               <li>9</li>
               <li>10</li>
             </ul>
-            <label class="sliders__question" for="wellness">wellness: from feeling down to feeling enthusiastic</label>
+            <div class="sliders__labels flex flex-jc-sb">
+              <span>exhausted</span>
+              <span>energetic</span>
+            </div>
+            <label class="sliders__question" for="wellness">Wellbeing</label>
             <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10"
               step="1" />
             <ul class="sliders__numbers flex flex-jc-sb">
@@ -144,8 +153,12 @@
               <li>9</li>
               <li>10</li>
             </ul>
+            <div class="sliders__labels flex flex-jc-sb">
+              <span>feeling down</span>
+              <span>enthusiastic</span>
+            </div>
           </div>
-          <div class="mood_form__btn">Save mood</div>
+          <button class="mood__form__button">Save mood</button>
         </form>
       </div>
       <div class="tabs tab-secondary tab__history">

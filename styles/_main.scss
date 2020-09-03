@@ -7,11 +7,12 @@
   position: relative;
   .tabs {
     width: 100%;
-    
+    padding-top: 0.5em;
+    // padding-bottom: 0.5em;
   }
   .tab-secondary {
-      display: none;
-    }
+    display: none;
+  }
   .tab__today {
     &__overlay {
       position: absolute;
@@ -80,6 +81,7 @@
           font-weight: lighter;
           margin: 0 0 0.5em;
           font-family: $font_headings;
+
           // &__pseudo{
 
           // }
@@ -92,15 +94,15 @@
       }
       .pwa_access {
         &__button {
-          background-color: $color_dark;
-          color: $color_light;
-          padding: 5px;
-          margin: 0 0 1em;
+          // background-color: $color_dark;
+          // color: $color_light;
+          // padding: 5px;
+          // margin: 0 0 1em;
           text-decoration: none;
           cursor: pointer;
           display: none;
           font-size: 0.7rem;
-          border-radius: 3px;
+          // border-radius: 3px;
         }
       }
     }
@@ -139,12 +141,11 @@
           margin-top: 1em;
           font-size: 1em;
           font-weight: 300;
-          
         }
         &__input {
           -webkit-appearance: none;
           width: 100%;
-          height: 8px;
+          height: 0.5em;
           border-radius: 5px;
           background: $color_light;
           box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
@@ -174,11 +175,21 @@
           }
         }
         &__numbers {
-          // margin: 0.3em 0 0.5em 0.3em;
+          margin: 0.1em 0 0.1em 0.3em;
           padding: 0;
           list-style-type: none;
           width: 100%;
         }
+        &__labels {
+          margin-bottom: 0.5em;
+          font-size: 0.8em;
+          padding: 0;
+          width: 100%;
+        }
+      }
+      &__button {
+        display: block;
+        margin: 1em auto 0;
       }
     }
   }
@@ -213,7 +224,6 @@
 //     animation-iteration-count: 1;
 //   }
 
-
 .header_contents {
   background-color: var(--foreground);
   color: var(--darkground);
@@ -222,8 +232,6 @@
   display: flex;
   justify-content: space-between;
 }
-
-
 
 //   .installPrompt {
 //     visibility: hidden;

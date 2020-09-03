@@ -18,9 +18,10 @@ $font_body: Roboto, sans-serif;
 
 $size_thumb: 1em;
 
-$font_light : 100;
-$font_regular : 300;
-$font_bold : 500;
+$font_light : lighter;
+// $font_regular : 300;
+$font_bold : bold;
+
 $size_mobile: 320px;
 $size_tablet: 768px;
 $size_desktop: 1024px;

@@ -89,6 +89,50 @@ ul {
   list-style-type: none;
 }
 
+button, .button {
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #585a79;
+  color: #f5ece7;
+  font-weight: 400;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+}
+
+button::before, .button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+button:hover::before, .button:hover::before {
+  opacity: 1;
+}
+
+@media screen and (max-width: 320px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
 .header {
   background-color: #585a79;
   color: #f5ece7;
@@ -101,22 +145,16 @@ ul {
 }
 
 .header__banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   min-width: 250px;
   width: 100%;
   max-width: 600px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .header__banner__logo {
   margin: 0 1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .header__banner__logo__image {
@@ -125,6 +163,12 @@ ul {
   padding: 0.3em;
   height: 3em;
   cursor: pointer;
+}
+
+.header__banner__logo__brand {
+  font-size: 1rem;
+  font-weight: lighter;
+  font-family: "Patrick Hand", cursive;
 }
 
 .header__banner__date {
@@ -140,6 +184,7 @@ ul {
 
 .main .tabs {
   width: 100%;
+  padding-top: 0.5em;
 }
 
 .main .tab-secondary {
@@ -230,15 +275,10 @@ ul {
 }
 
 .main .tab__today__greetings .pwa_access__button {
-  background-color: #585a79;
-  color: #f5ece7;
-  padding: 5px;
-  margin: 0 0 1em;
   text-decoration: none;
   cursor: pointer;
   display: none;
   font-size: 0.7rem;
-  border-radius: 3px;
 }
 
 .main .tab__today .mood__preview {
@@ -292,7 +332,7 @@ ul {
 .main .tab__today .mood__form .sliders__input {
   -webkit-appearance: none;
   width: 100%;
-  height: 8px;
+  height: 0.5em;
   border-radius: 5px;
   background: #f5ece7;
   -webkit-box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
@@ -328,9 +368,22 @@ ul {
 }
 
 .main .tab__today .mood__form .sliders__numbers {
+  margin: 0.1em 0 0.1em 0.3em;
   padding: 0;
   list-style-type: none;
   width: 100%;
+}
+
+.main .tab__today .mood__form .sliders__labels {
+  margin-bottom: 0.5em;
+  font-size: 0.8em;
+  padding: 0;
+  width: 100%;
+}
+
+.main .tab__today .mood__form__button {
+  display: block;
+  margin: 1em auto 0;
 }
 
 .header_contents {

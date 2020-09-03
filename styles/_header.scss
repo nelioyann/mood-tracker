@@ -7,19 +7,26 @@
   position: sticky;
   position: -webkit-sticky;
   &__banner {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     min-width: 250px;
     width: 100%;
     max-width: 600px;
-    align-items: center;
+    // align-items: center;
     &__logo {
       margin: 0 1em;
+      width: max-content;
+
       &__image{
         box-sizing: border-box;
         padding: 0.3em;
         height: 3em;
         cursor: pointer;
+      }
+      &__brand{
+        font-size: 1rem;
+        font-weight: $font_light;
+        font-family: $font_headings;
       }
     }
     &__date{
