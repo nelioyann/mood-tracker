@@ -3,7 +3,7 @@ const wellness = document.querySelector(".wellness");
 const construction = document.querySelector(".construction");
 const stability = document.querySelector(".stability");
 const preview = document.querySelector(".mood__preview__images");
-const save_btn = document.querySelector(".mood_form__btn");
+const save_btn = document.querySelector(".mood__form__button");
 const preview_imgs = document.querySelectorAll("mood__preview__images .mood__image");
 const btnAdd = document.querySelector(".install_prompt");
 const pushBtn = document.querySelector(".push_prompt");
@@ -38,13 +38,13 @@ fetch("https://type.fit/api/quotes")
     
     document.querySelector(".overlay_quote").innerHTML = data[index].text
     let author = data[index].author == null ? "Someone famous" : data[index].author
-    document.querySelector(".overlay_author").innerHTML = `&#8211;${author}`
+    document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
   });
 
 stability.addEventListener("input", (e) => {
-  preview_imgs.forEach((el) => el.classList.remove("mood_image"));
+  preview_imgs.forEach((el) => el.classList.remove("mood__image"));
   void preview.offsetWidth; // trigger a DOM reflow
-  preview_imgs.forEach((el) => el.classList.add("mood_image"));
+  preview_imgs.forEach((el) => el.classList.add("mood__image"));
   let new_value = 10 - e.target.value;
   preview_imgs.forEach(
     (el) => (el.style.animationIterationCount = `${new_value}`)
@@ -110,7 +110,7 @@ function afficher_surnom() {
   pseudo = pseudo == undefined ? "Person" : pseudo;
   // console.log(pseudo);
   pseudo_text.innerHTML = pseudo;
-  document.querySelector(".greetings__pseudo").innerHTML = pseudo;
+  document.querySelector(".greetings__title__pseudo").innerHTML = pseudo;
   pseudo_form.style.display = "none";
   pseudo_text.style.display = "inline-block";
   pseudo_text.addEventListener("click", function () {
