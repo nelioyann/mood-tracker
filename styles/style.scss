@@ -8,6 +8,10 @@
 
 .container__section {
   margin: auto;
+  width: 100%;
+  padding: 0em 1em;
+
+
   // @include breakpoint-up($size_mobile) {
   //   max-width: $size_tablet;
   // }
@@ -28,26 +32,26 @@
   }
 
   body {
-    background-color: var(--darkground);
+    background-color: $color_light;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     font-family: Roboto;
-    color: var(--darkground);
+    color: $color_dark;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
   }
 
 .sliders{
-  @include breakpoint-up($size_mobile) {
-    max-width: $size_tablet;
-  }
-  @include breakpoint-up($size_tablet) {
-    max-width: $size_desktop;
-  }
-  @include breakpoint-up($size_desktop) {
-    max-width: $size_desktop;
-  }
+  // @include breakpoint-up($size_mobile) {
+  //   max-width: $size_tablet;
+  // }
+  // @include breakpoint-up($size_tablet) {
+  //   max-width: $size_desktop;
+  // }
+  // @include breakpoint-up($size_desktop) {
+  //   max-width: $size_desktop;
+  // }
 }

@@ -1,7 +1,10 @@
 :root {
 	// font-size: 16px;
+	@include breakpoint-up($size_mobile_small) {
+		font-size: 13px;
+	}
 	@include breakpoint-up($size_mobile) {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	@include breakpoint-up($size_tablet) {
 		font-size: 18px;
@@ -92,6 +95,11 @@ button, .button {
 // Visibility
 .hide-for-mobile {
 	@include breakpoint-down($size_mobile){
+	  display: none;
+	}
+  }
+.hide-for-mobile-small {
+	@include breakpoint-down($size_mobile_small){
 	  display: none;
 	}
   }
