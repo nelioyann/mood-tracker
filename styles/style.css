@@ -10,13 +10,9 @@
   font-display: swap;
 }
 
-:root {
-  font-size: 16px;
-}
-
 @media screen and (min-width: 320px) {
   :root {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -146,8 +142,7 @@ ul {
   width: 100%;
 }
 
-.main .tabs .tab__history,
-.main .tabs .tab__info {
+.main .tab-secondary {
   display: none;
 }
 
@@ -231,6 +226,7 @@ ul {
 .main .tab__today__greetings .greetings__text {
   font-family: "Patrick Hand", cursive;
   font-size: 1rem;
+  display: none;
 }
 
 .main .tab__today__greetings .pwa_access__button {
@@ -331,8 +327,7 @@ ul {
   margin: 0;
 }
 
-.main .tab__today .mood__form .sliders__labels {
-  margin: 0.3em 0 0.5em 0.3em;
+.main .tab__today .mood__form .sliders__numbers {
   padding: 0;
   list-style-type: none;
   width: 100%;

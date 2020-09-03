@@ -49,7 +49,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container flex flex-d-c">
     <header class="header container__section flex flex-jc-c">
       <div class="header__banner">
         <div class="header__banner__logo">
@@ -62,7 +62,7 @@
 
 
     <main class="main flex flex-d-c flex-ai-c container__section">
-      <div class="tabs tab__today flex flex-d-c">
+      <div class="tabs tab-primary tab__today flex flex-d-c">
         <div class="tab__today__overlay">
           <div class="quote overlay_contents">
             <h5 class="quote__text">Quote of the day</h5>
@@ -102,7 +102,7 @@
           <div class="sliders">
             <label class="sliders__question" for="stability">stability: from nervous to relaxed</label>
             <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1" />
-            <ul class="sliders__labels flex flex-jc-sb">
+            <ul class="sliders__numbers flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -117,7 +117,7 @@
             <label class="sliders__question" for="construction">from exhausted to energetic</label>
             <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1"
               max="10" step="1" />
-            <ul class="sliders__labels flex flex-jc-sb">
+            <ul class="sliders__numbers flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -132,7 +132,7 @@
             <label class="sliders__question" for="wellness">wellness: from feeling down to feeling enthusiastic</label>
             <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10"
               step="1" />
-            <ul class="sliders__labels flex flex-jc-sb">
+            <ul class="sliders__numbers flex flex-jc-sb">
               <li>1</li>
               <li>2</li>
               <li>3</li>
@@ -148,10 +148,10 @@
           <div class="mood_form__btn">Save mood</div>
         </form>
       </div>
-      <div class="tabs tab__history">
+      <div class="tabs tab-secondary tab__history">
         <div class="tabs__content history_contents"></div>
       </div>
-      <div class="tabs tab__info">
+      <div class="tabs tab-secondary tab__info">
         <div class="tabs__content">
 
           <h4>
