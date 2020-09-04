@@ -4,6 +4,9 @@
   .tabs {
     width: 100%;
     padding-top: 0.5em;
+    &__content {
+      // margin: 0 1em;
+    }
   }
   .tab-secondary {
     display: none;
@@ -24,26 +27,35 @@
         left: 50%;
         background-color: $color_light;
         color: $color_dark;
-        width: 100%;
-        max-width: 80vw;
+        width: max-content;
+        max-width: 90vw;
         transform: translate(-50%, -50%);
         border-radius: 3px;
         position: relative;
         padding: 0.5em;
-        &__text {
+        &__headings {
           display: block;
+          margin: auto;
+          background-color: $color_dark;
+          color: $color_light;
+          width: max-content;
+          padding: 0.1em 0.3em;
+        }
+        &__citation {
+          font-family: $font_headings;
         }
         &__author {
           font-size: 0.8rem;
-
+          font-style: italic;
           opacity: 0.8;
           width: 100%;
-          text-align: right;
+          margin-left: 1em;
+          text-align: center;
         }
         &__close {
           position: absolute;
-          top: 20px;
-          right: 20px;
+          top: 0.5em;
+          right: 1em;
           /* background-color: var(--darkground); */
           border-radius: 5px;
           color: $color_light;
@@ -186,12 +198,60 @@
       &__button {
         display: block;
         border-radius: 0.3em;
-        margin: 1em auto 0;
+        margin: 2em auto 0;
+        padding: 0.4em 2em;
       }
     }
   }
-}
+  .tab__history {
+    &__contents {
+      width: 100%;
+      .month_history {
+        .month_title {
+          font-weight: 400;
+        }
+        .days_cards_slider {
+          display: flex;
+          margin-bottom: 3em;
+          overflow-x: auto;
+          padding: 1em 0em;
+          width: 100%;
+          -webkit-overflow-scrolling: touch;
+          .day_card {
+            background-color: $color_light;
+            color: $color_dark;
+            margin: 0em 0.2em;
+            padding: 0.3em 0.6em;
+            border-radius: 0.3em;
+            text-align: center;
+            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.22);
+            &.current_day{
+                  background-color: $color_dark;
+                  color: $color_light;
+                  transform: scale(1.1) translateY(-10px);
+                }
+            .day_title,
+            .date_number {
+              color: inherit;
 
+            }
+            .day_face {
+              .day_img {
+                height: 3em;
+                animation: shake;
+                animation-duration: 0.5s;
+                animation-timing-function: ease;
+                animation-iteration-count: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .tab__info {
+  }
+}
 
 // .header_contents {
 //   background-color: var(--foreground);
@@ -203,32 +263,6 @@
 // }
 
 
-//   .tabs__content {
-//     margin: 0 1em;
-//   }
-//   .days_cards_slider{
-//     display: flex;
-//     margin-bottom: 50px;
-//     overflow-x: auto;
-//     padding: 15px 0px;
-//     width: 100%;
-//     -webkit-overflow-scrolling: touch;
-//   }
-//   .day_card {
-//     background-color: var(--darkground);
-//     margin: 0em 0.2em;
-//     padding: 5px 10px;
-//     border-radius: 5px;
-//     text-align: center;
-//     box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.22);
-//   }
-
-//   .month_title{
-//     font-weight: 400;
-//   }
-//   .day_title, .date_number{
-//     color: var(--foreground);
-//   }
 //   .day_card.current_day{
 //       background-color: var(--foreground);
 //       color: var(--darkground);
@@ -266,4 +300,3 @@
 //     background: #f5ece7;
 //     box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
 //   }
-

@@ -4,13 +4,13 @@ const construction = document.querySelector(".construction");
 const stability = document.querySelector(".stability");
 const preview = document.querySelector(".mood__preview__images");
 const save_btn = document.querySelector(".mood__form__button");
-const preview_imgs = document.querySelectorAll("mood__preview__images .mood__image");
+const preview_imgs = document.querySelectorAll(".mood__preview__images .mood__image");
 const btnAdd = document.querySelector(".install_prompt");
 const pushBtn = document.querySelector(".push_prompt");
 const nav_links = document.querySelectorAll(".nav__link");
 const tabs = document.querySelectorAll(".tabs");
-const history = document.querySelector(".history_contents");
-const overlay= document.querySelector(".update_overlay")
+const history = document.querySelector(".tab__history__contents");
+const overlay= document.querySelector(".tab__today__overlay")
 const close_overlay= document.querySelector(".close_overlay")
 
 var s_list = [];
@@ -36,7 +36,7 @@ fetch("https://type.fit/api/quotes")
     
     let index = Math.floor(Math.random() * Math.floor(data.length))
     
-    document.querySelector(".overlay_quote").innerHTML = data[index].text
+    document.querySelector(".quote__citation").innerHTML = data[index].text
     let author = data[index].author == null ? "Someone famous" : data[index].author
     document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
   });
@@ -52,9 +52,10 @@ stability.addEventListener("input", (e) => {
 });
 
 
-save_btn.addEventListener("click", () => {
+save_btn.addEventListener("click", (e) => {
+  e.preventDefault()
   overlay.style.display = "block";
-  console.log(overlay)
+  // console.log(overlay)
   save_mood();
 
 });
@@ -227,7 +228,7 @@ const makeHistory = () => {
   );
 
   // console.log(stored_moods[current_year][current_month])
-  var history_tab = document.querySelector(".history_contents");
+  var history_tab = document.querySelector(".tab__history__contents");
   var weekCanvas = makeElement("div", "chartContainer", "");
   let cvs = makeElement("canvas", "weekChart", "");
   weekCanvas.appendChild(cvs);
