@@ -530,21 +530,8 @@ button:hover::before, .button:hover::before {
   }
 }
 
-div.nav__link {
+.navigation .nav__link {
   background-color: #585a79;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -562,38 +549,38 @@ div.nav__link {
 }
 
 @media screen and (min-width: 1024px) {
-  div.nav__link {
+  .navigation .nav__link {
     -webkit-transform: translateX(-70%);
             transform: translateX(-70%);
     border-radius: 0 0.3em 0.3em 0;
   }
 }
 
-div.nav__link:hover {
+.navigation div.nav__link:hover {
   color: #DD9534;
   fill: #DD9534;
 }
 
 @media screen and (min-width: 1024px) {
-  div.nav__link:hover {
+  .navigation div.nav__link:hover {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
 }
 
-div.nav__link--active {
+.navigation div.nav__link--active {
   fill: #DD9534;
   color: #f3d9b7;
 }
 
 @media screen and (min-width: 1024px) {
-  div.nav__link--active {
+  .navigation div.nav__link--active {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
 }
 
-.nav__text {
+.navigation .nav__text {
   font-size: 1em;
 }
 
@@ -673,16 +660,7 @@ div.nav__link--active {
 
 body {
   background-color: #f5ece7;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   font-family: "Patrick Hand", cursive;
   color: #585a79;
   -webkit-user-select: none;

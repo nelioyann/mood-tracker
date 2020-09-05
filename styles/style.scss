@@ -9,38 +9,16 @@
 .container__section {
   margin: auto;
   width: 100%;
-  
-
-
-
-  // @include breakpoint-up($size_mobile) {
-  //   max-width: $size_tablet;
-  // }
-  // @include breakpoint-up($size_tablet) {
-  //   max-width: $size_desktop;
-  // }
-  // @include breakpoint-up($size_desktop) {
-  //   max-width: $size_desktop;
-  // }
 }
 
 .container {
     min-height: 100vh;
     width: 100%;
-
-    // display: flex;
-    // flex-direction: column;
-    // background-color: #fff;
   }
 
   body {
     background-color: $color_light;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    // box-sizing: border-box;
-    min-height: 90vh;
+    min-height: 100vh;
     font-family: $font_headings;
     color: $color_dark;
     -webkit-user-select: none;

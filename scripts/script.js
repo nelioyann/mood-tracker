@@ -357,8 +357,6 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       },
     },
   });
-  ctx.style.height = "40vh"
-  console.log()
 };
 makeHistory();
 
