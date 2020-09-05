@@ -5,7 +5,8 @@
     width: 100%;
     padding-top: 0.5em;
     &__content {
-      // margin: 0 1em;
+      width: 100%;
+      margin: auto;
     }
   }
   .tab-secondary {
@@ -84,7 +85,7 @@
     &__greetings {
       .greetings {
         &__title {
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: lighter;
           margin: 0 0 0.5em;
           font-family: $font_headings;
@@ -198,21 +199,21 @@
       &__button {
         display: block;
         border-radius: 0.3em;
-        margin: 2em auto 0;
-        padding: 0.4em 2em;
+        margin: 1em auto 0;
+        padding: 0.8em 2em;
       }
     }
   }
   .tab__history {
     &__contents {
-      width: 100%;
+      
       .month_history {
         .month_title {
           font-weight: 400;
         }
         .days_cards_slider {
           display: flex;
-          margin-bottom: 3em;
+          margin-bottom: 1em;
           overflow-x: auto;
           padding: 1em 0em;
           width: 100%;
@@ -221,14 +222,14 @@
             background-color: $color_light;
             color: $color_dark;
             margin: 0em 0.2em;
-            padding: 0.3em 0.6em;
+            padding: 0.2em 0.5em;
             border-radius: 0.3em;
             text-align: center;
-            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.22);
+            box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.3);
             &.current_day{
                   background-color: $color_dark;
                   color: $color_light;
-                  transform: scale(1.1) translateY(-10px);
+                  transform: translateY(-1em);
                 }
             .day_title,
             .date_number {
@@ -237,7 +238,7 @@
             }
             .day_face {
               .day_img {
-                height: 3em;
+                height: 2em;
                 animation: shake;
                 animation-duration: 0.5s;
                 animation-timing-function: ease;
@@ -250,53 +251,35 @@
     }
   }
   .tab__info {
+    &__pseudo_text {
+      color: $color_light;
+      background-color: $color_dark;
+      padding: 1px 6px;
+      border-radius: 0.2em;
+      cursor: pointer;
+      display: none;
+      text-decoration: underline;
+    }
+    &__pseudo_form {
+      display: inline-block;
+      width: 2em;
+    }
+    &__pseudo_input {
+      border: none;
+      outline: 0;
+      color: inherit;
+      max-width: 50px;
+      padding: 5px 6px;
+      border-radius: 1px;
+      background: #f5ece7;
+      box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
+    }
+  
   }
 }
 
-// .header_contents {
-//   background-color: var(--foreground);
-//   color: var(--darkground);
-//   min-width: 250px;
-//   max-width: 600px;
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 
-//   .day_card.current_day{
-//       background-color: var(--foreground);
-//       color: var(--darkground);
-//       transform: scale(1.1) translateY(-10px);
-//   }
-//   .day_card.current_day div{
-//     color: var(--darkground);
-//   }
-//   .day_img{
-//     height: 40px;
-//     animation: shake;
-//     animation-duration: 0.5s;
-//     animation-timing-function: ease;
-//     animation-iteration-count: 0;
-//   }
-//   .tab__info__pseudo_text {
-//     color: var(--foreground);
-//     background-color: var(--darkground);
-//     padding: 1px 6px;
-//     border-radius: 2px;
-//     cursor: pointer;
-//     display: none;
-//   }
-//   .tab__info__pseudo_form {
-//     display: inline-block;
-//     width: 30px;
-//   }
-//   .tab__info__pseudo_input {
-//     border: none;
-//     outline: 0;
-//     color: inherit;
-//     max-width: 50px;
-//     padding: 5px 6px;
-//     border-radius: 1px;
-//     background: #f5ece7;
-//     box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
-//   }
+
+
+  

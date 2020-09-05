@@ -44,14 +44,14 @@
     -webkit-touch-callout: none;
   }
 
-// .sliders{
-  // @include breakpoint-up($size_mobile) {
-  //   max-width: $size_tablet;
-  // }
-  // @include breakpoint-up($size_tablet) {
-  //   max-width: $size_desktop;
-  // }
-  // @include breakpoint-up($size_desktop) {
-  //   max-width: $size_desktop;
-  // }
-// }
+.tabs{
+  @include breakpoint-up($size_mobile) {
+    max-width: $size_tablet;
+  }
+  @include breakpoint-up($size_tablet) {
+    max-width: $size_tablet;
+  }
+  @include breakpoint-up($size_desktop) {
+    max-width: $size_tablet;
+  }
+}

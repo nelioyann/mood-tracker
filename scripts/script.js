@@ -344,8 +344,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       labels: weekLabels,
       datasets: [
         {
-          label: "Stability",
-          stack: "stability",
+          label: "Stress",
+          stack: "Stress",
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
@@ -353,16 +353,16 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
         },
       
         {
-          label: "Construction",
-          stack: "Construction",
+          label: "Energy",
+          stack: "Energy",
           data: c_list,
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderColor: "rgba(54, 162, 235, 1)",
           borderWidth: 1,
         },
         {
-          label: "Wellness",
-          stack: "Wellness",
+          label: "Wellbeing",
+          stack: "Wellbeing",
 
           data: w_list,
           backgroundColor: "rgba(255, 206, 86, 0.2)",
@@ -384,7 +384,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
     options: {
       title: {
         display:true,
-        text:"Mood Chart"
+        text:"Your mood this month"
       },
       scales: {
         yAxes: [
@@ -410,4 +410,3 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
 makeHistory();
 
 
-// 

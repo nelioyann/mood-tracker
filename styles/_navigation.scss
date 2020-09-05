@@ -29,52 +29,9 @@
     background-color: #eee;
   }
   div.nav__link--active {
-    color: #009578;
+    fill: #009578;
   }
   .nav__icon {
-    font-size: 18px;
+    // font-size: 18px;
   }
-  @keyframes shake {
-    
-    
-    10% {
-      transform: translate(0, 0) rotate(0.5deg);
-    }
-    
-    20% {
-      transform: translate(0, 0) rotate(4.5deg);
-    }
-    
-    30% {
-      transform: translate(0, 0) rotate(5.5deg);
-    }
-    
-    40% {
-      transform: translate(0, 0) rotate(2.5deg);
-    }
- 
-    50% {
-      transform: translate(0, 0) rotate(-3.5deg);
-    }
-    
-    60% {
-      transform: translate(0, 0) rotate(-3.5deg);
-    }
   
-    70% {
-      transform: translate(0, 0) rotate(1.5deg);
-    }
-  
-    80% {
-      transform: translate(0, 0) rotate(-5.5deg);
-    }
-   
-    90% {
-      transform: translate(0, 0) rotate(-2.5deg);
-    }
-    
-    0%,
-    100% {
-      transform: translate(0, 0) rotate(0);
-    }
-  }

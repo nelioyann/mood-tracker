@@ -23,8 +23,8 @@ const assets = [
     "/images/dog7.png",
     "/images/dog8.png",
     "/images/dog9.png",
-    "/images/logo.svg",
     "/images/dog10.png",
+    "/images/logo.svg",
     "/fonts/patrick.ttf",
     "/fonts/roboto.ttf",
     "https://type.fit/api/quotes"

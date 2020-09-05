@@ -190,6 +190,11 @@ button:hover::before, .button:hover::before {
   padding-top: 0.5em;
 }
 
+.main .tabs__content {
+  width: 100%;
+  margin: auto;
+}
+
 .main .tab-secondary {
   display: none;
 }
@@ -280,7 +285,7 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today__greetings .greetings__title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: lighter;
   margin: 0 0 0.5em;
   font-family: "Patrick Hand", cursive;
@@ -400,12 +405,8 @@ button:hover::before, .button:hover::before {
 .main .tab__today .mood__form__button {
   display: block;
   border-radius: 0.3em;
-  margin: 2em auto 0;
-  padding: 0.4em 2em;
-}
-
-.main .tab__history__contents {
-  width: 100%;
+  margin: 1em auto 0;
+  padding: 0.8em 2em;
 }
 
 .main .tab__history__contents .month_history .month_title {
@@ -416,7 +417,7 @@ button:hover::before, .button:hover::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   overflow-x: auto;
   padding: 1em 0em;
   width: 100%;
@@ -427,18 +428,18 @@ button:hover::before, .button:hover::before {
   background-color: #f5ece7;
   color: #585a79;
   margin: 0em 0.2em;
-  padding: 0.3em 0.6em;
+  padding: 0.2em 0.5em;
   border-radius: 0.3em;
   text-align: center;
-  -webkit-box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.22);
-          box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card.current_day {
   background-color: #585a79;
   color: #f5ece7;
-  -webkit-transform: scale(1.1) translateY(-10px);
-          transform: scale(1.1) translateY(-10px);
+  -webkit-transform: translateY(-1em);
+          transform: translateY(-1em);
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card .day_title,
@@ -447,7 +448,7 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card .day_face .day_img {
-  height: 3em;
+  height: 2em;
   -webkit-animation: shake;
           animation: shake;
   -webkit-animation-duration: 0.5s;
@@ -456,6 +457,33 @@ button:hover::before, .button:hover::before {
           animation-timing-function: ease;
   -webkit-animation-iteration-count: 0;
           animation-iteration-count: 0;
+}
+
+.main .tab__info__pseudo_text {
+  color: #f5ece7;
+  background-color: #585a79;
+  padding: 1px 6px;
+  border-radius: 0.2em;
+  cursor: pointer;
+  display: none;
+  text-decoration: underline;
+}
+
+.main .tab__info__pseudo_form {
+  display: inline-block;
+  width: 2em;
+}
+
+.main .tab__info__pseudo_input {
+  border: none;
+  outline: 0;
+  color: inherit;
+  max-width: 50px;
+  padding: 5px 6px;
+  border-radius: 1px;
+  background: #f5ece7;
+  -webkit-box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
+          box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
 }
 
 .nav {
@@ -507,99 +535,7 @@ div.nav__link:hover {
 }
 
 div.nav__link--active {
-  color: #009578;
-}
-
-.nav__icon {
-  font-size: 18px;
-}
-
-@-webkit-keyframes shake {
-  10% {
-    -webkit-transform: translate(0, 0) rotate(0.5deg);
-            transform: translate(0, 0) rotate(0.5deg);
-  }
-  20% {
-    -webkit-transform: translate(0, 0) rotate(4.5deg);
-            transform: translate(0, 0) rotate(4.5deg);
-  }
-  30% {
-    -webkit-transform: translate(0, 0) rotate(5.5deg);
-            transform: translate(0, 0) rotate(5.5deg);
-  }
-  40% {
-    -webkit-transform: translate(0, 0) rotate(2.5deg);
-            transform: translate(0, 0) rotate(2.5deg);
-  }
-  50% {
-    -webkit-transform: translate(0, 0) rotate(-3.5deg);
-            transform: translate(0, 0) rotate(-3.5deg);
-  }
-  60% {
-    -webkit-transform: translate(0, 0) rotate(-3.5deg);
-            transform: translate(0, 0) rotate(-3.5deg);
-  }
-  70% {
-    -webkit-transform: translate(0, 0) rotate(1.5deg);
-            transform: translate(0, 0) rotate(1.5deg);
-  }
-  80% {
-    -webkit-transform: translate(0, 0) rotate(-5.5deg);
-            transform: translate(0, 0) rotate(-5.5deg);
-  }
-  90% {
-    -webkit-transform: translate(0, 0) rotate(-2.5deg);
-            transform: translate(0, 0) rotate(-2.5deg);
-  }
-  0%,
-  100% {
-    -webkit-transform: translate(0, 0) rotate(0);
-            transform: translate(0, 0) rotate(0);
-  }
-}
-
-@keyframes shake {
-  10% {
-    -webkit-transform: translate(0, 0) rotate(0.5deg);
-            transform: translate(0, 0) rotate(0.5deg);
-  }
-  20% {
-    -webkit-transform: translate(0, 0) rotate(4.5deg);
-            transform: translate(0, 0) rotate(4.5deg);
-  }
-  30% {
-    -webkit-transform: translate(0, 0) rotate(5.5deg);
-            transform: translate(0, 0) rotate(5.5deg);
-  }
-  40% {
-    -webkit-transform: translate(0, 0) rotate(2.5deg);
-            transform: translate(0, 0) rotate(2.5deg);
-  }
-  50% {
-    -webkit-transform: translate(0, 0) rotate(-3.5deg);
-            transform: translate(0, 0) rotate(-3.5deg);
-  }
-  60% {
-    -webkit-transform: translate(0, 0) rotate(-3.5deg);
-            transform: translate(0, 0) rotate(-3.5deg);
-  }
-  70% {
-    -webkit-transform: translate(0, 0) rotate(1.5deg);
-            transform: translate(0, 0) rotate(1.5deg);
-  }
-  80% {
-    -webkit-transform: translate(0, 0) rotate(-5.5deg);
-            transform: translate(0, 0) rotate(-5.5deg);
-  }
-  90% {
-    -webkit-transform: translate(0, 0) rotate(-2.5deg);
-            transform: translate(0, 0) rotate(-2.5deg);
-  }
-  0%,
-  100% {
-    -webkit-transform: translate(0, 0) rotate(0);
-            transform: translate(0, 0) rotate(0);
-  }
+  fill: #009578;
 }
 
 .container__section {
@@ -630,5 +566,23 @@ body {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+@media screen and (min-width: 375px) {
+  .tabs {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tabs {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .tabs {
+    max-width: 768px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
