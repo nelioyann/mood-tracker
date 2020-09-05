@@ -28,18 +28,18 @@ construction.addEventListener("input", (e) => {
   preview.style.filter = `grayscale(${1 - ((e.target.value - 1) * 1) / 10})`;
 });
 
-fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
+// fetch("https://type.fit/api/quotes")
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data) {
     
-    let index = Math.floor(Math.random() * Math.floor(data.length))
+//     let index = Math.floor(Math.random() * Math.floor(data.length))
     
-    document.querySelector(".quote__citation").innerHTML = data[index].text
-    let author = data[index].author == null ? "Someone famous" : data[index].author
-    document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
-  });
+//     document.querySelector(".quote__citation").innerHTML = data[index].text
+//     let author = data[index].author == null ? "Someone famous" : data[index].author
+//     document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
+//   });
 
 stability.addEventListener("input", (e) => {
   console.log("stability")
@@ -335,7 +335,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
     return null;
   }
   var ctx = document.querySelector(".weekChart").getContext("2d");
-  console.log(ctx);
+  // console.log(ctx);
   let total = []
   for (i=0; i<s_list.length; i++){
     total[i] = s_list[i] + c_list[i] + w_list[i]

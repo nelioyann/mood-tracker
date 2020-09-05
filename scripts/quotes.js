@@ -1,3 +1,4 @@
+
 let quotes = [
     {
       "text": "Genius is one percent inspiration and ninety-nine percent perspiration.",
@@ -6572,3 +6573,11 @@ let quotes = [
       "author": "Tom Jackson"
     }
   ]
+
+
+  let index = Math.floor(Math.random() * Math.floor(quotes.length))
+    
+  document.querySelector(".quote__citation").innerHTML = quotes[index].text
+  let author = quotes[index].author == null ? "Someone famous" : quotes[index].author
+  document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
+  

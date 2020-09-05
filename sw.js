@@ -1,16 +1,15 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v33"
+const staticCacheName = "site-static-v34"
 
 // Fichier qui seront cacher
 const assets = [
     '/',
     '/index.html',
-    '/style.css',
-    '/scripts/script.js',
+    'styles/style.css',
     '/scripts/dependencies/chart.js',
+    '/scripts/script.js',
     '/scripts/app.js',
-    '/scripts/push.js',
     "/images/icons/icon-72x72.png",
     "/images/icons/icon-144x144.png",
     "/images/icons/icon-152x152.png",
@@ -26,8 +25,6 @@ const assets = [
     "/images/dog10.png",
     "/images/logo.svg",
     "/fonts/patrick.ttf",
-    "/fonts/roboto.ttf",
-    "https://type.fit/api/quotes"
     
     
 ]
