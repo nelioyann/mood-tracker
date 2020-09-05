@@ -319,7 +319,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
           borderWidth: 1,
         },
         {
-          label: "Total",
+          label: "Overall Score",
           type: "line",
           stack: "total",
           data: total,
