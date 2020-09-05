@@ -28,18 +28,6 @@ construction.addEventListener("input", (e) => {
   preview.style.filter = `grayscale(${1 - ((e.target.value - 1) * 1) / 10})`;
 });
 
-// fetch("https://type.fit/api/quotes")
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(data) {
-    
-//     let index = Math.floor(Math.random() * Math.floor(data.length))
-    
-//     document.querySelector(".quote__citation").innerHTML = data[index].text
-//     let author = data[index].author == null ? "Someone famous" : data[index].author
-//     document.querySelector(".quote__author").innerHTML = `&#8211;${author}`
-//   });
 
 stability.addEventListener("input", (e) => {
   console.log("stability")
@@ -57,7 +45,6 @@ stability.addEventListener("input", (e) => {
 save_btn.addEventListener("click", (e) => {
   e.preventDefault()
   overlay.style.display = "block";
-  // console.log(overlay)
   save_mood();
 
 });
@@ -68,8 +55,6 @@ close_overlay.addEventListener("click", ()=>{
 nav_links.forEach((nav_link) => {
   nav_link.addEventListener("click", (e) => {
     let current_name = e.currentTarget.getAttribute("data-tab");
-    // let link_name = e.target.getAttribute("data-tab");
-    // console.log(e.target,current_name)
     e.preventDefault();
     nav_links.forEach((el) => el.classList.remove("nav__link--active"));
     document
@@ -78,7 +63,6 @@ nav_links.forEach((nav_link) => {
 
     tabs.forEach((tab) => (tab.style.display = "none"));
     document.querySelector(`.tab__${current_name}`).style.display = "flex";
-    // console.log(current_name);
     showChart(s_list, c_list, w_list, last_week_labels);
   });
 });
@@ -91,7 +75,6 @@ const pseudo_input = document.querySelector(".tab__info__pseudo_input");
 const pseudo_text = document.querySelector(".tab__info__pseudo_text");
 pseudo_form.addEventListener("submit", (e) => enregistrerSurnom(e));
 pseudo_form.addEventListener("focusout", (e) => enregistrerSurnom(e));
-// enregistrerSurnom(e)
 afficher_surnom();
 
 function enregistrerSurnom(event) {
@@ -124,7 +107,6 @@ function afficher_surnom() {
 
 const date_el = document.querySelector(".header_date");
 let today = new Date();
-// console.log(today);
 var dd = String(today.getDate()).padStart(2, "0");
 var mm = Intl.DateTimeFormat("en-US", { month: "long" }).format(today); //January is 0!
 var yyyy = today.getFullYear();
@@ -136,8 +118,6 @@ date_el.innerHTML = today;
 const temporary = () => {
   const date_ms = Date.now();
   var current_date = new Date(date_ms);
-  // console.log(typeof today);
-  // console.log(today);
   let current_month = current_date.getMonth();
   let current_year = current_date.getFullYear();
   let current_day = current_date.getDay();
@@ -173,36 +153,27 @@ const save_mood = () => {
     b: current_wellness,
   };
   // recupere les 3 valeurs de la date
-  // const date_ms = Date.now();
   let today = new Date();
-  // console.log(typeof today);
-  // console.log(today);
   let current_month = today.getMonth();
   let current_year = today.getFullYear();
   let current_day = today.getDay();
   let current_date = today.getDate();
 
   let stored_moods = getFromStorage("moods");
-  // console.log(stored_moods)
   let year_entry = stored_moods[current_year] ? stored_moods[current_year] : {};
   let month_entry = year_entry[current_month] ? year_entry[current_month] : {};
   let date_entry = current_mood;
-  // let date_obj = {}
-  // date_obj[]
   month_entry[current_date] = date_entry;
   year_entry[current_month] = month_entry;
   stored_moods[current_year] = year_entry;
 
   saveInStorage("moods", stored_moods);
-//   alert("265");
   makeHistory();
-//   alert("post hist");
 };
 
 const getFromStorage = (key) => {
   // Recuperer les cartes du local Storage labelé key s'il existe, sinon renvoyé un objet vide
   let valeurText = localStorage[key] ? localStorage[key] : "{}";
-  // console.log("object")
   // Conversion de la chaine de caractères en objet Javascript
   let valeur = JSON.parse(valeurText);
   return valeur;
@@ -218,8 +189,6 @@ const saveInStorage = (clé, nouvelleValeur) => {
 
 const makeHistory = () => {
   let stored_moods = getFromStorage("moods");
-  // console.log(stored_moods);
-//   alert("290")
   let today = new Date();
   let current_year = today.getFullYear();
   let current_month = parseInt(today.getMonth());
@@ -234,7 +203,6 @@ const makeHistory = () => {
   var weekCanvas = makeElement("div", "chartContainer", "");
   let cvs = makeElement("canvas", "weekChart", "");
   weekCanvas.appendChild(cvs);
-//   alert("307")
   let history_wrapper = makeElement("div", "month_history", "");
 
   if (
@@ -256,11 +224,8 @@ const makeHistory = () => {
   c_list = [];
   w_list = [];
   last_week_labels = [];
-//   alert("329")
   for (date in stored_moods[current_year][current_month]) {
-//   alert("331")
 
-    // console.log(date);
     let stability = parseInt(
       stored_moods[current_year][current_month][date]["s"]
     );
@@ -270,30 +235,19 @@ const makeHistory = () => {
     let wellness = parseInt(
       stored_moods[current_year][current_month][date]["b"]
     );
-	// alert("343")
 
     s_list.push(stability);
     c_list.push(construction);
     w_list.push(wellness);
-    // last_week_data.push(stability+construction+wellness)
     last_week_labels.push(`${date} ${current_monthtxt}`);
-	// alert("350")
-    // let temp_date = new Date(`${current_year}-${current_month + 1}-${date}`);
     let temp_date = new Date(current_year, current_month, date);
-	// console.log(temp_date);
-	// alert("354")
 	
-    // console.log(Intl.DateTimeFormat("en-US", {weekday: "long"}).format(temp_date));
-	// temp_date = new Date()
 	let temp_weekday = Intl.DateTimeFormat("en-US", {weekday: "short"}).format(temp_date);
 	
 
-	// alert("360")
 
     let day_card = makeElement("div", "day_card", "");
     if (current_date == date) day_card.classList.add("current_day");
-    // console.log(typeof date)
-    // day_card.classList.add()
     let day_title = makeElement("div", "day_title", temp_weekday);
     let date_number = makeElement("div", "date_number", date);
     let day_face = makeElement("div", "day_face", "");
@@ -305,22 +259,15 @@ const makeHistory = () => {
     day_card.appendChild(day_title);
     day_card.appendChild(date_number);
     day_card.appendChild(day_face);
-    // days_slider.appendChild(day_card)
     days_slider.insertBefore(day_card, days_slider.firstChild);
-	// alert("380")
     
   }
-//   alert("383")
 
-  // console.log(last_week_labels);
   history_tab.innerHTML = "";
   history_tab.appendChild(history_wrapper);
-  // console.log(weekCanvas);
   history_tab.appendChild(weekCanvas);
 
-  // <canvas id="myChart"></canvas>
-  // console.log(history_wrapper);
-//   console.log("393")
+
 };
 
 const makeElement = (balise, classe, texte) => {
