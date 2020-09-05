@@ -42,10 +42,12 @@ fetch("https://type.fit/api/quotes")
   });
 
 stability.addEventListener("input", (e) => {
+  console.log("stability")
   preview_imgs.forEach((el) => el.classList.remove("mood__image"));
   void preview.offsetWidth; // trigger a DOM reflow
   preview_imgs.forEach((el) => el.classList.add("mood__image"));
   let new_value = 10 - e.target.value;
+  console.log(new_value)
   preview_imgs.forEach(
     (el) => (el.style.animationIterationCount = `${new_value}`)
   );

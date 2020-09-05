@@ -155,7 +155,7 @@ button:hover::before, .button:hover::before {
           box-shadow: 0 1px 3px rgba(88, 90, 121, 0.1);
   position: sticky;
   position: -webkit-sticky;
-  padding: 0em 1.5em;
+  padding: 0em 1em;
 }
 
 .header__banner {
@@ -163,7 +163,7 @@ button:hover::before, .button:hover::before {
 }
 
 .header__banner__logo {
-  padding: 0.3em;
+  padding: 0.2em;
 }
 
 .header__banner__logo__image {
@@ -172,7 +172,7 @@ button:hover::before, .button:hover::before {
 }
 
 .header__banner__logo__brand {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: lighter;
   font-family: "Patrick Hand", cursive;
 }
@@ -186,7 +186,16 @@ button:hover::before, .button:hover::before {
       -ms-flex-positive: 1;
           flex-grow: 1;
   position: relative;
-  padding: 0em 1.5em;
+  padding: 0em 2em;
+  border-right: 0.4em solid #585a79;
+  border-left: 0.4em solid #585a79;
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    border-left: none;
+    border-bottom: 0.4em solid #585a79;
+  }
 }
 
 .main .tabs {
@@ -213,7 +222,7 @@ button:hover::before, .button:hover::before {
   z-index: 5;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background-color: rgba(88, 90, 121, 0.52);
+  background-color: rgba(88, 90, 121, 0.5);
 }
 
 .main .tab__today__overlay .quote {
@@ -442,8 +451,8 @@ button:hover::before, .button:hover::before {
 .main .tab__history__contents .month_history .days_cards_slider .day_card.current_day {
   background-color: #585a79;
   color: #f5ece7;
-  -webkit-transform: translateY(-1em);
-          transform: translateY(-1em);
+  -webkit-transform: translateY(-0.5em);
+          transform: translateY(-0.5em);
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card .day_title,
@@ -556,6 +565,70 @@ div.nav__link:hover {
 div.nav__link--active {
   fill: #DD9534;
   color: #DD9534;
+}
+
+@-webkit-keyframes shake {
+  2% {
+    -webkit-transform: translate(0, 0) rotate(0.5deg);
+            transform: translate(0, 0) rotate(0.5deg);
+  }
+  10% {
+    -webkit-transform: translate(0, 0) rotate(0.5deg);
+            transform: translate(0, 0) rotate(0.5deg);
+  }
+  30% {
+    -webkit-transform: translate(0, 0) rotate(5.5deg);
+            transform: translate(0, 0) rotate(5.5deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 0) rotate(-3.5deg);
+            transform: translate(0, 0) rotate(-3.5deg);
+  }
+  70% {
+    -webkit-transform: translate(0, 0) rotate(1.5deg);
+            transform: translate(0, 0) rotate(1.5deg);
+  }
+  90% {
+    -webkit-transform: translate(0, 0) rotate(-2.5deg);
+            transform: translate(0, 0) rotate(-2.5deg);
+  }
+  0%,
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0);
+            transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes shake {
+  2% {
+    -webkit-transform: translate(0, 0) rotate(0.5deg);
+            transform: translate(0, 0) rotate(0.5deg);
+  }
+  10% {
+    -webkit-transform: translate(0, 0) rotate(0.5deg);
+            transform: translate(0, 0) rotate(0.5deg);
+  }
+  30% {
+    -webkit-transform: translate(0, 0) rotate(5.5deg);
+            transform: translate(0, 0) rotate(5.5deg);
+  }
+  50% {
+    -webkit-transform: translate(0, 0) rotate(-3.5deg);
+            transform: translate(0, 0) rotate(-3.5deg);
+  }
+  70% {
+    -webkit-transform: translate(0, 0) rotate(1.5deg);
+            transform: translate(0, 0) rotate(1.5deg);
+  }
+  90% {
+    -webkit-transform: translate(0, 0) rotate(-2.5deg);
+            transform: translate(0, 0) rotate(-2.5deg);
+  }
+  0%,
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0);
+            transform: translate(0, 0) rotate(0);
+  }
 }
 
 .container__section {

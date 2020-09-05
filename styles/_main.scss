@@ -1,8 +1,13 @@
 .main {
   flex-grow: 1;
   position: relative;
-  padding: 0em 1.5em;
-
+  padding: 0em 2em;
+  border-right: 0.4em solid $color_dark;
+  border-left: 0.4em solid $color_dark;
+  @include breakpoint-up($size_desktop) {
+    border-left: none;
+    border-bottom: 0.4em solid $color_dark;
+  }
   .tabs {
     width: 100%;
     padding-top: 0.5em;
@@ -24,7 +29,7 @@
       display: none;
       z-index: 5;
       backdrop-filter: blur(5px);
-      background-color: rgba($color_dark, 0.52);
+      background-color: rgba($color_dark, 0.5);
       .quote {
         top: 50%;
         left: 50%;
@@ -231,7 +236,7 @@
             &.current_day{
                   background-color: $color_dark;
                   color: $color_light;
-                  transform: translateY(-1em);
+                  transform: translateY(-0.5em);
                 }
             .day_title,
             .date_number {
