@@ -346,8 +346,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       labels: weekLabels,
       datasets: [
         {
-          label: "Stress",
-          stack: "Stress",
+          label: "Tranquility",
+          stack: "Tranquility",
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
