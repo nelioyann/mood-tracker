@@ -331,6 +331,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       ],
     },
     options: {
+      maintainAspectRatio: false,
+
       title: {
         display:true,
         text:"Your mood this month"
@@ -355,6 +357,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       },
     },
   });
+  ctx.style.height = "40vh"
+  console.log()
 };
 makeHistory();
 

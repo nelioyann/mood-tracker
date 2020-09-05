@@ -472,6 +472,10 @@ button:hover::before, .button:hover::before {
           animation-iteration-count: 0;
 }
 
+.main .tab__history__contents .chartContainer {
+  height: 50vh;
+}
+
 .main .tab__info__pseudo_text {
   color: #f5ece7;
   background-color: #585a79;
@@ -678,7 +682,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
   font-family: "Patrick Hand", cursive;
   color: #585a79;
   -webkit-user-select: none;
