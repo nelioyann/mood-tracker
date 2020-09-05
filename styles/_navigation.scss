@@ -58,7 +58,7 @@
   }
   div.nav__link--active {
     fill: $color_primary;
-    color: $color_primary;
+    color: lighten($color: $color_primary, $amount: 30);
     
     @include breakpoint-up($size_desktop) {
       transform: translateX(0%);
@@ -67,9 +67,10 @@
 
 
   }
-  // .nav__text {
-  //   font-size: 1em;
-  // }
+  .nav__text {
+    font-size: 1em;
+    // font-weight: bold;
+  }
   @keyframes shake {
     2% {
       transform: translate(0, 0) rotate(0.5deg);

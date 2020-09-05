@@ -408,8 +408,8 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today .mood__form .sliders__labels {
-  color: rgba(88, 90, 121, 0.7);
-  font-size: 0.8em;
+  color: rgba(88, 90, 121, 0.9);
+  font-size: 0.9em;
   padding: 0;
   margin-bottom: 2em;
   width: 100%;
@@ -579,7 +579,7 @@ div.nav__link:hover {
 
 div.nav__link--active {
   fill: #DD9534;
-  color: #DD9534;
+  color: #f3d9b7;
 }
 
 @media screen and (min-width: 1024px) {
@@ -587,6 +587,10 @@ div.nav__link--active {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
+}
+
+.nav__text {
+  font-size: 1em;
 }
 
 @-webkit-keyframes shake {
