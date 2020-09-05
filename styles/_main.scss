@@ -5,8 +5,10 @@
   border-right: 0.4em solid $color_dark;
   border-left: 0.4em solid $color_dark;
   @include breakpoint-up($size_desktop) {
-    border-left: none;
+    // border-left: none;
     border-bottom: 0.4em solid $color_dark;
+  border-right: 0.4em solid $color_dark;
+
   }
   .tabs {
     width: 100%;

@@ -4,50 +4,68 @@
     width: 100%;
     height: 4em;
     // box-shadow: 0 0 3px rgba($color_light, 0.2);
-    background-color: $color_dark;
+
     display: flex;
     overflow-x: auto;
     @include breakpoint-up($size_desktop) {
       // max-width: $size_tablet;
       position: absolute;
       flex-direction: column;
-      height: 100%;
+      height: 15em;
       max-width: 4em;
+      left: 0.4em;
       top: 10vh;
-      border-radius: 0 0.2em 0.2em 0;
       padding: 0;
+    gap: 0.1em 0em;
+
       // bottom: -50%;
     }
   }
   div.nav__link {
+    background-color: $color_dark;
+    
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    min-width: 50px;
+    min-width: 4em;
     overflow: hidden;
     white-space: nowrap;
-    font-family: sans-serif;
     font-size: 0.8em;
     color: $color_light;
     fill: $color_light;
     text-decoration: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     @include breakpoint-up($size_desktop) {
-
+      transform: translateX(-70%);
+    border-radius: 0 0.3em 0.3em 0;
     }
   }
   div.nav__link:hover {
     // background-color: $color_light;
     color: $color_primary;
     fill: $color_primary;
+    // transform: translateX(0%);
+    @include breakpoint-up($size_desktop) {
+      transform: translateX(0%);
+
+    }
+
   }
   div.nav__link--active {
     fill: $color_primary;
     color: $color_primary;
+    
+    @include breakpoint-up($size_desktop) {
+      transform: translateX(0%);
+
+    }
+
+
   }
   // .nav__text {
   //   font-size: 1em;
