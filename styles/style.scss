@@ -9,7 +9,6 @@
 .container__section {
   margin: auto;
   width: 100%;
-  padding: 0em 1.5em;
 
 
   // @include breakpoint-up($size_mobile) {
@@ -26,6 +25,7 @@
 .container {
     min-height: 100vh;
     width: 100%;
+
     // display: flex;
     // flex-direction: column;
     // background-color: #fff;
@@ -36,6 +36,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    // box-sizing: border-box;
     min-height: 100vh;
     font-family: $font_headings;
     color: $color_dark;
@@ -44,7 +46,7 @@
     -webkit-touch-callout: none;
   }
 
-.tabs{
+.tabs, .header__banner{
   @include breakpoint-up($size_mobile) {
     max-width: $size_tablet;
   }

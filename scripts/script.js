@@ -65,9 +65,9 @@ close_overlay.addEventListener("click", ()=>{
 })
 nav_links.forEach((nav_link) => {
   nav_link.addEventListener("click", (e) => {
-    let current_name = e.target.getAttribute("data-tab");
+    let current_name = e.currentTarget.getAttribute("data-tab");
     // let link_name = e.target.getAttribute("data-tab");
-
+    // console.log(e.target,current_name)
     e.preventDefault();
     nav_links.forEach((el) => el.classList.remove("nav__link--active"));
     document
