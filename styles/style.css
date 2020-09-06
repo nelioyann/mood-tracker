@@ -97,6 +97,7 @@ ul {
 }
 
 button, .button {
+  font-family: "Patrick Hand", cursive;
   position: relative;
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -374,8 +375,8 @@ button:hover::before, .button:hover::before {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
   outline: none;
   background: #f5ece7;
   cursor: pointer;
@@ -413,6 +414,7 @@ button:hover::before, .button:hover::before {
   border-radius: 0.3em;
   margin: 1em auto 0;
   padding: 0.8em 2em;
+  font-size: 0.8em;
 }
 
 .main .tab__history__contents .month_history .month_title {
@@ -665,10 +667,11 @@ button:hover::before, .button:hover::before {
 .container {
   min-height: 100vh;
   width: 100%;
+  background-color: #f5ece7;
 }
 
 body {
-  background-color: #f5ece7;
+  background-color: #585a79;
   min-height: 100vh;
   font-family: "Patrick Hand", cursive;
   color: #585a79;

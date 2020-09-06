@@ -14,10 +14,12 @@
 .container {
     min-height: 100vh;
     width: 100%;
+    background-color: $color_light;
+
   }
 
   body {
-    background-color: $color_light;
+    background-color: $color_dark;
     min-height: 100vh;
     font-family: $font_headings;
     color: $color_dark;

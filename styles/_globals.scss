@@ -60,6 +60,7 @@ ul{
 }
 
 button, .button {
+	font-family: $font_headings;
 	position: relative;
 	display: inline-block;
 	padding: 0.8rem 2rem;
@@ -69,6 +70,7 @@ button, .button {
 	background-color: $color_dark;
 	color: $color_light;
 	font-weight: 400;  
+	
 	// font-size: $font-sm;  
 	transition: opacity 300ms ease-in-out;
 	overflow: hidden;
