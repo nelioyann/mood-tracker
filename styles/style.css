@@ -270,7 +270,6 @@ button:hover::before, .button:hover::before {
   position: absolute;
   top: 0.5em;
   right: 1em;
-  /* background-color: var(--darkground); */
   border-radius: 5px;
   color: #f5ece7;
   height: 22px;
