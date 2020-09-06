@@ -310,13 +310,6 @@ button:hover::before, .button:hover::before {
   display: none;
 }
 
-.main .tab__today__greetings .pwa_access__button {
-  text-decoration: none;
-  cursor: pointer;
-  display: none;
-  font-size: 0.7rem;
-}
-
 .main .tab__today .mood__preview {
   width: 5em;
   height: 5em;
@@ -476,7 +469,7 @@ button:hover::before, .button:hover::before {
   height: 50vh;
 }
 
-.main .tab__info__pseudo_text {
+.main .tab__info__pseudo_text, .main .tab__info .highlighted {
   color: #f5ece7;
   background-color: #585a79;
   padding: 1px 6px;
@@ -501,6 +494,22 @@ button:hover::before, .button:hover::before {
   background: #f5ece7;
   -webkit-box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
           box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
+}
+
+.main .tab__info .pwa_access__button {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.main .tab__info .pwa_access .install_prompt, .main .tab__info .pwa_access .push_prompt {
+  padding: 0.4em 1em;
+}
+
+.main .tab__info .copyright__link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: lighter;
 }
 
 .navigation {

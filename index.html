@@ -79,10 +79,7 @@
             </h1>
             <span class="greetings__text"> How're you feeling today ?</span>
           </div>
-          <div class="pwa_access">
-            <button class="pwa_access__button install_prompt">Install on device</button>
-            <button class="pwa_access__button push_prompt">Allow Push Notifications</button>
-          </div>
+          
         </div>
         <div class="mood__preview">
           <div id="mood_images" class="mood__preview__images">
@@ -172,15 +169,23 @@
             <form class="tab__info__pseudo_form">
               <input type="text" class="tab__info__pseudo_input" placeholder="insert" />
             </form>
-            Can I change it?
+            . Can I change it?
           </h4>
           <p>
             Click on the underlined alias above to
             do just that.
           </p>
-          <p>The results of this mood tracker are for reference only and do not rely on any scientific findings </p>
-          <h4>Community (coming soon)</h4>
-          <p>Share your mood and see how others feel today</p>
+          <h4>Validity of this scale</h4>
+          <p>The results of this mood tracker are for reference only and do not rely on any scientific findings. </p>
+          <!-- <h4>Community (coming soon)</h4> -->
+          <!-- <p>Share your mood and see how others feel today</p> -->
+          <h4>Keep this beautiful app on your homescreen </h4>
+          <div class="pwa_access">
+            <button class="pwa_access__button install_prompt">Install on device</button>
+            <button class="pwa_access__button push_prompt">Allow Push Notifications</button>
+          </div>
+          <h4>Copyright</h4>
+          <p>© 2020 <a class="copyright__link highlighted" target="_blank" href="https://yannicknana.fr">Yannick Nana</a>.  All rights reserved.</p>
         </div>
       </div>
       <!-- <canvas class="weekChart"></canvas> -->
@@ -225,6 +230,7 @@
   <script defer src="./scripts/dependencies/chart.min.js"></script>
   <script defer src="./scripts/script.js"></script>
   <script defer src="./scripts/quotes.js"></script>
+  <script defer src="./scripts/push.js"></script>
 
 </body>
 

@@ -109,19 +109,7 @@
           display: none;
         }
       }
-      .pwa_access {
-        &__button {
-          // background-color: $color_dark;
-          // color: $color_light;
-          // padding: 5px;
-          // margin: 0 0 1em;
-          text-decoration: none;
-          cursor: pointer;
-          display: none;
-          font-size: 0.7rem;
-          // border-radius: 3px;
-        }
-      }
+      
     }
     .mood__preview {
       width: 5em;
@@ -263,7 +251,7 @@
     }
   }
   .tab__info {
-    &__pseudo_text {
+    &__pseudo_text, .highlighted {
       color: $color_light;
       background-color: $color_dark;
       padding: 1px 6px;
@@ -285,6 +273,27 @@
       border-radius: 1px;
       background: #f5ece7;
       box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
+    }
+    .pwa_access {
+      &__button {
+        // background-color: $color_dark;
+        // color: $color_light;
+        // padding: 5px;
+        // margin: 0 0 1em;
+        text-decoration: none;
+        cursor: pointer;
+        // display: none;
+        font-size: 0.8em;
+        // border-radius: 3px;
+      }
+      .install_prompt, .push_prompt{
+        padding: 0.4em 1em;
+      }
+    }
+    .copyright__link{
+      display: inline-block;
+      text-decoration: none;
+      font-weight: lighter;
     }
   
   }
