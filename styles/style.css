@@ -490,7 +490,8 @@ button:hover::before, .button:hover::before {
   border: none;
   outline: 0;
   color: inherit;
-  max-width: 50px;
+  font-size: 1em;
+  max-width: 4em;
   padding: 5px 6px;
   border-radius: 1px;
   background: #f5ece7;
