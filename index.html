@@ -214,26 +214,30 @@
 
     </nav>
   </div>
-  <!--  -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-  <script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 
-    var firebaseConfig = {
-      apiKey: "AIzaSyCIVRHzGGcAbhPeOzAudc_d3sImjZaZi4A",
-      authDomain: "mood-tracker-f7525.firebaseapp.com",
-      databaseURL: "https://mood-tracker-f7525.firebaseio.com",
-      projectId: "mood-tracker-f7525",
-      storageBucket: "mood-tracker-f7525.appspot.com",
-      messagingSenderId: "425666970841",
-      appId: "1:425666970841:web:a3d7d02accd44c4774eac8"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 
-    
-  </script> -->
-  <script defer src="./scripts/app.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCIVRHzGGcAbhPeOzAudc_d3sImjZaZi4A",
+    authDomain: "mood-tracker-f7525.firebaseapp.com",
+    databaseURL: "https://mood-tracker-f7525.firebaseio.com",
+    projectId: "mood-tracker-f7525",
+    storageBucket: "mood-tracker-f7525.appspot.com",
+    messagingSenderId: "425666970841",
+    appId: "1:425666970841:web:a3d7d02accd44c4774eac8",
+    measurementId: "G-JX0FQ9QLYF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  <!-- <script defer src="./scripts/app.js"></script> -->
   <script defer src="./scripts/dependencies/chart.min.js"></script>
   <script defer src="./scripts/script.js"></script>
   <script defer src="./scripts/quotes.js"></script>

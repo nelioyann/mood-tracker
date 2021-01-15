@@ -1,7 +1,7 @@
 :root {
 	// font-size: 16px;
 	@include breakpoint-up($size_mobile_small) {
-		font-size: 13px;
+		font-size: 14px;
 	}
 	@include breakpoint-up($size_mobile) {
 		font-size: 16px;
