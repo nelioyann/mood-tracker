@@ -31,9 +31,15 @@
       display: none;
       z-index: 5;
       backdrop-filter: blur(5px);
-      background-color: rgba($color_dark, 0.5);
+      background-color: rgba($color_dark, 0.25);
+      iframe{
+        width: 50%;
+        max-width: 300px;
+        height: 50%;
+        margin: auto;
+      }
       .quote {
-        top: 50%;
+        top: 20%;
         left: 50%;
         background-color: $color_light;
         color: $color_dark;
@@ -43,6 +49,7 @@
         border-radius: 3px;
         position: relative;
         padding: 0.5em;
+        text-align: center;
         &__headings {
           display: block;
           margin: auto;
@@ -53,10 +60,12 @@
         }
         &__citation {
           font-family: $font_headings;
+          margin: 1em 0 0;
         }
         &__author {
           font-size: 0.8rem;
-          font-style: italic;
+          // font-style: italic;
+          color: $color_primary;
           opacity: 0.8;
           width: 100%;
           margin-left: 1em;
@@ -95,7 +104,7 @@
         &__title {
           font-size: 1rem;
           font-weight: lighter;
-          margin: 0 0 0.5em;
+          margin: 0 0 0.1em;
           font-family: $font_headings;
 
           // &__pseudo{
@@ -104,8 +113,8 @@
         }
         &__text {
           font-family: $font_headings;
-          font-size: 1rem;
-          display: none;
+          font-size: 0.9rem;
+          // display: none;
         }
       }
       
@@ -142,9 +151,11 @@
     .mood__form {
       .sliders {
         &__question {
-          margin-top: 1em;
+          margin-top: 0.3em;
           font-size: 1em;
           font-weight: 300;
+          display: block;
+          text-align: center;
         }
         &__input {
           -webkit-appearance: none;
@@ -200,7 +211,7 @@
         display: block;
         border-radius: 0.3em;
         margin: 1em auto 0;
-        padding: 0.8em 2em;
+        padding: 0.4em 1em;
         font-size: 0.8em;
       }
     }

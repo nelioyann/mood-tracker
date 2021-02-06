@@ -10,9 +10,7 @@ const assets = [
     '/scripts/dependencies/chart.js',
     '/scripts/script.js',
     '/scripts/app.js',
-    "/images/icons/icon-72x72.png",
-    "/images/icons/icon-144x144.png",
-    "/images/icons/icon-152x152.png",
+
     "/images/dog1.png",
     "/images/dog2.png",
     "/images/dog3.png",

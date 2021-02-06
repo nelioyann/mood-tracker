@@ -8,13 +8,23 @@
     src: url(../fonts/roboto.ttf);
     font-display: swap;
   }
+  @font-face {
+    font-family: "VT323";
+    src: url(../fonts/VT323-Regular.ttf);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "PTSans";
+    src: url(../fonts/PTSans-Regular.ttf);
+    font-display: swap;
+  }
 
-$color_dark: #585a79;
+$color_dark: rgb(88, 90, 121);
 $color_light: #f5ece7;
 $color_primary: #DD9534;
 
-$font_headings: "Patrick Hand", cursive;
-$font_body: Roboto, sans-serif;
+$font_headings: VT323, cursive;
+$font_body: PTSans, sans-serif;
 
 $size_thumb: 1.6em;
 

@@ -10,6 +10,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "VT323";
+  src: url(../fonts/VT323-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PTSans";
+  src: url(../fonts/PTSans-Regular.ttf);
+  font-display: swap;
+}
+
 @media screen and (min-width: 320px) {
   :root {
     font-size: 14px;
@@ -97,7 +109,7 @@ ul {
 }
 
 button, .button {
-  font-family: "Patrick Hand", cursive;
+  font-family: VT323, cursive;
   position: relative;
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -175,7 +187,7 @@ button:hover::before, .button:hover::before {
 .header__banner__logo__brand {
   font-size: 1em;
   font-weight: lighter;
-  font-family: "Patrick Hand", cursive;
+  font-family: VT323, cursive;
 }
 
 .header__banner__date {
@@ -223,11 +235,18 @@ button:hover::before, .button:hover::before {
   z-index: 5;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background-color: rgba(88, 90, 121, 0.5);
+  background-color: rgba(88, 90, 121, 0.25);
+}
+
+.main .tab__today__overlay iframe {
+  width: 50%;
+  max-width: 300px;
+  height: 50%;
+  margin: auto;
 }
 
 .main .tab__today__overlay .quote {
-  top: 50%;
+  top: 20%;
   left: 50%;
   background-color: #f5ece7;
   color: #585a79;
@@ -240,6 +259,7 @@ button:hover::before, .button:hover::before {
   border-radius: 3px;
   position: relative;
   padding: 0.5em;
+  text-align: center;
 }
 
 .main .tab__today__overlay .quote__headings {
@@ -254,12 +274,13 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today__overlay .quote__citation {
-  font-family: "Patrick Hand", cursive;
+  font-family: VT323, cursive;
+  margin: 1em 0 0;
 }
 
 .main .tab__today__overlay .quote__author {
   font-size: 0.8rem;
-  font-style: italic;
+  color: #DD9534;
   opacity: 0.8;
   width: 100%;
   margin-left: 1em;
@@ -300,14 +321,13 @@ button:hover::before, .button:hover::before {
 .main .tab__today__greetings .greetings__title {
   font-size: 1rem;
   font-weight: lighter;
-  margin: 0 0 0.5em;
-  font-family: "Patrick Hand", cursive;
+  margin: 0 0 0.1em;
+  font-family: VT323, cursive;
 }
 
 .main .tab__today__greetings .greetings__text {
-  font-family: "Patrick Hand", cursive;
-  font-size: 1rem;
-  display: none;
+  font-family: VT323, cursive;
+  font-size: 0.9rem;
 }
 
 .main .tab__today .mood__preview {
@@ -350,9 +370,11 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today .mood__form .sliders__question {
-  margin-top: 1em;
+  margin-top: 0.3em;
   font-size: 1em;
   font-weight: 300;
+  display: block;
+  text-align: center;
 }
 
 .main .tab__today .mood__form .sliders__input {
@@ -414,7 +436,7 @@ button:hover::before, .button:hover::before {
   display: block;
   border-radius: 0.3em;
   margin: 1em auto 0;
-  padding: 0.8em 2em;
+  padding: 0.4em 1em;
   font-size: 0.8em;
 }
 
@@ -675,7 +697,7 @@ button:hover::before, .button:hover::before {
 body {
   background-color: #585a79;
   min-height: 100vh;
-  font-family: "Patrick Hand", cursive;
+  font-family: VT323, cursive;
   color: #585a79;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
