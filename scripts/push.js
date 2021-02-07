@@ -47,7 +47,7 @@ function displayNotification(title, body, tag) {
         var options = {
           body: body,
           tag: tag,
-          icon: "/images/icons/icon-72x72.png",
+          icon: "/images/icons/apple-icon-180.png",
           vibrate: [100, 50, 100],
           data: {
             dateOfArrival: Date.now(),
