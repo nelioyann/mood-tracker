@@ -494,6 +494,10 @@ button:hover::before, .button:hover::before {
   height: 50vh;
 }
 
+.main .tab__info #container > a.spline-watermark {
+  display: none;
+}
+
 .main .tab__info__pseudo_text, .main .tab__info .highlighted {
   color: #f5ece7;
   background-color: #585a79;

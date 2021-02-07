@@ -266,6 +266,9 @@
     }
   }
   .tab__info {
+    #container > a.spline-watermark{
+      display: none;
+    }
     &__pseudo_text, .highlighted {
       color: $color_light;
       background-color: $color_dark;
