@@ -209,7 +209,7 @@ const makeHistory = () => {
     !stored_moods[current_year] ||
     !stored_moods[current_year][current_month]
   ) {
-    history_tab.innerHTML = "<h4>No entry yet for this month</h4>";
+    history_tab.innerHTML = "<h4>No entry yet for this month. Save your mood today to see more details here</h4>";
     return null;
   }
   let month_title = makeElement(

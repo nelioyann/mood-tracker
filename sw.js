@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v46"
+const staticCacheName = "site-static-v47"
 
 // Fichier qui seront cacher
 const assets = [
@@ -10,7 +10,9 @@ const assets = [
     '/scripts/dependencies/chart.js',
     '/scripts/script.js',
     '/scripts/app.js',
-
+    'https://my.spline.design/thisisfine-4e3aa9057db4171671eb6fd4aec4f048/js/scene.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js',
+    'https://cdn.spline.design/lib/anime.min.js',
     "/images/dog1.png",
     "/images/dog2.png",
     "/images/dog3.png",

@@ -411,6 +411,7 @@ button:hover::before, .button:hover::before {
   width: 1.6em;
   height: 1.6em;
   border-radius: 0% 100% 47% 53% / 0% 62% 38% 100%;
+  cursor: pointer;
   background: #f5ece7;
   box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
   outline: 0;
@@ -703,6 +704,9 @@ body {
   min-height: 100vh;
   font-family: VT323, cursive;
   color: #585a79;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;

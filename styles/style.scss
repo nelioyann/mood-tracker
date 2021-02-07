@@ -23,6 +23,7 @@
     min-height: 100vh;
     font-family: $font_headings;
     color: $color_dark;
+    user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
