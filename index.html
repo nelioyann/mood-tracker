@@ -134,7 +134,25 @@
         </div>
         <form class="mood__form">
           <div class="sliders">
-            <label class="sliders__question" for="stability">Tranquility</label>
+            <label class="sliders__question" for="wellness">Wellbeing</label>
+            <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10" step="1">
+            <ul class="sliders__numbers flex flex-jc-sb">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+            </ul>
+            <div class="sliders__labels flex flex-jc-sb">
+              <span>feeling down</span>
+              <span>enthusiastic</span>
+            </div>
+            <label class="sliders__question" for="stability">Stress</label>
             <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1">
             <ul class="sliders__numbers flex flex-jc-sb">
               <li>1</li>
@@ -170,24 +188,7 @@
               <span>exhausted</span>
               <span>energetic</span>
             </div>
-            <label class="sliders__question" for="wellness">Wellbeing</label>
-            <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10" step="1">
-            <ul class="sliders__numbers flex flex-jc-sb">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-            <div class="sliders__labels flex flex-jc-sb">
-              <span>feeling down</span>
-              <span>enthusiastic</span>
-            </div>
+            
           </div>
           <button class="mood__form__button">Save this mood</button>
         </form>
