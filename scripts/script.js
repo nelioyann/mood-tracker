@@ -101,6 +101,7 @@ function afficher_surnom() {
   pseudo_text.style.display = "inline-block";
   pseudo_text.addEventListener("click", function () {
     pseudo_text.style.display = "none";
+    pseudo_input.value = pseudo
     pseudo_form.style.display = "inline-block";
   });
 }

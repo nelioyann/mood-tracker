@@ -258,7 +258,7 @@ button:hover::before, .button:hover::before {
           transform: translate(-50%, -50%);
   border-radius: 3px;
   position: relative;
-  padding: 0.5em;
+  padding: 1.5em;
   text-align: center;
 }
 
@@ -280,10 +280,10 @@ button:hover::before, .button:hover::before {
 
 .main .tab__today__overlay .quote__author {
   font-size: 0.8rem;
-  color: #DD9534;
+  text-transform: uppercase;
+  color: #585a79;
   opacity: 0.8;
   width: 100%;
-  margin-left: 1em;
   text-align: center;
 }
 
@@ -519,9 +519,10 @@ button:hover::before, .button:hover::before {
   outline: 0;
   color: inherit;
   font-size: 1em;
-  max-width: 4em;
+  font-family: inherit;
+  max-width: 7em;
   padding: 5px 6px;
-  border-radius: 1px;
+  border-radius: 1em;
   background: #f5ece7;
   -webkit-box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
           box-shadow: inset 2px 2px 3px #cbc4c0, inset -2px -2px 3px #fff;
