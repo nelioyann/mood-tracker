@@ -294,8 +294,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       labels: weekLabels,
       datasets: [
         {
-          label: "Tranquility",
-          stack: "Tranquility",
+          label: "Stress",
+          stack: "Stress",
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
@@ -320,7 +320,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
           borderWidth: 1,
         },
         {
-          label: "Overall Score",
+          label: "Mood Score",
           type: "line",
           stack: "total",
           data: total,
