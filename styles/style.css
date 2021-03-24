@@ -168,7 +168,7 @@ button:hover::before, .button:hover::before {
           box-shadow: 0 1px 3px rgba(88, 90, 121, 0.1);
   position: sticky;
   position: -webkit-sticky;
-  padding: 0em 1em;
+  padding: 1em;
 }
 
 .header__banner {
@@ -437,7 +437,7 @@ button:hover::before, .button:hover::before {
   display: block;
   border-radius: 0.3em;
   margin: 1em auto 0;
-  padding: 0.4em 1em;
+  padding: 1.4em 1em;
   font-size: 0.8em;
 }
 
@@ -545,10 +545,10 @@ button:hover::before, .button:hover::before {
 }
 
 .navigation {
-  position: static;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 3em;
+  height: 5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -589,6 +589,11 @@ button:hover::before, .button:hover::before {
   transition: all 0.3s ease-in-out;
 }
 
+.navigation .nav__link .nav__icon {
+  width: 30px;
+  height: 30px;
+}
+
 @media screen and (min-width: 1024px) {
   .navigation .nav__link {
     -webkit-transform: translateX(-70%);
@@ -623,6 +628,7 @@ button:hover::before, .button:hover::before {
 
 .navigation .nav__text {
   font-size: 1em;
+  display: none;
 }
 
 @-webkit-keyframes shake {

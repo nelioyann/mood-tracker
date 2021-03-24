@@ -1,6 +1,6 @@
 
 // Label des fichiers statiques to precache
-const staticCacheName = "site-static-v51"
+const staticCacheName = "site-static-v61"
 
 // Fichier qui seront cacher
 const assets = [
@@ -10,9 +10,6 @@ const assets = [
     '/scripts/dependencies/chart.js',
     '/scripts/script.js',
     '/scripts/app.js',
-    'https://my.spline.design/thisisfine-4e3aa9057db4171671eb6fd4aec4f048/js/scene.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js',
-    'https://cdn.spline.design/lib/anime.min.js',
     "/images/dog1.png",
     "/images/dog2.png",
     "/images/dog3.png",
@@ -67,7 +64,15 @@ self.addEventListener("fetch", (event)=>{
     event.respondWith(
         caches.match(event.request)
         .then(cachedResponse =>{
-            return cachedResponse || fetch(event.request)
+            return cachedResponse || 
+            fetch(event.request).then(
+                (response) => {
+                    return response
+                },
+                (error) =>{
+                    return caches.match('/index.html');
+                }
+            )
         })
         .catch(()=> {
                 console.log("the requested link doesn't exist")
