@@ -22,6 +22,7 @@ const assets = [
     "/images/dog10.png",
     "/images/logo.svg",
     "/fonts/VT323-Regular.ttf",
+    "/images/brain.mp4"
     
     
 ]
