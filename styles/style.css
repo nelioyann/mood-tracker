@@ -168,7 +168,6 @@ button:hover::before, .button:hover::before {
           box-shadow: 0 1px 3px rgba(88, 90, 121, 0.1);
   position: sticky;
   position: -webkit-sticky;
-  padding: 1em;
 }
 
 .header__banner {
@@ -216,6 +215,14 @@ button:hover::before, .button:hover::before {
   padding-top: 0.5em;
 }
 
+@media screen and (min-width: 1024px) {
+  .main .tabs {
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+}
+
 .main .tabs__content {
   width: 100%;
   margin: auto;
@@ -246,9 +253,9 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today__overlay .quote {
-  top: 20%;
+  top: 50%;
   left: 50%;
-  background-color: #f5ece7;
+  background-color: white;
   color: #585a79;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -266,7 +273,7 @@ button:hover::before, .button:hover::before {
   display: block;
   margin: auto;
   background-color: #585a79;
-  color: #f5ece7;
+  color: white;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -318,6 +325,10 @@ button:hover::before, .button:hover::before {
           transform: rotate(-45deg);
 }
 
+.main .tab__today__greetings .greetings {
+  position: absolute;
+}
+
 .main .tab__today__greetings .greetings__title {
   font-size: 1rem;
   font-weight: lighter;
@@ -328,6 +339,7 @@ button:hover::before, .button:hover::before {
 .main .tab__today__greetings .greetings__text {
   font-family: VT323, cursive;
   font-size: 0.9rem;
+  display: none;
 }
 
 .main .tab__today .mood__preview {
@@ -369,9 +381,45 @@ button:hover::before, .button:hover::before {
           animation-iteration-count: 1;
 }
 
+.main .tab__today .mood__form {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .tab__today .mood__form .sliders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+  gap: 2em;
+}
+
+@media screen and (min-width: 1024px) {
+  .main .tab__today .mood__form .sliders {
+    gap: 0;
+  }
+}
+
 .main .tab__today .mood__form .sliders__question {
   margin-top: 0.3em;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 300;
   display: block;
   text-align: center;
@@ -431,14 +479,16 @@ button:hover::before, .button:hover::before {
   padding: 0;
   margin-bottom: 0.2em;
   width: 100%;
+  display: none;
 }
 
 .main .tab__today .mood__form__button {
   display: block;
   border-radius: 0.3em;
-  margin: 1em auto 0;
-  padding: 1.4em 1em;
-  font-size: 0.8em;
+  margin: 1em auto;
+  line-height: 0;
+  padding: 1em;
+  font-size: 1em;
 }
 
 .main .tab__history__contents .month_history .month_title {
@@ -451,7 +501,7 @@ button:hover::before, .button:hover::before {
   display: flex;
   margin-bottom: 1em;
   overflow-x: auto;
-  padding: 1em 0em;
+  padding: 1em 0 0 0;
   width: 100%;
   -webkit-overflow-scrolling: touch;
 }

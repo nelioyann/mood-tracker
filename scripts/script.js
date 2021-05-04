@@ -81,7 +81,7 @@ function enregistrerSurnom(event) {
   event.preventDefault();
   // Extraire la valeur de l'input
   let pseudo = document.querySelector(".tab__info__pseudo_input").value;
-  pseudo = pseudo == "" ? "Person" : pseudo;
+  pseudo = pseudo == "" ? "" : pseudo;
 
   localStorage["pseudo"] = pseudo;
   // Verification de l'existence d'un surnom et affichage
@@ -92,8 +92,8 @@ function enregistrerSurnom(event) {
 function afficher_surnom() {
   let pseudo = localStorage["pseudo"];
   if (!pseudo_text || !pseudo_form) return null;
-  pseudo = pseudo == "" ? "Person" : pseudo;
-  pseudo = pseudo == undefined ? "Person" : pseudo;
+  pseudo = pseudo == "" ? "" : pseudo;
+  pseudo = pseudo == undefined ? "" : pseudo;
   // console.log(pseudo);
   pseudo_text.innerHTML = pseudo;
   document.querySelector(".greetings__title__pseudo").innerHTML = pseudo;
@@ -294,8 +294,8 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       labels: weekLabels,
       datasets: [
         {
-          label: "Stress",
-          stack: "Stress",
+          label: "Relaxed",
+          stack: "Relaxed",
           data: s_list,
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",

@@ -104,6 +104,7 @@
             <h4 class="quote__headings">Quote of the day</h4>
             <blockquote class="quote__citation"></blockquote>
             <div class="quote__author overlay_author">----</div>
+            <video autoplay loop width="250" src="./images/brain.mp4"></video>
             <span class="quote__close close_overlay">x</span>
           </div>
           <!-- <iframe src='https://my.spline.design/thisisfine-4e3aa9057db4171671eb6fd4aec4f048/' frameborder='0' width='100%' height='100%'></iframe> -->
@@ -112,9 +113,9 @@
         <div class="tab__today__greetings header_contents">
           <div class="greetings">
             <h1 class="greetings__title hide-for-mobile-small">
-              Hey, <span class="greetings__title__pseudo">-----</span>
+              Welcome back <span class="greetings__title__pseudo">-----</span>
             </h1>
-            <span class="greetings__text"> How're you feeling today ?</span>
+            <span class="greetings__text"> How're you feeling today ? </span>
           </div>
           
         </div>
@@ -134,63 +135,73 @@
         </div>
         <form class="mood__form">
           <div class="sliders">
-            <label class="sliders__question" for="wellness">Wellbeing</label>
-            <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10" step="1">
-            <ul class="sliders__numbers flex flex-jc-sb">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-            <div class="sliders__labels flex flex-jc-sb">
-              <span>feeling down</span>
-              <span>enthusiastic</span>
-            </div>
-            <label class="sliders__question" for="stability">Stress</label>
-            <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1">
-            <ul class="sliders__numbers flex flex-jc-sb">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-            <div class="sliders__labels flex flex-jc-sb">
-              <span>nervous</span>
-              <span>relaxed</span>
-            </div>
-            <label class="sliders__question" for="construction">Energy Level</label>
-            <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1" max="10" step="1">
-            <ul class="sliders__numbers flex flex-jc-sb">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>10</li>
-            </ul>
-            <div class="sliders__labels flex flex-jc-sb">
-              <span>exhausted</span>
-              <span>energetic</span>
-            </div>
+            <fieldset>
+
+              <legend class="sliders__question" for="wellness">😔 How are you feeling ? 😊</legend>
+              <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10" step="1">
+              <ul class="sliders__numbers flex flex-jc-sb">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+              <div class="sliders__labels flex flex-jc-sb">
+                <span>feeling down</span>
+                <span>enthusiastic</span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+
+              <legend class="sliders__question" for="stability"> 😬 How relaxed do you feel ?  😌</legend>
+              <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1">
+              <ul class="sliders__numbers flex flex-jc-sb">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+              <div class="sliders__labels flex flex-jc-sb">
+                <span>nervous</span>
+                <span>relaxed</span>
+              </div>
+            </fieldset>
+            <fieldset>
+
+              <legend class="sliders__question" for="construction">😴 How energized are you ? 🔥</legend>
+              <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1" max="10" step="1">
+              <ul class="sliders__numbers flex flex-jc-sb">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+              <div class="sliders__labels flex flex-jc-sb">
+                <span>exhausted</span>
+                <span>energetic</span>
+              </div>
+            </fieldset>
             
           </div>
-          <button class="mood__form__button">Save this mood</button>
+          <button class="mood__form__button">+</button>
         </form>
       </div>
       <div class="tabs tab-secondary tab__history">
@@ -215,7 +226,7 @@
           <p>
             You can change your pseudo by clicking on the underlined alias above 
           </p>
-          <p>The results of this mood tracker are for reference only and do not rely on any scientific findings. </p>
+          <!-- <p>The results of this mood tracker are for reference only and do not rely on any scientific findings. </p> -->
           <!-- <h4>Community (coming soon)</h4> -->
           <!-- <p>Share your mood and see how others feel today</p> -->
           <h4>Install this app on your device </h4>
