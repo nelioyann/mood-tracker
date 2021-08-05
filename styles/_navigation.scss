@@ -5,6 +5,7 @@
   height: 5em;
   display: flex;
   overflow-x: auto;
+  padding: 0.5em 1em;
   @include breakpoint-up($size_desktop) {
     position: absolute;
     flex-direction: column;
@@ -18,7 +19,6 @@
   }
   .nav__link {
     background-color: $color_dark;
-    
     flex-grow: 1;
     min-width: 4em;
     overflow: hidden;
@@ -30,6 +30,23 @@
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: all 0.3s ease-in-out;
+    &:nth-child(1){
+      border-radius: 30px 0px 0px 30px;
+      @include breakpoint-up($size_desktop) {
+      border-radius: 0 0.3em 0.3em 0;
+        
+    
+      }
+    }
+    &:nth-child(3){
+      border-radius: 0px 30px 30px 0px;
+      @include breakpoint-up($size_desktop) {
+        border-radius: 0 0.3em 0.3em 0;
+          
+      
+        }
+    }
+
     .nav__icon{
       width: 30px;height: 30px;
     }
@@ -49,7 +66,8 @@
   }
   div.nav__link--active {
     fill: $color_primary;
-    color: lighten($color: $color_primary, $amount: 30);
+    color: $color_primary;
+    // color: lighten($color: $color_primary, $amount: 30);
 
     @include breakpoint-up($size_desktop) {
       transform: translateX(0%);
@@ -57,7 +75,8 @@
   }
   .nav__text {
     font-size: 1em;
-    display: none;
+    // color: $color_light;
+    // display: none;
     // font-weight: bold;
   }
 }
