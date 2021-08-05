@@ -20,7 +20,8 @@ var last_week_labels = [];
 
 
 wellness.addEventListener("input", (e) => {
-  let new_value = (e.target.value - 1) * -5;
+  let new_value = Math.abs(e.target.value ) * -5 ;
+  console.log(new_value);
   preview.style.transform = `translateX(${new_value}em)`;
 });
 
@@ -112,7 +113,7 @@ var dd = String(today.getDate()).padStart(2, "0");
 var mm = Intl.DateTimeFormat("en-US", { month: "long" }).format(today); //January is 0!
 var yyyy = today.getFullYear();
 
-today = `${dd}, ${mm} ${yyyy}`;
+today = `${mm} ${dd}, ${yyyy}`;
 date_el.innerHTML = today;
 // -------------------------------------
 
@@ -289,7 +290,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
     total[i] = s_list[i] + c_list[i] + w_list[i]
   }
   var myChart = new Chart(ctx, {
-    type: "bar",
+    type: "line",
     data: {
       labels: weekLabels,
       datasets: [
@@ -313,7 +314,6 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
         {
           label: "Wellbeing",
           stack: "Wellbeing",
-
           data: w_list,
           backgroundColor: "rgba(255, 206, 86, 0.2)",
           borderColor: "rgba(255, 206, 86, 1)",
@@ -321,7 +321,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
         },
         {
           label: "Mood Score",
-          type: "line",
+          type: "bar",
           stack: "total",
           data: total,
           backgroundColor: "rgba(75, 192, 192, 0.2)",

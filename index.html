@@ -121,6 +121,7 @@
         </div>
         <div class="mood__preview">
           <div id="mood_images" class="mood__preview__images">
+            <img class="mood__image" src="./images/dog0.png" alt="dog0">
             <img class="mood__image" src="./images/dog1.png" alt="dog1">
             <img class="mood__image" src="./images/dog2.png" alt="dog2">
             <img class="mood__image" src="./images/dog3.png" alt="dog3">
@@ -137,9 +138,10 @@
           <div class="sliders">
             <fieldset>
 
-              <legend class="sliders__question" for="wellness">😔 How are you feeling ? 😊</legend>
-              <input class="sliders__input wellness" type="range" value="1" name="wellness" id="wellness" min="1" max="10" step="1">
+              <legend class="sliders__question" for="wellness"> How are you feeling, right now ? </legend>
+              <input class="sliders__input wellness" type="range" value="5" name="wellness" id="wellness" min="0" max="10" step="1">
               <ul class="sliders__numbers flex flex-jc-sb">
+                <li>0</li>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
@@ -159,9 +161,10 @@
 
             <fieldset>
 
-              <legend class="sliders__question" for="stability"> 😬 How relaxed do you feel ?  😌</legend>
-              <input class="sliders__input slider stability" type="range" name="stability" id="stability" min="1" max="10" step="1">
+              <legend class="sliders__question" for="stability">  How relaxed do you feel ?  </legend>
+              <input class="sliders__input slider stability" type="range" value="5" name="stability" id="stability" min="0" max="10" step="1">
               <ul class="sliders__numbers flex flex-jc-sb">
+                <li>0</li>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
@@ -180,9 +183,10 @@
             </fieldset>
             <fieldset>
 
-              <legend class="sliders__question" for="construction">😴 How energized are you ? 🔥</legend>
-              <input class="sliders__input construction" type="range" name="construction" value="10" id="construction" min="1" max="10" step="1">
+              <legend class="sliders__question" for="construction"> How energized are you ? </legend>
+              <input class="sliders__input construction" type="range" name="construction" value="5" id="construction" min="0" max="10" step="1">
               <ul class="sliders__numbers flex flex-jc-sb">
+                <li>0</li>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
@@ -201,7 +205,7 @@
             </fieldset>
             
           </div>
-          <button class="mood__form__button">+</button>
+          <button class="mood__form__button">Save</button>
         </form>
       </div>
       <div class="tabs tab-secondary tab__history">
@@ -230,7 +234,7 @@
           <!-- <h4>Community (coming soon)</h4> -->
           <!-- <p>Share your mood and see how others feel today</p> -->
           <h4>Install this app on your device </h4>
-          <h5>On Android or Desktop</h5>
+          <h5>On Android or Desktop using Chrome</h5>
           <div class="pwa_access">
             <button class="pwa_access__button install_prompt">Install on device</button>
             <button class="pwa_access__button push_prompt">Allow Push Notifications</button>
