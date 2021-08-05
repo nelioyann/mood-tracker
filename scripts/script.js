@@ -289,36 +289,37 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
   for (i=0; i<s_list.length; i++){
     total[i] = s_list[i] + c_list[i] + w_list[i]
   }
+  Chart.defaults.global.defaultFontColor = "#fff";
   var myChart = new Chart(ctx, {
     type: "line",
     data: {
       labels: weekLabels,
       datasets: [
-        {
-          label: "Relaxed",
-          stack: "Relaxed",
-          data: s_list,
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
-          borderColor: "rgba(255, 99, 132, 1)",
-          borderWidth: 1,
-        },
+        // {
+        //   label: "Relaxed",
+        //   stack: "Relaxed",
+        //   data: s_list,
+        //   backgroundColor: "rgba(255, 99, 132, 0.2)",
+        //   borderColor: "rgba(255, 99, 132, 1)",
+        //   borderWidth: 1,
+        // },
       
-        {
-          label: "Energy",
-          stack: "Energy",
-          data: c_list,
-          backgroundColor: "rgba(54, 162, 235, 0.2)",
-          borderColor: "rgba(54, 162, 235, 1)",
-          borderWidth: 1,
-        },
-        {
-          label: "Wellbeing",
-          stack: "Wellbeing",
-          data: w_list,
-          backgroundColor: "rgba(255, 206, 86, 0.2)",
-          borderColor: "rgba(255, 206, 86, 1)",
-          borderWidth: 1,
-        },
+        // {
+        //   label: "Energy",
+        //   stack: "Energy",
+        //   data: c_list,
+        //   backgroundColor: "rgba(54, 162, 235, 0.2)",
+        //   borderColor: "rgba(54, 162, 235, 1)",
+        //   borderWidth: 1,
+        // },
+        // {
+        //   label: "Wellbeing",
+        //   stack: "Wellbeing",
+        //   data: w_list,
+        //   backgroundColor: "rgba(255, 206, 86, 0.2)",
+        //   borderColor: "rgba(255, 206, 86, 1)",
+        //   borderWidth: 1,
+        // },
         {
           label: "Mood Score",
           type: "bar",
@@ -333,6 +334,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
     },
     options: {
       maintainAspectRatio: false,
+      
 
       title: {
         display:true,
@@ -358,6 +360,7 @@ const showChart = (s_list, c_list, w_list, weekLabels) => {
       },
     },
   });
+  myChart.defaults.color = "#fff"
 };
 makeHistory();
 

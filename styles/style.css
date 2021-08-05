@@ -64,8 +64,8 @@ body {
   width: 100vw;
   overflow: hidden;
   min-height: 100vh;
-  color: #f5ece7;
-  background-color: #585a79;
+  color: #585a79;
+  background-color: #f5ece7;
 }
 
 .flex {
@@ -109,15 +109,15 @@ ul {
 }
 
 button, .button {
-  font-family: VT323, cursive;
+  font-family: cursive;
   position: relative;
   display: inline-block;
   padding: 0.8rem 2rem;
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  background-color: #585a79;
-  color: #f5ece7;
+  background-color: #f5ece7;
+  color: #585a79;
   font-weight: 400;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
@@ -160,12 +160,12 @@ button:hover::before, .button:hover::before {
 }
 
 .header {
-  background-color: #585a79;
-  color: #f5ece7;
+  background-color: #f5ece7;
+  color: #585a79;
   top: 0;
   width: 100%;
-  -webkit-box-shadow: 0 1px 3px rgba(88, 90, 121, 0.1);
-          box-shadow: 0 1px 3px rgba(88, 90, 121, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(245, 236, 231, 0.1);
+          box-shadow: 0 1px 3px rgba(245, 236, 231, 0.1);
   position: sticky;
   position: -webkit-sticky;
 }
@@ -186,7 +186,7 @@ button:hover::before, .button:hover::before {
 .header__banner__logo__brand {
   font-size: 1em;
   font-weight: lighter;
-  font-family: VT323, cursive;
+  font-family: cursive;
 }
 
 .header__banner__date {
@@ -199,14 +199,14 @@ button:hover::before, .button:hover::before {
           flex-grow: 1;
   position: relative;
   padding: 0em 2em;
-  border-right: 0.4em solid #585a79;
-  border-left: 0.4em solid #585a79;
+  border-right: 0.4em solid #f5ece7;
+  border-left: 0.4em solid #f5ece7;
 }
 
 @media screen and (min-width: 1024px) {
   .main {
-    border-bottom: 0.4em solid #585a79;
-    border-right: 0.4em solid #585a79;
+    border-bottom: 0.4em solid #f5ece7;
+    border-right: 0.4em solid #f5ece7;
   }
 }
 
@@ -242,7 +242,7 @@ button:hover::before, .button:hover::before {
   z-index: 5;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background-color: rgba(88, 90, 121, 0.25);
+  background-color: rgba(245, 236, 231, 0.25);
 }
 
 .main .tab__today__overlay iframe {
@@ -272,8 +272,8 @@ button:hover::before, .button:hover::before {
 .main .tab__today__overlay .quote__headings {
   display: block;
   margin: auto;
-  background-color: #585a79;
-  color: white;
+  text-decoration: underline;
+  color: #585a79;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -281,7 +281,7 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today__overlay .quote__citation {
-  font-family: VT323, cursive;
+  font-family: cursive;
   margin: 1em 0 0;
 }
 
@@ -299,7 +299,7 @@ button:hover::before, .button:hover::before {
   top: 0.5em;
   right: 1em;
   border-radius: 5px;
-  color: #f5ece7;
+  color: #585a79;
   height: 22px;
   width: 22px;
   opacity: 0.7;
@@ -309,7 +309,7 @@ button:hover::before, .button:hover::before {
 .main .tab__today__overlay .quote__close::before, .main .tab__today__overlay .quote__close::after {
   position: absolute;
   left: 15px;
-  content: " ";
+  content: "";
   height: 23px;
   width: 2px;
   background-color: #333;
@@ -333,11 +333,11 @@ button:hover::before, .button:hover::before {
   font-size: 1rem;
   font-weight: lighter;
   margin: 0 0 0.1em;
-  font-family: VT323, cursive;
+  font-family: cursive;
 }
 
 .main .tab__today__greetings .greetings__text {
-  font-family: VT323, cursive;
+  font-family: cursive;
   font-size: 0.9rem;
   display: none;
 }
@@ -432,7 +432,7 @@ button:hover::before, .button:hover::before {
   width: 100%;
   height: 0.5em;
   border-radius: 5px;
-  background: #f5ece7;
+  background: #585a79;
   -webkit-box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
           box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
   outline: 0;
@@ -449,10 +449,8 @@ button:hover::before, .button:hover::before {
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   outline: none;
-  background: #585a79;
+  background: #DD9534;
   cursor: pointer;
-  -webkit-box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
-          box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
 }
 
 .main .tab__today .mood__form .sliders__input::-moz-range-thumb {
@@ -460,8 +458,7 @@ button:hover::before, .button:hover::before {
   height: 1.6em;
   border-radius: 50%;
   cursor: pointer;
-  background: #f5ece7;
-  box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+  background: #585a79;
   outline: 0;
   margin: 0;
 }
@@ -474,7 +471,7 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today .mood__form .sliders__labels {
-  color: rgba(88, 90, 121, 0.9);
+  color: rgba(245, 236, 231, 0.9);
   font-size: 0.9em;
   padding: 0;
   margin-bottom: 0.2em;
@@ -507,8 +504,8 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card {
-  background-color: #f5ece7;
-  color: #585a79;
+  background-color: #585a79;
+  color: #f5ece7;
   margin: 0em 0.2em;
   padding: 0.2em 0.5em;
   border-radius: 0.3em;
@@ -518,8 +515,8 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__history__contents .month_history .days_cards_slider .day_card.current_day {
-  background-color: #585a79;
-  color: #f5ece7;
+  background-color: #f5ece7;
+  color: #585a79;
   -webkit-transform: translateY(-0.5em);
           transform: translateY(-0.5em);
 }
@@ -550,9 +547,10 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__info__pseudo_text, .main .tab__info .highlighted {
-  color: #f5ece7;
-  background-color: #585a79;
+  color: #585a79;
+  background-color: #f5ece7;
   padding: 1px 6px;
+  min-width: 50px;
   border-radius: 0.2em;
   cursor: pointer;
   display: none;
@@ -567,7 +565,7 @@ button:hover::before, .button:hover::before {
 .main .tab__info__pseudo_input {
   border: none;
   outline: 0;
-  color: inherit;
+  color: #585a79;
   font-size: 1em;
   font-family: inherit;
   max-width: 7em;
@@ -622,7 +620,7 @@ button:hover::before, .button:hover::before {
 }
 
 .navigation .nav__link {
-  background-color: #585a79;
+  background-color: #f5ece7;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -630,8 +628,8 @@ button:hover::before, .button:hover::before {
   overflow: hidden;
   white-space: nowrap;
   font-size: 0.8em;
-  color: #f5ece7;
-  fill: #f5ece7;
+  color: #585a79;
+  fill: #585a79;
   text-decoration: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -753,14 +751,14 @@ button:hover::before, .button:hover::before {
 .container {
   min-height: 100vh;
   width: 100%;
-  background-color: #f5ece7;
+  background-color: #585a79;
 }
 
 body {
-  background-color: #585a79;
+  background-color: #f5ece7;
   min-height: 100vh;
-  font-family: VT323, cursive;
-  color: #585a79;
+  font-family: cursive;
+  color: #f5ece7;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;

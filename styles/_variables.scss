@@ -19,11 +19,15 @@
     font-display: swap;
   }
 
-$color_dark: rgb(88, 90, 121);
+$color_dark: #585a79;
 $color_light: #f5ece7;
+$color_dark: #f5ece7;
+$color_light: #585a79;
 $color_primary: #DD9534;
 
-$font_headings: VT323, cursive;
+// $font_headings: VT323, cursive;
+// $font_body: PTSans, sans-serif;
+$font_headings: cursive;
 $font_body: PTSans, sans-serif;
 
 $size_thumb: 1.6em;

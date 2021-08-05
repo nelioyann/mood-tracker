@@ -46,7 +46,7 @@
         top: 50%;
         left: 50%;
         background-color: white;
-        color: $color_dark;
+        color: $color_light;
         width: max-content;
         max-width: 90vw;
         transform: translate(-50%, -50%);
@@ -57,8 +57,9 @@
         &__headings {
           display: block;
           margin: auto;
-          background-color: $color_dark;
-          color: white;
+          // background-color: $color_dark;
+          text-decoration: underline;
+          color: $color_light;
           width: max-content;
           padding: 0.1em 0.3em;
         }
@@ -70,7 +71,7 @@
           font-size: 0.8rem;
           // font-style: italic;
           text-transform: uppercase;
-          color: $color_dark;
+          color: $color_light;
           opacity: 0.8;
           width: 100%;
           text-align: center;
@@ -89,7 +90,7 @@
           &::after {
             position: absolute;
             left: 15px;
-            content: " ";
+            content: "";
             height: 23px;
             width: 2px;
             background-color: #333;
@@ -197,10 +198,10 @@
             // border-radius: 0% 100% 47% 53% / 0% 62% 38% 100% ;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
             outline: none;
-            background: $color_dark;
+            background: $color_primary;
             // transform: rotate(-135deg);
             cursor: pointer;
-            box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
+            // box-shadow: 3px 3px 5px #ddd4d0, -3px -3px 5px #fffffe;
           }
           &::-moz-range-thumb {
             width: $size_thumb;
@@ -211,7 +212,7 @@
             cursor: pointer;
             // border-radius: 50%;
             background: $color_light;
-            box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
+            // box-shadow: inset 3px 3px 5px #ddd4d0, inset -3px -3px 5px #fffffe;
             outline: 0;
             margin: 0;
           }
@@ -299,6 +300,7 @@
       color: $color_light;
       background-color: $color_dark;
       padding: 1px 6px;
+      min-width: 50px;
       border-radius: 0.2em;
       cursor: pointer;
       display: none;
@@ -312,7 +314,7 @@
     &__pseudo_input {
       border: none;
       outline: 0;
-      color: inherit;
+      color: $color_light;
       font-size: 1em;
       font-family: inherit;
 
