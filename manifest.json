@@ -1,6 +1,6 @@
 {
-  "name": "Mood Tracker",
-  "short_name": "Mood Tracker",
+  "name": "Daily Mood Tracker",
+  "short_name": "Daily Mood Tracker",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#585a79",
