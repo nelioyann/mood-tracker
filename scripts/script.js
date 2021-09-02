@@ -93,8 +93,8 @@ function enregistrerSurnom(event) {
 function afficher_surnom() {
   let pseudo = localStorage["pseudo"];
   if (!pseudo_text || !pseudo_form) return null;
-  pseudo = pseudo == "" ? "" : pseudo;
-  pseudo = pseudo == undefined ? "" : pseudo;
+  pseudo = pseudo == "" ? "person" : pseudo;
+  pseudo = pseudo == undefined ? "person" : pseudo;
   // console.log(pseudo);
   pseudo_text.innerHTML = pseudo;
   document.querySelector(".greetings__title__pseudo").innerHTML = pseudo;

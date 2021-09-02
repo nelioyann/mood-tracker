@@ -443,8 +443,8 @@ button:hover::before, .button:hover::before {
 .main .tab__today .mood__form .sliders__input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 1.6em;
-  height: 1.6em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -454,8 +454,8 @@ button:hover::before, .button:hover::before {
 }
 
 .main .tab__today .mood__form .sliders__input::-moz-range-thumb {
-  width: 1.6em;
-  height: 1.6em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   cursor: pointer;
   background: #585a79;
